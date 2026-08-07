@@ -1,0 +1,41 @@
+name: Deploy to Hostinger
+
+# Builds the static Astro site and uploads dist/ to Hostinger over FTPS.
+# Credentials live in repository secrets, never in the repo:
+#   FTP_SERVER    - Hostinger FTP host (IP or hostname)
+#   FTP_USERNAME  - Hostinger FTP account name
+#   FTP_PASSWORD  - Hostinger FTP password (set by the account owner)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Upload dist/ to Hostinger (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./dist/
+          server-dir: public_html/
