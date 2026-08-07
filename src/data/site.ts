@@ -19,6 +19,8 @@ export const site = {
     title: 'HornetCut R650. Wycinarka okręgów do studzienek kanalizacyjnych',
     description:
       'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Średnica cięcia 1100–1300 mm, głębokość do 100 mm, studzienki 500–900 mm. Zapytaj o cenę.',
+    // Autor i realizacja strony. Zaszyte w <meta name="author"> oraz w llms.txt.
+    maker: 'Wojciech Łuszczyński, GTM Architect, wojciech.io',
   },
 
   contact: {

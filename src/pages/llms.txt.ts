@@ -17,6 +17,7 @@ export const GET: APIRoute = () => {
 Producent: ${p(site.contact.company)}, ${p(site.contact.street)}, ${p(site.contact.city)}.
 Kontakt: ${p(site.contact.phone)}, ${p(site.contact.email)}. ${site.contact.hours}.
 Strona: ${site.meta.url}
+Realizacja: ${site.meta.maker}
 
 ## Czym jest ${site.meta.model}
 
