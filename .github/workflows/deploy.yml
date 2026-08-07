@@ -1,21 +1,25 @@
-name: Deploy to Hostinger (FTP)
+name: Build and publish to live branch
 
-# Builds the static site and deploys dist/ over plain FTP with lftp.
-# Prints the FTP working directory and listings so we can see exactly where
-# files land (the panel's FTPS endpoint was misrouting).
-# Secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+# Hostinger's FTP endpoint for this account routes to a different node than the
+# one serving hornetcut.pl, so FTP deploys never reach the docroot. Instead we
+# build the static site and force-push the built output to the `live` branch;
+# Hostinger's native Git deployment (hPanel -> Advanced -> GIT) runs on the web
+# server and pulls `live` straight into public_html.
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: publish-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,28 +32,15 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get update -q && sudo apt-get install -y -q lftp
-
-      - name: Diagnose + deploy over FTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      - name: Force-push dist/ to the live branch
         run: |
-          lftp -c "
-          set ftp:ssl-allow false;
-          set net:max-retries 2;
-          set net:timeout 20;
-          open -u '$FTP_USERNAME','$FTP_PASSWORD' 'ftp://$FTP_SERVER';
-          echo '=== pwd (FTP home) ===';
-          pwd;
-          echo '=== ls home ===';
-          cls -l;
-          echo '=== ls public_html ===';
-          cls -l public_html || echo '(no public_html here)';
-          echo '=== mirror dist -> public_html ===';
-          mirror -R --delete --parallel=4 --verbose=1 dist/ public_html/;
-          echo '=== after: ls public_html ===';
-          cls -l public_html;
-          "
+          cd dist
+          git init -q
+          git config user.name "Wojciech Luszczynski"
+          git config user.email "78645420+wojciechluszczynski@users.noreply.github.com"
+          git checkout -q -b live
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA}"
+          git push -f -q "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
