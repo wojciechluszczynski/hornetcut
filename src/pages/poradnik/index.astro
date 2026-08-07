@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import NextLinks from '../../components/NextLinks.astro';
+import { site } from '../../data/site';
+
+const crumbs = [{ label: 'Poradnik', href: '/poradnik/' }];
+
+const posts = [
+  {
+    slug: 'regulacja-wysokosci-studzienki',
+    title: 'Regulacja wysokości studzienki w jezdni',
+    lead: 'Kiedy studzienka wymaga regulacji, jak przebiega robota i dlaczego sposób rozbiórki decyduje o trwałości naprawy.',
+    read: 6,
+    date: '2026-08-06',
+  },
+  {
+    slug: 'wymiana-wlazu-kanalizacyjnego',
+    title: 'Wymiana włazu kanalizacyjnego w jezdni',
+    lead: 'Po czym poznać, że właz nadaje się do wymiany, jakiej klasy szukać i gdzie najczęściej popełnia się błąd, który wraca po zimie.',
+    read: 5,
+    date: '2026-08-06',
+  },
+  {
+    slug: 'ciecie-po-obwodzie-czy-rozkuwanie',
+    title: 'Cięcie po obwodzie czy rozkuwanie młotem?',
+    lead: 'Trzy metody otwarcia nawierzchni wokół studzienki i to, co każda robi z krawędzią, ilością odpadu i czasem zajęcia pasa.',
+    read: 5,
+    date: '2026-08-06',
+  },
+];
+
+const schema = [
+  {
+    '@type': 'CollectionPage',
+    name: 'Poradnik',
+    description: 'Teksty o regulacji studzienek, wymianie włazów i metodach otwierania nawierzchni.',
+    inLanguage: 'pl-PL',
+    hasPart: posts.map((p) => ({
+      '@type': 'Article',
+      headline: p.title,
+      description: p.lead,
+      datePublished: p.date,
+      url: `${site.meta.url}/poradnik/${p.slug}/`,
+    })),
+  },
+];
+---
+
+<Base
+  title="Poradnik: studzienki, włazy, nawierzchnia"
+  description="Praktyczne teksty o regulacji wysokości studzienek, wymianie włazów kanalizacyjnych i metodach otwierania nawierzchni w jezdni."
+  schema={schema}
+  crumbs={crumbs}
+>
+  <PageHero
+    h1="Poradnik"
+    lead="Konkretne odpowiedzi na pytania, które wracają przy każdym odcinku ze studzienkami. Bez lania wody, z liczbami tam, gdzie liczby mają sens."
+    crumbs={crumbs}
+  />
+
+  <section class="band">
+    <div class="shell">
+      <ol class="posts">
+        {
+          posts.map((post, i) => (
+            <li class="post reveal">
+              <span class="post__idx mono">{String(i + 1).padStart(2, '0')}</span>
+              <div class="post__body">
+                <h2 class="post__title">
+                  <a href={`/poradnik/${post.slug}/`}>{post.title}</a>
+                </h2>
+                <p class="muted post__lead">{post.lead}</p>
+              </div>
+              <p class="post__meta mono">{post.read} min</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="band band--paper band--tight">
+    <div class="shell cta">
+      <h2 class="display-l">Pytanie, którego tu nie ma?</h2>
+      <p class="lead muted">Napisz albo zadzwoń. Odpowiadamy w ciągu jednego dnia roboczego.</p>
+      <a href="/kontakt/" class="btn btn--solid">Zadaj pytanie</a>
+    </div>
+
+    <div class="shell">
+      <NextLinks
+        items={[
+          { label: 'Dane techniczne', href: '/dane-techniczne/', note: 'Pełna tabela parametrów' },
+          { label: 'Zastosowania', href: '/zastosowania/', note: 'Gdzie maszyna pracuje' },
+          { label: 'FAQ', href: '/faq/', note: 'Krótkie odpowiedzi' },
+        ]}
+      />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .posts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+
+  .post {
+    display: grid;
+    grid-template-columns: 4rem 1fr auto;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    align-items: start;
+    padding-block: clamp(1.75rem, 3.5vw, 2.75rem);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .post__idx { font-size: 0.72rem; color: var(--accent-text); padding-top: 0.35rem; }
+
+  .post__title {
+    font-size: clamp(1.25rem, 2.6vw, 1.9rem);
+    font-stretch: 108%;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .post__title a { color: inherit; text-decoration: none; }
+  .post__title a:hover { color: var(--accent-text); }
+
+  .post__lead { margin-top: 0.75rem; max-width: 58ch; }
+
+  .post__meta {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.4rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .post { grid-template-columns: 2.5rem 1fr; }
+    .post__meta { grid-column: 2; }
+  }
+</style>

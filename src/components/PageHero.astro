@@ -1,0 +1,55 @@
+---
+interface Props {
+  h1: string;
+  lead?: string;
+  crumbs: { label: string; href: string }[];
+}
+const { h1, lead, crumbs } = Astro.props;
+---
+
+<section class="phero">
+  <div class="shell">
+    <nav class="phero__crumbs mono" aria-label="Okruszki">
+      <a href="/">Strona główna</a>
+      {
+        crumbs.map((c, i) => (
+          <>
+            <span aria-hidden="true">/</span>
+            {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : <a href={c.href}>{c.label}</a>}
+          </>
+        ))
+      }
+    </nav>
+
+    <h1 class="display-xl">
+      {h1.split('\n').map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))}
+    </h1>
+
+    {lead && <p class="lead muted phero__lead">{lead}</p>}
+  </div>
+</section>
+
+<style>
+  .phero {
+    padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(2.5rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--rule);
+  }
+  .phero__crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .phero__crumbs a:hover { color: var(--accent-text); }
+  .phero__crumbs [aria-current] { color: var(--fg); }
+  .phero__lead { margin-top: 1.75rem; }
+</style>

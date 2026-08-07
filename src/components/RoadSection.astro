@@ -1,0 +1,137 @@
+---
+/**
+ * Przekrój nawierzchni przez właz studzienki. Pokazuje, co dokładnie zabiera
+ * cięcie na 100 mm i gdzie kończy się wycinka. Rysunek techniczny, nie ilustracja.
+ */
+---
+
+<figure class="rs">
+  <svg
+    viewBox="0 0 1040 430"
+    role="img"
+    aria-label="Przekrój nawierzchni drogi przez studzienkę: warstwa ścieralna, warstwa wiążąca, podbudowa, pierścień odciążający i korpus studni. Zaznaczona głębokość cięcia 100 mm i wycięty pierścień nawierzchni po obu stronach włazu."
+    class="rs__svg"
+  >
+    <defs>
+      <pattern id="rs-agg" width="16" height="16" patternUnits="userSpaceOnUse">
+        <circle cx="3" cy="5" r="1.7" fill="currentColor" fill-opacity="0.3"></circle>
+        <circle cx="11" cy="10" r="1.2" fill="currentColor" fill-opacity="0.24"></circle>
+        <circle cx="7" cy="14" r="0.9" fill="currentColor" fill-opacity="0.18"></circle>
+      </pattern>
+      <pattern id="rs-cut" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="8" stroke="#ffb800" stroke-opacity="0.5" stroke-width="1.6"></line>
+      </pattern>
+      <marker id="rs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor" fill-opacity="0.6"></path>
+      </marker>
+    </defs>
+
+    {/* warstwy nawierzchni */}
+    <g class="rs__layers">
+      <rect x="150" y="80" width="710" height="32" class="rs__wear"></rect>
+      <rect x="150" y="112" width="710" height="46" class="rs__bind"></rect>
+      <rect x="150" y="158" width="710" height="70" class="rs__base"></rect>
+      <rect x="150" y="158" width="710" height="70" fill="url(#rs-agg)" stroke="none"></rect>
+      <rect x="150" y="228" width="710" height="152" class="rs__soil"></rect>
+    </g>
+
+    {/* wycięty pierścień: dwa przekroje tego samego okręgu */}
+    <g>
+      <rect x="352" y="80" width="60" height="78" fill="url(#rs-cut)" stroke="none"></rect>
+      <rect x="598" y="80" width="60" height="78" fill="url(#rs-cut)" stroke="none"></rect>
+      <g class="rs__cutline">
+        <path d="M352 80 V158 M412 80 V158 M598 80 V158 M658 80 V158"></path>
+      </g>
+    </g>
+
+    {/* konstrukcja studni */}
+    <g class="rs__struct">
+      <rect x="430" y="122" width="150" height="36" class="rs__solid"></rect>
+      <rect x="460" y="80" width="90" height="42" class="rs__solid"></rect>
+      <path d="M430 228 V380 M580 228 V380"></path>
+      <rect x="430" y="158" width="150" height="70" fill="none" stroke-dasharray="5 4"></rect>
+      <ellipse cx="505" cy="80" rx="78" ry="10" class="rs__solid"></ellipse>
+    </g>
+
+    {/* wymiar głębokości cięcia */}
+    <g class="rs__dim">
+      <line x1="310" y1="80" x2="310" y2="158" marker-start="url(#rs-arrow)" marker-end="url(#rs-arrow)"></line>
+      <line x1="318" y1="80" x2="352" y2="80" stroke-dasharray="3 3"></line>
+      <line x1="318" y1="158" x2="352" y2="158" stroke-dasharray="3 3"></line>
+      <text x="296" y="114" text-anchor="end" class="rs__t rs__t--acc">100 mm</text>
+      <text x="296" y="132" text-anchor="end" class="rs__t rs__t--s">GŁĘBOKOŚĆ CIĘCIA</text>
+    </g>
+
+    {/* opisy warstw po prawej */}
+    <g class="rs__labels">
+      <line x1="860" y1="96" x2="874" y2="96"></line>
+      <text x="882" y="101" class="rs__t rs__t--s">WARSTWA ŚCIERALNA</text>
+      <line x1="860" y1="135" x2="874" y2="135"></line>
+      <text x="882" y="140" class="rs__t rs__t--s">WARSTWA WIĄŻĄCA</text>
+      <line x1="860" y1="193" x2="874" y2="193"></line>
+      <text x="882" y="198" class="rs__t rs__t--s">PODBUDOWA</text>
+      <line x1="860" y1="300" x2="874" y2="300"></line>
+      <text x="882" y="305" class="rs__t rs__t--s">GRUNT RODZIMY</text>
+
+      <text x="505" y="70" text-anchor="middle" class="rs__t rs__t--s">WŁAZ</text>
+      <text x="505" y="146" text-anchor="middle" class="rs__t rs__t--s">PIERŚCIEŃ ODCIĄŻAJĄCY</text>
+      <text x="505" y="330" text-anchor="middle" class="rs__t rs__t--s">KORPUS STUDNI</text>
+
+      {/* opis wycinki wyniesiony nad przekrój */}
+      <path d="M382 78 V40" class="rs__lead" stroke-dasharray="3 4"></path>
+      <path d="M628 78 V40" class="rs__lead" stroke-dasharray="3 4"></path>
+      <line x1="382" y1="40" x2="628" y2="40" class="rs__lead"></line>
+      <text x="505" y="28" text-anchor="middle" class="rs__t rs__t--acc rs__t--s">WYCIĘTY PIERŚCIEŃ NAWIERZCHNI</text>
+    </g>
+  </svg>
+
+  <figcaption class="rs__cap mono">
+    Cięcie po obwodzie zabiera warstwę ścieralną i wiążącą wokół włazu. Korpus studni i pierścień
+    odciążający zostają na miejscu.
+  </figcaption>
+</figure>
+
+<style>
+  .rs { margin: 0; }
+  .rs__svg { width: 100%; height: auto; color: var(--fg); }
+
+  .rs__wear { fill: currentColor; fill-opacity: 0.16; }
+  .rs__bind { fill: currentColor; fill-opacity: 0.1; }
+  .rs__base { fill: currentColor; fill-opacity: 0.05; }
+  .rs__soil { fill: currentColor; fill-opacity: 0.02; }
+  .rs__layers rect { stroke: currentColor; stroke-opacity: 0.22; stroke-width: 1; }
+
+  .rs__cutline path { stroke: var(--color-amber); stroke-width: 2; fill: none; }
+
+  .rs__struct rect,
+  .rs__struct path,
+  .rs__struct ellipse {
+    stroke: currentColor;
+    stroke-opacity: 0.5;
+    stroke-width: 1.25;
+    fill: none;
+  }
+  .rs__struct .rs__solid { fill: var(--bg); }
+
+  .rs__dim line { stroke: currentColor; stroke-opacity: 0.6; stroke-width: 1; }
+  .rs__labels line,
+  .rs__lead { stroke: currentColor; stroke-opacity: 0.35; fill: none; }
+
+  .rs__t {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    fill: currentColor;
+    fill-opacity: 0.8;
+    letter-spacing: 0.06em;
+  }
+  .rs__t--s { font-size: 11px; letter-spacing: 0.15em; fill-opacity: 0.6; }
+  .rs__t--acc { fill: var(--accent-text); fill-opacity: 1; }
+
+  .rs__cap {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 62ch;
+  }
+</style>

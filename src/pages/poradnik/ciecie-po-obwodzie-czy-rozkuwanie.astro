@@ -1,0 +1,119 @@
+---
+import Article from '../../layouts/Article.astro';
+---
+
+<Article
+  title="Cięcie po obwodzie czy rozkuwanie młotem? Porównanie metod"
+  description="Trzy sposoby otwarcia nawierzchni wokół studzienki: młot, piła prosta na kwadrat i cięcie po obwodzie. Co każdy z nich robi z krawędzią, ilością odpadu i czasem zajęcia pasa."
+  h1="Cięcie po obwodzie czy rozkuwanie młotem?"
+  lead="Wybór metody rozbiórki decyduje o trzech rzeczach naraz: ile materiału wyjedzie na wysypisko, jak długo pas będzie zajęty i czy naprawa dotrwa do następnej zimy. Poniżej to, czym te metody różnią się w praktyce."
+  published="2026-08-06"
+  readMin={5}
+  slug="ciecie-po-obwodzie-czy-rozkuwanie"
+>
+  <p>
+    Do studzienki trzeba się jakoś dostać. Nawierzchnia wokół włazu musi zejść na głębokość warstwy
+    ścieralnej i wiążącej, czyli zwykle w okolice 10 cm. Metody są trzy i każda zostawia po sobie
+    inny ślad.
+  </p>
+
+  <h2>Młot i rozkuwanie</h2>
+  <p>
+    Najszybsze wejście w robotę i najdroższe wyjście z niej. Młot nie ma linii, przy którą się
+    zatrzyma, więc obszar rozbiórki zawsze wychodzi większy niż zaplanowany. Krawędź jest poszarpana,
+    a drgania idą w głąb warstwy wiążącej i zostawiają mikropęknięcia poza widocznym ubytkiem.
+  </p>
+  <p>
+    Drugi problem to sam korpus studni. Młot pracujący blisko pierścienia odciążającego potrafi go
+    naruszyć, a wtedy regulacja wysokości zamienia się w naprawę konstrukcji.
+  </p>
+
+  <h2>Piła prosta, cięcie na kwadrat</h2>
+  <p>
+    Krawędź jest równa i pionowa, więc styk ze świeżą masą trzyma się znacznie lepiej niż po młocie.
+    Cena za to jest geometryczna: żeby okrągłą studzienkę zamknąć w kwadracie, trzeba wyciąć obszar
+    wyraźnie większy od tego, co faktycznie musi zejść. Do tego dochodzą cztery przejścia piłą i
+    naroża, których tarcza nie domyka, więc i tak schodzą młotem.
+  </p>
+
+  <h2>Cięcie po obwodzie</h2>
+  <p>
+    Maszyna mocuje się w pierścieniu włazu i obraca ramię wokół osi studni. Wycięty pierścień ma
+    kształt zbliżony do tego, co trzeba wyjąć, krawędź jest pionowa i równa, a punkt odniesienia to
+    sama studzienka, nie nawierzchnia. Nie ma wytyczania obszaru, nie ma narożników, nie ma dobijania
+    młotem.
+  </p>
+
+  <h2>Zestawienie</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Kryterium</th>
+        <th>Młot</th>
+        <th>Piła, kwadrat</th>
+        <th>Po obwodzie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Krawędź</td>
+        <td>poszarpana</td>
+        <td>równa</td>
+        <td>równa, pionowa</td>
+      </tr>
+      <tr>
+        <td>Obszar rozbiórki</td>
+        <td>trudny do kontroli</td>
+        <td>nadmiarowy w narożnikach</td>
+        <td>zbliżony do potrzebnego</td>
+      </tr>
+      <tr>
+        <td>Liczba przejść</td>
+        <td>nie dotyczy</td>
+        <td>cztery plus naroża</td>
+        <td>jedno</td>
+      </tr>
+      <tr>
+        <td>Ryzyko dla korpusu studni</td>
+        <td>realne</td>
+        <td>niskie</td>
+        <td>niskie, maszyna opiera się o ramę</td>
+      </tr>
+      <tr>
+        <td>Powtarzalność na odcinku</td>
+        <td>żadna</td>
+        <td>zależna od wytyczenia</td>
+        <td>ta sama średnica za każdym razem</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p>
+      Powtarzalność jest niedoceniana. Jeżeli każdy wycięty otwór ma tę samą średnicę, materiał na
+      odtworzenie liczy się raz dla całego odcinka, a nie osobno dla każdej studzienki.
+    </p>
+  </div>
+
+  <h2>Kiedy młot i tak jest potrzebny?</h2>
+  <p>
+    Cięcie po obwodzie otwiera nawierzchnię. Nie zastępuje demontażu ramy, oczyszczenia korpusu ani
+    ustawienia nowego poziomu. Młot zostaje w wyposażeniu brygady, tylko przestaje być narzędziem,
+    którym zaczyna się robotę.
+  </p>
+
+  <h2>Co warto policzyć przed decyzją?</h2>
+  <ul>
+    <li>Powierzchnię rozbiórki na jedną studzienkę, przemnożoną przez liczbę studzienek na odcinku.</li>
+    <li>Objętość gruzu i liczbę kursów wywrotki.</li>
+    <li>Masę do wbudowania przy odtworzeniu.</li>
+    <li>Metry bieżące styku, który trzeba uszczelnić.</li>
+    <li>Godziny zajęcia pasa ruchu, jeżeli płacisz za zajęcie pasa.</li>
+  </ul>
+
+  <p>
+    Przy jednej studzience różnice są do zniesienia. Przy kilkunastu zaczynają decydować o wyniku
+    zlecenia. Zobacz <a href="/dane-techniczne/">dane techniczne HornetCut R650</a> albo
+    <a href="/jak-to-dziala/">jak wygląda sekwencja cięcia</a>.
+  </p>
+</Article>

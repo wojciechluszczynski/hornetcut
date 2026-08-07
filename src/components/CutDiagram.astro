@@ -1,0 +1,274 @@
+---
+/**
+ * Signature element: a plan-view engineering drawing of the cut circle around
+ * a manhole. The slider drives the cutting diameter 1100-1300 mm live.
+ * Everything is drawn to scale: 0.3231 px per mm (1300 mm across = 420 px).
+ */
+const CX = 310;
+const CY = 250;
+const K = 0.27; // px per mm
+const DEFAULT_DIA = 1200;
+const MANHOLE_DIA = 600;
+const r0 = (DEFAULT_DIA / 2) * K;
+const rm = (MANHOLE_DIA / 2) * K;
+const DIM_Y = 500;
+---
+
+<figure class="dgm">
+  <svg
+    viewBox="0 0 720 620"
+    role="img"
+    aria-label="Rysunek techniczny: okrąg cięcia wokół włazu studzienki, średnica regulowana od 1100 do 1300 mm"
+    class="dgm__svg"
+  >
+    <defs>
+      <pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="7" stroke="rgba(255,184,0,0.30)" stroke-width="1"></line>
+      </pattern>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 1 L 10 5 L 0 9 z" fill="currentColor" fill-opacity="0.55"></path>
+      </marker>
+    </defs>
+
+    <!-- sheet frame -->
+    <rect x="8" y="8" width="704" height="604" fill="none" stroke="currentColor" stroke-opacity="0.12"></rect>
+    <g stroke="currentColor" stroke-opacity="0.3" stroke-width="1">
+      <path d="M8 34 H30 M8 34 V12"></path>
+      <path d="M712 34 H690 M712 34 V12"></path>
+      <path d="M8 586 H30 M8 586 V608"></path>
+      <path d="M712 586 H690 M712 586 V608"></path>
+    </g>
+
+    <!-- centre lines -->
+    <g stroke="currentColor" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="14 5 3 5">
+      <line x1={CX - 250} y1={CY} x2={CX + 250} y2={CY}></line>
+      <line x1={CX} y1={CY - 250} x2={CX} y2={CY + 250}></line>
+    </g>
+
+    <!-- cut ring: hatched area between manhole and cutting circle -->
+    <path
+      id="dgm-ring"
+      d={`M ${CX} ${CY} m ${-r0} 0 a ${r0} ${r0} 0 1 0 ${r0 * 2} 0 a ${r0} ${r0} 0 1 0 ${-r0 * 2} 0 M ${CX} ${CY} m ${-rm} 0 a ${rm} ${rm} 0 1 1 ${rm * 2} 0 a ${rm} ${rm} 0 1 1 ${-rm * 2} 0`}
+      fill="url(#hatch)"
+      fill-rule="evenodd"
+    ></path>
+
+    <!-- manhole cover -->
+    <g class="dgm__cover">
+      <circle cx={CX} cy={CY} r={rm} class="dgm__disc" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.5"></circle>
+      <circle cx={CX} cy={CY} r={rm - 8} fill="none" stroke="currentColor" stroke-opacity="0.22"></circle>
+      <circle cx={CX} cy={CY} r={rm - 18} fill="none" stroke="currentColor" stroke-opacity="0.12"></circle>
+      {
+        Array.from({ length: 12 }).map((_, i) => {
+          const a = (i * Math.PI * 2) / 12;
+          const x1 = CX + Math.cos(a) * (rm - 18);
+          const y1 = CY + Math.sin(a) * (rm - 18);
+          const x2 = CX + Math.cos(a) * (rm - 8);
+          const y2 = CY + Math.sin(a) * (rm - 8);
+          return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" stroke-opacity="0.2"></line>;
+        })
+      }
+      <rect x={CX - 14} y={CY - 3} width="28" height="6" rx="1" fill="none" stroke="currentColor" stroke-opacity="0.3"></rect>
+    </g>
+
+    <!-- cutting circle -->
+    <circle
+      id="dgm-cut"
+      cx={CX}
+      cy={CY}
+      r={r0}
+      fill="none"
+      class="dgm__cut"
+      stroke-width="2"
+      stroke-dasharray="10 6"
+    ></circle>
+
+    <!-- orbiting cutter head -->
+    <g id="dgm-orbit" class="dgm__orbit" style={`--cx:${CX}px; --cy:${CY}px;`}>
+      <g id="dgm-head" transform={`translate(${CX + r0} ${CY})`}>
+        <rect x="-5" y="-9" width="10" height="18" class="dgm__head"></rect>
+        <line x1="0" y1="-18" x2="0" y2="18" class="dgm__cut" stroke-width="1" opacity="0.5"></line>
+      </g>
+    </g>
+
+    <!-- radius dimension -->
+    <line
+      id="dgm-radius"
+      x1={CX}
+      y1={CY}
+      x2={CX + r0 * Math.cos(-0.61)}
+      y2={CY + r0 * Math.sin(-0.61)}
+      stroke="currentColor" stroke-opacity="0.55"
+      stroke-width="1"
+      marker-end="url(#arrow)"></line>
+    <text id="dgm-radius-label" class="dgm__t" x={CX + 84} y={CY - 58}>R 600</text>
+
+    <!-- centre crosshair -->
+    <g class="dgm__cut" stroke-width="1">
+      <line x1={CX - 9} y1={CY} x2={CX + 9} y2={CY}></line>
+      <line x1={CX} y1={CY - 9} x2={CX} y2={CY + 9}></line>
+    </g>
+
+    <!-- diameter dimension under the drawing -->
+    <g stroke="currentColor" stroke-opacity="0.55" stroke-width="1">
+      <line id="dgm-ext-l" x1={CX - r0} y1={CY + 20} x2={CX - r0} y2={DIM_Y + 8}></line>
+      <line id="dgm-ext-r" x1={CX + r0} y1={CY + 20} x2={CX + r0} y2={DIM_Y + 8}></line>
+      <line
+        id="dgm-dim"
+        x1={CX - r0}
+        y1={DIM_Y}
+        x2={CX + r0}
+        y2={DIM_Y}
+        marker-start="url(#arrow)"
+        marker-end="url(#arrow)"></line>
+    </g>
+    <text id="dgm-dia-label" class="dgm__t dgm__t--lg" x={CX} y={DIM_Y - 14} text-anchor="middle">
+      &#216; 1200 mm
+    </text>
+
+    <!-- manhole reference -->
+    <text class="dgm__t dgm__t--dim" x={CX} y={CY + rm + 24} text-anchor="middle">WŁAZ &#216; 500&#8211;900</text>
+
+    <!-- title block -->
+    <g class="dgm__block">
+      <rect x="512" y="440" width="192" height="150" fill="none" stroke="currentColor" stroke-opacity="0.22"></rect>
+      <line x1="512" y1="477" x2="704" y2="477" stroke="currentColor" stroke-opacity="0.22"></line>
+      <line x1="512" y1="514" x2="704" y2="514" stroke="currentColor" stroke-opacity="0.22"></line>
+      <line x1="512" y1="552" x2="704" y2="552" stroke="currentColor" stroke-opacity="0.22"></line>
+      <text class="dgm__t dgm__t--head" x="524" y="465">HORNETCUT R650</text>
+      <text class="dgm__t dgm__t--dim" x="524" y="502">CIĘCIE PO OBWODZIE</text>
+      <text class="dgm__t dgm__t--dim" x="524" y="539">GŁĘB. DO 100 mm</text>
+      <text class="dgm__t dgm__t--dim" x="524" y="577">RZUT Z GÓRY</text>
+    </g>
+  </svg>
+
+  <figcaption class="dgm__ctl">
+    <label class="label" for="dgm-slider">Średnica cięcia</label>
+    <input
+      id="dgm-slider"
+      type="range"
+      min="1100"
+      max="1300"
+      step="10"
+      value={DEFAULT_DIA}
+      aria-describedby="dgm-readout"
+    />
+    <output id="dgm-readout" class="mono dgm__out">1200 mm</output>
+  </figcaption>
+</figure>
+
+<style>
+  .dgm { margin: 0; }
+  .dgm__svg { width: 100%; height: auto; color: var(--fg); }
+  .dgm__disc { fill: var(--elev); }
+  .dgm__cut { stroke: var(--color-amber); }
+  .dgm__head { fill: var(--color-amber); }
+
+  .dgm__t {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    fill: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .dgm__t--lg { font-size: 17px; fill: var(--accent-text); letter-spacing: 0.08em; }
+  .dgm__t--dim { font-size: 11px; letter-spacing: 0.14em; }
+  .dgm__t--head { font-size: 13px; fill: var(--fg); letter-spacing: 0.14em; }
+
+  .dgm__orbit {
+    transform-origin: var(--cx) var(--cy);
+    animation: dgm-spin 26s linear infinite;
+  }
+  @keyframes dgm-spin {
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dgm__orbit { animation: none; }
+  }
+
+  .dgm__ctl {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+  .dgm__out {
+    font-size: 0.875rem;
+    color: var(--accent-text);
+    min-width: 8ch;
+    text-align: right;
+  }
+
+  input[type='range'] {
+    appearance: none;
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    cursor: ew-resize;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 22px;
+    background: var(--color-amber);
+    border-radius: 1px;
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 14px;
+    height: 22px;
+    background: var(--color-amber);
+    border: 0;
+    border-radius: 1px;
+  }
+</style>
+
+<script>
+  const CX = 310;
+  const CY = 250;
+  const K = 0.27;
+  const RM = (600 / 2) * K;
+  const DIM_Y = 500;
+  const ANGLE = -0.61;
+
+  const slider = document.getElementById('dgm-slider') as HTMLInputElement | null;
+  const cut = document.getElementById('dgm-cut');
+  const ring = document.getElementById('dgm-ring');
+  const head = document.getElementById('dgm-head');
+  const radius = document.getElementById('dgm-radius');
+  const radiusLabel = document.getElementById('dgm-radius-label');
+  const diaLabel = document.getElementById('dgm-dia-label');
+  const extL = document.getElementById('dgm-ext-l');
+  const extR = document.getElementById('dgm-ext-r');
+  const dim = document.getElementById('dgm-dim');
+  const readout = document.getElementById('dgm-readout');
+
+  function render(diameter: number) {
+    const r = (diameter / 2) * K;
+    cut?.setAttribute('r', String(r));
+    ring?.setAttribute(
+      'd',
+      `M ${CX} ${CY} m ${-r} 0 a ${r} ${r} 0 1 0 ${r * 2} 0 a ${r} ${r} 0 1 0 ${-r * 2} 0 ` +
+        `M ${CX} ${CY} m ${-RM} 0 a ${RM} ${RM} 0 1 1 ${RM * 2} 0 a ${RM} ${RM} 0 1 1 ${-RM * 2} 0`,
+    );
+    head?.setAttribute('transform', `translate(${CX + r} ${CY})`);
+    radius?.setAttribute('x2', String(CX + r * Math.cos(ANGLE)));
+    radius?.setAttribute('y2', String(CY + r * Math.sin(ANGLE)));
+    if (radiusLabel) radiusLabel.textContent = `R ${Math.round(diameter / 2)}`;
+    if (diaLabel) diaLabel.textContent = `Ø ${diameter} mm`;
+    extL?.setAttribute('x1', String(CX - r));
+    extL?.setAttribute('x2', String(CX - r));
+    extR?.setAttribute('x1', String(CX + r));
+    extR?.setAttribute('x2', String(CX + r));
+    dim?.setAttribute('x1', String(CX - r));
+    dim?.setAttribute('x2', String(CX + r));
+    if (dim) {
+      dim.setAttribute('y1', String(DIM_Y));
+      dim.setAttribute('y2', String(DIM_Y));
+    }
+    if (readout) readout.textContent = `${diameter} mm`;
+  }
+
+  slider?.addEventListener('input', () => render(Number(slider.value)));
+</script>
