@@ -22,7 +22,10 @@ const schema = [
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs} schema={schema}>
-  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs} />
+  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs}
+    image={site.media.trench.src}
+    imageAlt={site.media.trench.alt}
+  />
 
   <section class="band">
     <div class="shell faq-page">

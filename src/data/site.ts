@@ -341,15 +341,90 @@ export const site = {
 
   /** Lista ujęć do dosłania. Kolejność zgodna z układem strony. */
   photos: {
-    hero: { id: 'FOTO 01', desc: 'Maszyna zamocowana w pierścieniu włazu, ujęcie z góry', ratio: '3:2' },
-    work: { id: 'FOTO 02', desc: 'Operator przy pełnym obrocie ramienia, plan pełny', ratio: '3:2' },
-    edge: { id: 'FOTO 03', desc: 'Krawędź cięcia z bliska, widoczna pionowa ścianka', ratio: '4:3' },
-    ring: { id: 'FOTO 04', desc: 'Wyjęty pierścień asfaltu obok studzienki', ratio: '4:3' },
-    transport: { id: 'FOTO 05', desc: 'Maszyna na wózku kołowym, blokada obrotu założona', ratio: '3:2' },
-    detail: { id: 'FOTO 06', desc: 'Uchwyt krzyżowy i regulacja promienia, detal', ratio: '1:1' },
-    crew: { id: 'FOTO 07', desc: 'Operator w kamizelce przy maszynie, twarz widoczna, plan amerykański', ratio: '3:2' },
-    handover: { id: 'FOTO 08', desc: 'Przekazanie maszyny i instruktaż, dwie osoby przy urządzeniu', ratio: '3:2' },
-    site: { id: 'FOTO 09', desc: 'Cała brygada i oznakowany odcinek drogi, szeroki plan', ratio: '16:9' },
+    // Zdjęcia maszyny czekają na realne fotografie z budowy. Reszta to zdjęcia
+    // kontekstowe: droga, studzienka, nawierzchnia, ekipa. Żadne z nich nie
+    // przedstawia HornetCut R650 ani nie sugeruje konkretnych osób z firmy.
+    // Wizualizacje maszyny wygenerowane na podstawie zdjęć referencyjnych maszyn
+    // tej klasy. Pokazują mechanizm: rama z silnikiem przy włazie, ramię na
+    // promieniu, głowica tnąca prowadzona po obwodzie. DO PODMIANY na realne
+    // zdjęcia HornetCut R650, gdy tylko dotrą z budowy.
+    hero: {
+      id: 'FOTO 01',
+      desc: 'Maszyna zamocowana w pierścieniu włazu, ujęcie z góry',
+      ratio: '16:9',
+      src: '/foto/machine-top.webp',
+      alt: 'Wycinarka ustawiona nad studzienką, ramię na promieniu i wycięty okrąg w asfalcie wokół włazu',
+    },
+    work: {
+      id: 'FOTO 02',
+      desc: 'Operator przy pełnym obrocie ramienia',
+      ratio: '16:9',
+      src: '/foto/machine-work.webp',
+      alt: 'Operator w kamizelce odblaskowej prowadzi ramię wycinarki wokół włazu, pył przy głowicy tnącej',
+    },
+    transport: {
+      id: 'FOTO 05',
+      desc: 'Maszyna na wózku kołowym przy otwartej studzience',
+      ratio: '16:9',
+      src: '/foto/machine-ring.webp',
+      alt: 'Wycinarka na kołach obok otwartej studzienki, ramię tnące uniesione',
+    },
+    detail: {
+      id: 'FOTO 06',
+      desc: 'Rama, silnik i ramię promienia, ujęcie z boku',
+      ratio: '4:3',
+      src: '/foto/machine-side.webp',
+      alt: 'Widok z boku na ramę wycinarki z silnikiem spalinowym, kogutem i ramieniem tnącym',
+    },
+
+    edge: {
+      id: 'FOTO 03',
+      desc: 'Krawędź cięcia z bliska, widoczna pionowa ścianka',
+      ratio: '16:9',
+      src: '/foto/method-cut.webp',
+      alt: 'Wycięty otwór w nawierzchni asfaltowej z równą, pionową krawędzią cięcia',
+    },
+    ring: {
+      id: 'FOTO 04',
+      desc: 'Wyjęty pierścień asfaltu obok studzienki',
+      ratio: '16:9',
+      src: '/foto/ring-removed.webp',
+      alt: 'Okrągły otwór w nawierzchni po wyjęciu wyciętego pierścienia, widoczna konstrukcja studni',
+    },
+    crew: {
+      id: 'FOTO 07',
+      desc: 'Brygada przy otwartej studzience na zamkniętym pasie',
+      ratio: '16:9',
+      src: '/foto/crew-work.webp',
+      alt: 'Dwóch drogowców w kamizelkach odblaskowych przy otwartej studzience na zamkniętym pasie ruchu',
+    },
+    handover: {
+      id: 'FOTO 08',
+      desc: 'Rozmowa na budowie przy sprzęcie',
+      ratio: '16:9',
+      src: '/foto/handover.webp',
+      alt: 'Dwaj mężczyźni w kamizelkach odblaskowych rozmawiają przy pojeździe serwisowym na poboczu',
+    },
+    site: {
+      id: 'FOTO 09',
+      desc: 'Oznakowany odcinek drogi w remoncie',
+      ratio: '16:9',
+      src: '/foto/road-repair.webp',
+      alt: 'Ulica w remoncie z zamkniętym pasem, barierami i pachołkami',
+    },
+  },
+
+  /** Zdjęcia nagłówkowe podstron i pasów przedzielających. */
+  media: {
+    pain: { src: '/foto/pain-sunken.webp', alt: 'Zapadnięty właz otoczony pierścieniem spękanego asfaltu' },
+    dusk: { src: '/foto/dusk-works.webp', alt: 'Roboty drogowe o zmierzchu, bursztynowe światło ostrzegawcze odbite w mokrym asfalcie' },
+    footer: { src: '/foto/footer-road.webp', alt: 'Pusta mokra ulica o zmierzchu z włazem na pierwszym planie' },
+    trench: { src: '/foto/utility-trench.webp', alt: 'Otwarty wykop z rurą kanalizacyjną i studnią' },
+    yard: { src: '/foto/yard-parking.webp', alt: 'Betonowy plac manewrowy z włazem w nawierzchni' },
+    street: { src: '/foto/hero-alt.webp', alt: 'Właz w zużytym asfalcie, w tle zamknięty pas ruchu z pachołkami' },
+    lowangle: { src: '/foto/test-hero.webp', alt: 'Właz w mokrym asfalcie widziany z poziomu jezdni' },
+    machine: { src: '/foto/machine-hero.webp', alt: 'Wycinarka z ramieniem tnącym ustawiona przy włazie na zamkniętym pasie ruchu' },
+    loop: { video: '/foto/street-loop.mp4', poster: '/foto/street-loop.webp' },
   },
 
   downloads: [

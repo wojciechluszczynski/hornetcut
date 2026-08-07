@@ -11,7 +11,10 @@ const crumbs = [{ label: 'Do pobrania', href: '/do-pobrania/' }];
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs}>
-  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs} />
+  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs}
+    image={site.media.footer.src}
+    imageAlt={site.media.footer.alt}
+  />
 
   <section class="band">
     <div class="shell">

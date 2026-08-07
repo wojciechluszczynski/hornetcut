@@ -21,6 +21,8 @@ const [w, h] = ratio.split(':').map(Number);
   src ? (
     <img
       src={src}
+      srcset={`${src.replace('.webp', '-800.webp')} 800w, ${src} 1600w`}
+      sizes="(max-width: 900px) 100vw, 1200px"
       alt={alt ?? desc}
       width={w * 400}
       height={h * 400}

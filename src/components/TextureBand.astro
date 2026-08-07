@@ -9,17 +9,35 @@ import path from 'node:path';
  */
 interface Props {
   file?: string;
+  /** Ambientowa pętla wideo. Ładuje się dopiero po wejściu w kadr i nigdy na mobile. */
+  video?: string;
+  poster?: string;
   quote: string;
   source: string;
 }
-const { file = 'wlaz-asfalt.jpg', quote, source } = Astro.props;
+const { file = 'dusk-works.webp', video, poster, quote, source } = Astro.props;
 
-const rel = `foto/tekstury/${file}`;
+const rel = `foto/${file}`;
 const hasPhoto = fs.existsSync(path.join(process.cwd(), 'public', rel));
+const hasVideo = !!video && fs.existsSync(path.join(process.cwd(), 'public', video.replace(/^\//, '')));
 ---
 
 <section class:list={['tb', { 'tb--photo': hasPhoto }]}>
-  {hasPhoto && <div class="tb__img" style={`background-image:url(/${rel})`} aria-hidden="true" />}
+  {hasPhoto && !hasVideo && <div class="tb__img" style={`background-image:url(/${rel})`} aria-hidden="true" />}
+  {
+    hasVideo && (
+      <video
+        class="tb__vid"
+        poster={poster}
+        muted
+        loop
+        playsinline
+        preload="none"
+        aria-hidden="true"
+        data-src={video}
+      />
+    )
+  }
   <div class="shell tb__inner">
     <blockquote class="tb__quote">
       <p class="display-m">{quote}</p>
@@ -58,10 +76,21 @@ const hasPhoto = fs.existsSync(path.join(process.cwd(), 'public', rel));
     z-index: -1;
     background-size: cover;
     background-position: center;
-    opacity: 0.18;
+    opacity: 0.3;
     filter: grayscale(1) contrast(1.15);
   }
   .tb--photo::before { opacity: 0.25; }
+
+  .tb__vid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.32;
+    filter: grayscale(1) contrast(1.15);
+  }
 
   .tb__quote { margin: 0; max-width: 26ch; }
   .tb__quote p { margin: 0; }
@@ -77,3 +106,27 @@ const hasPhoto = fs.existsSync(path.join(process.cwd(), 'public', rel));
     .tb__quote { max-width: none; }
   }
 </style>
+
+<script>
+  // Wideo startuje dopiero, gdy pas wjedzie w kadr, i tylko na szerokich ekranach
+  // przy połączeniu, które tego nie żałuje. Na mobile zostaje sam plakat.
+  const vid = document.querySelector<HTMLVideoElement>('.tb__vid');
+  const nav = navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } };
+  const wide = window.matchMedia('(min-width: 900px)').matches;
+  const calm = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cheap = !nav.connection?.saveData && !/2g/.test(nav.connection?.effectiveType ?? '');
+
+  if (vid && wide && calm && cheap) {
+    new IntersectionObserver((entries, obs) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        const src = vid.dataset.src;
+        if (src && !vid.src) {
+          vid.src = src;
+          vid.play().catch(() => {});
+        }
+        obs.disconnect();
+      }
+    }, { rootMargin: '200px' }).observe(vid);
+  }
+</script>

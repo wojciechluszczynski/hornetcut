@@ -177,7 +177,9 @@ body,
   }
 
   /* Display sizes ------------------------------------------- */
-  .display-xl { font-size: clamp(2.125rem, 4.4vw, 3.9rem); }
+  .display-xl { font-size: clamp(2.125rem, 4.4vw, 3.9rem);   overflow-wrap: break-word;
+  hyphens: auto;
+}
   .display-l  { font-size: clamp(1.75rem, 3.1vw, 2.75rem); }
   .display-m  { font-size: clamp(1.25rem, 2vw, 1.625rem); }
 

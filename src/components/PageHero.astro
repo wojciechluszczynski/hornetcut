@@ -3,8 +3,11 @@ interface Props {
   h1: string;
   lead?: string;
   crumbs: { label: string; href: string }[];
+  /** Zdjęcie kontekstowe pod nagłówkiem. Pas 21:9, ładowany priorytetowo, bo jest LCP. */
+  image?: string;
+  imageAlt?: string;
 }
-const { h1, lead, crumbs } = Astro.props;
+const { h1, lead, crumbs, image, imageAlt } = Astro.props;
 ---
 
 <section class="phero">
@@ -32,6 +35,24 @@ const { h1, lead, crumbs } = Astro.props;
 
     {lead && <p class="lead muted phero__lead">{lead}</p>}
   </div>
+
+  {
+    image && (
+      <div class="shell">
+        <img
+          src={image}
+          srcset={`${image.replace('.webp', '-800.webp')} 800w, ${image} 1600w`}
+          sizes="(max-width: 900px) 100vw, 1320px"
+          alt={imageAlt ?? ''}
+          width="1800"
+          height="771"
+          fetchpriority="high"
+          decoding="async"
+          class="phero__img"
+        />
+      </div>
+    )
+  }
 </section>
 
 <style>
@@ -52,4 +73,13 @@ const { h1, lead, crumbs } = Astro.props;
   .phero__crumbs a:hover { color: var(--accent-text); }
   .phero__crumbs [aria-current] { color: var(--fg); }
   .phero__lead { margin-top: 1.75rem; }
+  .phero__img {
+    display: block;
+    width: 100%;
+    height: clamp(180px, 26vw, 340px);
+    object-fit: cover;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    border: 1px solid var(--rule);
+    filter: saturate(0.85) contrast(1.05);
+  }
 </style>

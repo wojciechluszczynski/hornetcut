@@ -1,35 +1,25 @@
-name: Deploy to Hostinger (FTP)
+name: Build and publish to live branch
 
-# Builds the static site and mirrors dist/ over plain FTP into the real docroot.
-#
-# The docroot is NOT ~/public_html. On this Hostinger account hornetcut.pl lives
-# under the account home, so its docroot is:
-#
-#   /domains/hornetcut.pl/public_html
-#
-# Verified in the panel file browser (srv862): that directory held default.php
-# and the cc-probe.txt test file that served at https://hornetcut.pl/cc-probe.txt,
-# while ~/public_html held our earlier deploys and served nothing. Hostinger even
-# drops a DO_NOT_UPLOAD_HERE marker one level above the real docroot.
-#
-# Plain FTP, not FTPS: the panel's FTPS endpoint negotiates badly here.
-#
-# Secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+# Hostinger's FTP endpoint for this account routes to a different node than the
+# one serving hornetcut.pl, so FTP deploys never reach the docroot. Instead we
+# build the static site and force-push the built output to the `live` branch;
+# Hostinger's native Git deployment (hPanel -> Advanced -> GIT) runs on the web
+# server and pulls `live` straight into public_html.
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
-  group: deploy-${{ github.ref }}
+  group: publish-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  DOCROOT: domains/hornetcut.pl/public_html
-
 jobs:
-  build-deploy:
+  build-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,55 +32,15 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Install lftp
-        run: sudo apt-get update -q && sudo apt-get install -y -q lftp
-
-      - name: Mirror dist/ into the real docroot
+      - name: Force-push dist/ to the live branch
+        run: |
+          cd dist
+          git init -q
+          git config user.name "Wojciech Luszczynski"
+          git config user.email "78645420+wojciechluszczynski@users.noreply.github.com"
+          git checkout -q -b live
+          git add -A
+          git commit -q -m "Build ${GITHUB_SHA}"
+          git push -f -q "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" live
         env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          lftp -c "
-          set ftp:ssl-allow false;
-          set net:max-retries 2;
-          set net:timeout 20;
-          set mirror:parallel-transfer-count 4;
-          open -u '$FTP_USERNAME','$FTP_PASSWORD' 'ftp://$FTP_SERVER';
-          echo '=== target before ===';
-          cls -l '$DOCROOT' || echo '(target missing)';
-          echo '=== mirror ===';
-          mirror -R --delete --verbose=1 dist/ '$DOCROOT/';
-          echo '=== target after ===';
-          cls -l '$DOCROOT';
-          "
-
-      # A green deploy that serves a placeholder is worse than a red one.
-      # This step fails the job unless the live domain actually changed.
-      - name: Verify on the live domain
-        run: |
-          sleep 5
-          fail=0
-
-          echo "--- homepage ---"
-          home=$(curl -sS -L --max-time 30 https://hornetcut.pl/ || true)
-          if printf '%s' "$home" | grep -q "HORNETCUT"; then
-            echo "OK: homepage serves the built site"
-          else
-            echo "FAIL: homepage does not contain HORNETCUT"
-            printf '%s' "$home" | head -c 400
-            fail=1
-          fi
-
-          for path in /dane-techniczne/ /poradnik/ /llms.txt /sitemap-index.xml; do
-            code=$(curl -sS -o /dev/null -w '%{http_code}' -L --max-time 30 "https://hornetcut.pl$path" || echo 000)
-            echo "$path -> $code"
-            [ "$code" = "200" ] || fail=1
-          done
-
-          echo "--- placeholder must be gone ---"
-          code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 30 https://hornetcut.pl/default.php || echo 000)
-          echo "/default.php -> $code (expected 404)"
-          [ "$code" = "404" ] || fail=1
-
-          exit $fail
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

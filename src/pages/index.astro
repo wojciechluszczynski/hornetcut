@@ -99,6 +99,18 @@ const schema = [
         <p class="lead muted">{site.pains.lead}</p>
       </div>
 
+      <img
+        src={site.media.pain.src}
+        srcset={`${site.media.pain.src.replace('.webp', '-800.webp')} 800w, ${site.media.pain.src} 1600w`}
+        sizes="(max-width: 900px) 100vw, 1320px"
+        alt={site.media.pain.alt}
+        width="1600"
+        height="893"
+        loading="lazy"
+        decoding="async"
+        class="pg__photo reveal"
+      />
+
       <div class="pg">
         <p class="pg__col label">Tak jest zwykle</p>
         <p class="pg__col label pg__col--gain">Z HornetCut R650</p>
@@ -128,6 +140,13 @@ const schema = [
       <div class="why__figure reveal">
         <RoadSection />
       </div>
+
+      <figure class="why__shot reveal">
+        <PhotoSlot {...site.photos.ring} />
+        <figcaption class="mono why__cap">
+          Pierścień nawierzchni zdjęty wokół włazu. Krawędź pionowa, korpus studni nietknięty.
+        </figcaption>
+      </figure>
 
       <div class="why__rows">
         {
@@ -178,6 +197,8 @@ const schema = [
   </section>
 
   <TextureBand
+    video={site.media.loop.video}
+    poster={site.media.loop.poster}
     quote="Studzienka nie jest problemem. Problemem jest to, co trzeba rozebrać, żeby się do niej dostać."
     source="Z rozmowy na budowie"
   />
@@ -450,7 +471,16 @@ const schema = [
   @media (min-width: 820px) {
     .pg { grid-template-columns: 1fr 1fr; column-gap: 3rem; }
     .pg__col { display: block; border-bottom: 1px solid var(--rule); }
-    .pg__col--gain { color: var(--accent-text); }
+    .pg__photo {
+    display: block;
+    width: 100%;
+    height: clamp(200px, 30vw, 380px);
+    object-fit: cover;
+    margin-block: clamp(2rem, 4vw, 3rem);
+    border: 1px solid var(--rule);
+    filter: saturate(0.85) contrast(1.05);
+  }
+  .pg__col--gain { color: var(--accent-text); }
     .pg__pain, .pg__gain { padding-block: 1.35rem; }
   }
 
@@ -461,6 +491,14 @@ const schema = [
     .why__head { grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
   }
   .why__figure { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+  .why__shot { margin: clamp(2.5rem, 4vw, 3.5rem) 0 0; }
+  .why__cap {
+    margin-top: 0.9rem;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 60ch;
+  }
   .why__rows { margin-top: clamp(3rem, 5vw, 4.5rem); border-top: 1px solid var(--rule); }
   .why__row {
     display: grid;
