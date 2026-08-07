@@ -189,6 +189,8 @@ const schema = [
       <div class="how__video">
         <VideoSlot
           youtubeId={site.how.video.youtubeId}
+          file={site.how.video.file}
+          poster={site.how.video.poster}
           caption={site.how.video.caption}
           title={site.how.video.title}
         />
@@ -235,11 +237,15 @@ const schema = [
 
         <div class="pp__shots">
           <PhotoSlot {...site.photos.crew} />
-          <PhotoSlot {...site.photos.handover} />
         </div>
       </div>
 
-      <PhotoSlot {...site.photos.site} class="pp__wide" />
+      <div class="shots" role="group" aria-label="Zdjęcia z budowy, przewiń w bok">
+        <PhotoSlot {...site.photos.work} />
+        <PhotoSlot {...site.photos.handover} />
+        <PhotoSlot {...site.photos.site} />
+        <PhotoSlot {...site.photos.transport} />
+      </div>
     </div>
   </section>
 
@@ -264,7 +270,7 @@ const schema = [
             ))
           }
         </div>
-        <PhotoSlot {...site.photos.work} class="uses__photo" />
+        <PhotoSlot {...site.photos.hero} class="uses__photo" />
       </div>
     </div>
   </section>
@@ -567,7 +573,24 @@ const schema = [
   }
   .pp__facts dd { font-size: 0.875rem; text-align: right; }
   .pp__shots { display: grid; gap: 1.25rem; align-content: start; }
-  .pp__wide { margin-top: 1.25rem; }
+
+  /* Przewijany pas zdjęć. Bez biblioteki: scroll-snap i pasek przewijania,
+     który na desktopie pokazuje trzy kadry, a na telefonie półtora. */
+  .shots {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min(78vw, 460px), 1fr);
+    gap: 1.25rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+  }
+  .shots > * { scroll-snap-align: start; }
+  .shots::-webkit-scrollbar { height: 3px; }
+  .shots::-webkit-scrollbar-thumb { background: var(--rule); }
   @media (min-width: 960px) {
     .pp { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   }
@@ -590,13 +613,14 @@ const schema = [
     .uses__matrix { grid-template-columns: repeat(2, 1fr); }
   }
   @media (min-width: 1080px) {
-    .uses__layout { grid-template-columns: 2fr 1fr; align-items: start; }
+    .uses__layout { grid-template-columns: 1.35fr 1fr; align-items: stretch; }
+    .uses__photo { height: 100%; object-fit: cover; }
     .uses__matrix { grid-template-columns: repeat(3, 1fr); }
   }
 
   /* 07 equipment ----------------------------------------------- */
   .eq { display: grid; gap: 2.5rem; }
-  .eq__photo { margin-top: 2rem; max-width: 340px; }
+  .eq__photo { margin-top: 2rem; }
   .eq__list { display: grid; gap: 0; border-top: 1px solid var(--rule); }
   .eq__item { padding-block: 1.15rem; border-bottom: 1px solid var(--rule); }
   .eq__item dt {

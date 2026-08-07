@@ -142,8 +142,10 @@ export const site = {
       },
     ],
     video: {
-      youtubeId: '', // pusty = slot na film promocyjny
-      caption: 'Film promocyjny HornetCut R650',
+      youtubeId: '', // po dostarczeniu filmu promocyjnego wpisz tu identyfikator z YouTube
+      file: '/foto/machine-loop.mp4',
+      poster: '/foto/machine-loop.webp',
+      caption: 'Wizualizacja przebiegu cięcia. Film z budowy zastąpi ją po nagraniu.',
       title: 'HornetCut R650 w pracy: cięcie po obwodzie włazu studzienki',
     },
   },
