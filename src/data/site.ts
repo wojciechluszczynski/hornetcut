@@ -18,14 +18,14 @@ export const site = {
     lang: 'pl-PL',
     title: 'HornetCut R650. Wycinarka okręgów do studzienek kanalizacyjnych',
     description:
-      'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Regulowana średnica cięcia do 1300 mm, głębokość do 100 mm. Zapytaj o cenę i dostępność.',
+      'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Regulowana średnica cięcia, maksymalny promień 1300 mm, głębokość do 100 mm. Zapytaj o cenę.',
     // Autor i realizacja strony. Zaszyte w <meta name="author"> oraz w llms.txt.
     maker: 'Wojciech Łuszczyński, GTM Architect, wojciech.io',
   },
 
   contact: {
-    // Dane z fijalo.pl oraz z publicznych rejestrów (CEIDG). NIP i REGON
-    // oznaczone do potwierdzenia, bo pochodzą z agregatorów, nie z dokumentu firmy.
+    // Adres za fijalo.pl. NIP i REGON potwierdzone stopką karty katalogowej
+    // producenta, więc bez znacznika niepewności.
     company: 'Fijalo-Poland Cyprian Fijało',
     brandLine: 'Producent maszyn dla budownictwa podziemnego',
     phone: '+48 534 979 628',
@@ -33,8 +33,8 @@ export const site = {
     email: 'biuro@fijalo.pl',
     street: 'ul. Jana Kochanowskiego 130',
     city: '80-405 Gdańsk',
-    nip: '?8431504413',
-    regon: '?221964971',
+    nip: '843-150-44-13',
+    regon: '221964971',
     hours: 'Poniedziałek do piątku, 9:00–18:00',
     reply: 'Odpowiadamy w ciągu jednego dnia roboczego.',
   },
@@ -52,14 +52,14 @@ export const site = {
   hero: {
     eyebrow: 'Wycinarka okręgów do studzienek',
     h1: 'Wytnij właz po okręgu.\nNie rozbijaj pół jezdni.',
-    lead: 'HornetCut R650 montuje się w ramie włazu na ściskach rozporowych i tnie asfalt lub beton po obwodzie. Regulowana średnica cięcia do 1300 mm, głębokość do 100 mm.',
+    lead: 'HornetCut R650 montuje się w ramie włazu na ściskach rozporowych i tnie asfalt lub beton po obwodzie. Regulowana średnica cięcia, maksymalny promień 1300 mm, głębokość do 100 mm.',
     ctaPrimary: { label: 'Zapytaj o cenę', href: '/kontakt/' },
     ctaSecondary: { label: 'Dane techniczne', href: '/dane-techniczne/' },
   },
 
   stats: [
     { value: '100', unit: 'mm', label: 'Głębokość cięcia' },
-    { value: 'do 1300', unit: 'mm', label: 'Średnica cięcia' },
+    { value: 'do 1300', unit: 'mm', label: 'Maksymalny promień cięcia' },
     { value: '500–900', unit: 'mm', label: 'Zakres studzienek' },
     { value: '11,2', unit: 'KM', label: 'Silnik spalinowy' },
     { value: '125', unit: 'kg', label: 'Masa robocza' },
@@ -130,7 +130,7 @@ export const site = {
       },
       {
         title: 'Ustawienie',
-        body: 'Ustawiasz średnicę cięcia i opuszczasz piłę na zadaną głębokość, maksymalnie 100 mm. Ta sama nastawa wraca przy każdej kolejnej studzience na odcinku.',
+        body: 'Ustawiasz promień cięcia, maksymalnie 1300 mm, i opuszczasz piłę na zadaną głębokość, maksymalnie 100 mm. Ta sama nastawa wraca przy każdej kolejnej studzience.',
       },
       {
         title: 'Cięcie',
@@ -223,7 +223,8 @@ export const site = {
     caption: 'Dane techniczne wycinarki HornetCut R650',
     rows: [
       { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
-      { k: 'Średnica cięcia', v: 'regulowana, do 1300 mm' },
+      { k: 'Średnica cięcia', v: 'regulowana' },
+      { k: 'Maksymalny promień cięcia', v: '1300 mm' },
       { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
       { k: 'Zakres średnic studzienek', v: '500–900 mm' },
       { k: 'Silnik', v: 'spalinowy benzynowy, 11,2 KM' },
@@ -243,7 +244,7 @@ export const site = {
     items: [
       {
         q: 'Na jakich studzienkach pracuje HornetCut R650?',
-        a: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych, więc nie wymaga kotwienia w nawierzchni. Średnicę cięcia ustawiasz niezależnie od wymiaru studzienki, do 1300 mm.',
+        a: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych, więc nie wymaga kotwienia w nawierzchni. Promień cięcia ustawiasz niezależnie od wymiaru studzienki, maksymalnie 1300 mm.',
         home: true,
       },
       {
@@ -419,7 +420,7 @@ export const site = {
     specs: {
       title: 'Dane techniczne HornetCut R650',
       description:
-        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, regulowana średnica do 1300 mm, silnik spalinowy, masa 125 kg, wyposażenie standardowe.',
+        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, maksymalny promień cięcia 1300 mm, silnik spalinowy, masa 125 kg, wyposażenie standardowe.',
       h1: 'Dane techniczne\nHornetCut R650',
       lead: 'Parametry maszyny w konfiguracji standardowej. Pozycje oznaczone podkreśleniem czekają na potwierdzenie w dokumentacji technicznej producenta.',
       blocks: [
@@ -427,7 +428,8 @@ export const site = {
           h2: 'Cięcie',
           rows: [
             { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
-            { k: 'Średnica cięcia', v: 'regulowana, do 1300 mm' },
+            { k: 'Średnica cięcia', v: 'regulowana' },
+      { k: 'Maksymalny promień cięcia', v: '1300 mm' },
             { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
             { k: 'Zakres średnic studzienek', v: '500–900 mm' },
             { k: 'Zakres obrotu ramienia', v: '360°' },
@@ -507,7 +509,7 @@ export const site = {
         items: [
           'Oznakuj i zabezpiecz miejsce pracy zgodnie z projektem organizacji ruchu.',
           'Sprawdź, czy pierścień włazu jest stabilny i czy uchwyt krzyżowy ma pełne oparcie.',
-          'Ustaw średnicę i głębokość, zanim ruszysz z ramą wokół studzienki.',
+          'Ustaw promień i głębokość, zanim ruszysz z ramą wokół studzienki.',
           'Pracuj w środkach ochrony: ochronniki słuchu, okulary, rękawice, obuwie ochronne.',
           '?Zasady cięcia na mokro i odprowadzania szlamu uzupełnimy zgodnie z DTR.',
         ],

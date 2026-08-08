@@ -1,13 +1,14 @@
 ---
 /**
  * Signature element: a plan-view engineering drawing of the cut circle around
- * a manhole. The slider drives the cutting diameter 1100-1300 mm live.
- * Everything is drawn to scale: 0.3231 px per mm (1300 mm across = 420 px).
+ * a manhole. The slider drives the cutting RADIUS, 300-1300 mm, exactly as the
+ * manufacturer's data sheet states it. Drawn to scale: K pixels per mm.
  */
 const CX = 310;
 const CY = 250;
-const K = 0.27; // px per mm
-const DEFAULT_DIA = 1200;
+const K = 0.15; // px per mm; promień 1300 mm mieści się w kadrze
+const DEFAULT_RADIUS = 650; // odpowiada oznaczeniu R650
+const DEFAULT_DIA = DEFAULT_RADIUS * 2;
 const MANHOLE_DIA = 600;
 const r0 = (DEFAULT_DIA / 2) * K;
 const rm = (MANHOLE_DIA / 2) * K;
@@ -18,7 +19,7 @@ const DIM_Y = 500;
   <svg
     viewBox="0 0 720 620"
     role="img"
-    aria-label="Rysunek techniczny: okrąg cięcia wokół włazu studzienki, średnica regulowana od 1100 do 1300 mm"
+    aria-label="Rysunek techniczny: okrąg cięcia wokół włazu studzienki, promień cięcia regulowany do 1300 mm"
     class="dgm__svg"
   >
     <defs>
@@ -101,7 +102,7 @@ const DIM_Y = 500;
       stroke="currentColor" stroke-opacity="0.55"
       stroke-width="1"
       marker-end="url(#arrow)"></line>
-    <text id="dgm-radius-label" class="dgm__t" x={CX + 84} y={CY - 58}>R 600</text>
+    <text id="dgm-radius-label" class="dgm__t" x={CX + 84} y={CY - 58}>R 650</text>
 
     <!-- centre crosshair -->
     <g class="dgm__cut" stroke-width="1">
@@ -123,7 +124,7 @@ const DIM_Y = 500;
         marker-end="url(#arrow)"></line>
     </g>
     <text id="dgm-dia-label" class="dgm__t dgm__t--lg" x={CX} y={DIM_Y - 14} text-anchor="middle">
-      &#216; 1200 mm
+      R 650 mm
     </text>
 
     <!-- manhole reference -->
@@ -143,17 +144,17 @@ const DIM_Y = 500;
   </svg>
 
   <figcaption class="dgm__ctl">
-    <label class="label" for="dgm-slider">Średnica cięcia</label>
+    <label class="label" for="dgm-slider">Promień cięcia</label>
     <input
       id="dgm-slider"
       type="range"
-      min="1100"
+      min="300"
       max="1300"
       step="10"
-      value={DEFAULT_DIA}
+      value={DEFAULT_RADIUS}
       aria-describedby="dgm-readout"
     />
-    <output id="dgm-readout" class="mono dgm__out">1200 mm</output>
+    <output id="dgm-readout" class="mono dgm__out">650 mm</output>
   </figcaption>
 </figure>
 
@@ -256,7 +257,7 @@ const DIM_Y = 500;
     radius?.setAttribute('x2', String(CX + r * Math.cos(ANGLE)));
     radius?.setAttribute('y2', String(CY + r * Math.sin(ANGLE)));
     if (radiusLabel) radiusLabel.textContent = `R ${Math.round(diameter / 2)}`;
-    if (diaLabel) diaLabel.textContent = `Ø ${diameter} mm`;
+    if (diaLabel) diaLabel.textContent = `R ${Math.round(diameter / 2)} mm`;
     extL?.setAttribute('x1', String(CX - r));
     extL?.setAttribute('x2', String(CX - r));
     extR?.setAttribute('x1', String(CX + r));
@@ -267,8 +268,9 @@ const DIM_Y = 500;
       dim.setAttribute('y1', String(DIM_Y));
       dim.setAttribute('y2', String(DIM_Y));
     }
-    if (readout) readout.textContent = `${diameter} mm`;
+    if (readout) readout.textContent = `${Math.round(diameter / 2)} mm`;
   }
 
-  slider?.addEventListener('input', () => render(Number(slider.value)));
+  if (slider) render(Number(slider.value) * 2);
+  slider?.addEventListener('input', () => render(Number(slider.value) * 2));
 </script>
