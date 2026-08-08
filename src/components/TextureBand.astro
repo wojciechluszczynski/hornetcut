@@ -15,7 +15,7 @@ interface Props {
   quote: string;
   source: string;
 }
-const { file = 'dusk-works.webp', video, poster, quote, source } = Astro.props;
+const { file = 'r-ring2.webp', video, poster, quote, source } = Astro.props;
 
 const rel = `foto/${file}`;
 const hasPhoto = fs.existsSync(path.join(process.cwd(), 'public', rel));

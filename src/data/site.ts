@@ -18,7 +18,7 @@ export const site = {
     lang: 'pl-PL',
     title: 'HornetCut R650. Wycinarka okręgów do studzienek kanalizacyjnych',
     description:
-      'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Średnica cięcia 1100–1300 mm, głębokość do 100 mm, studzienki 500–900 mm. Zapytaj o cenę.',
+      'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Regulowana średnica cięcia do 1300 mm, głębokość do 100 mm. Zapytaj o cenę i dostępność.',
     // Autor i realizacja strony. Zaszyte w <meta name="author"> oraz w llms.txt.
     maker: 'Wojciech Łuszczyński, GTM Architect, wojciech.io',
   },
@@ -52,14 +52,14 @@ export const site = {
   hero: {
     eyebrow: 'Wycinarka okręgów do studzienek',
     h1: 'Wytnij właz po okręgu.\nNie rozbijaj pół jezdni.',
-    lead: 'HornetCut R650 mocuje się w pierścieniu włazu i tnie asfalt lub beton po obwodzie. Średnica cięcia 1100 do 1300 mm, głębokość do 100 mm, studzienki od 500 do 900 mm.',
+    lead: 'HornetCut R650 montuje się w ramie włazu na ściskach rozporowych i tnie asfalt lub beton po obwodzie. Regulowana średnica cięcia do 1300 mm, głębokość do 100 mm.',
     ctaPrimary: { label: 'Zapytaj o cenę', href: '/kontakt/' },
     ctaSecondary: { label: 'Dane techniczne', href: '/dane-techniczne/' },
   },
 
   stats: [
     { value: '100', unit: 'mm', label: 'Głębokość cięcia' },
-    { value: '1100–1300', unit: 'mm', label: 'Średnica cięcia' },
+    { value: 'do 1300', unit: 'mm', label: 'Średnica cięcia' },
     { value: '500–900', unit: 'mm', label: 'Zakres studzienek' },
     { value: '11,2', unit: 'KM', label: 'Silnik spalinowy' },
     { value: '125', unit: 'kg', label: 'Masa robocza' },
@@ -73,7 +73,7 @@ export const site = {
     rows: [
       {
         pain: 'Rozbiórka wychodzi dwa razy większa od potrzebnej',
-        gain: 'Zdejmujesz pierścień o średnicy ustawionej co do milimetra, od 1100 do 1300 mm.',
+        gain: 'Zdejmujesz pierścień o średnicy ustawionej pod konkretną studzienkę, nie o metr za dużo.',
       },
       {
         pain: 'Wywóz gruzu i dowóz masy rosną razem z powierzchnią',
@@ -89,7 +89,7 @@ export const site = {
       },
       {
         pain: 'Młot potrafi uszkodzić korpus studni albo pierścień odciążający',
-        gain: 'Tarcza pracuje w nawierzchni, maszyna opiera się na włazie, konstrukcja studni zostaje nietknięta.',
+        gain: 'Tarcze pracują w nawierzchni, maszyna bazuje na ramie włazu, konstrukcja studni zostaje nietknięta.',
       },
     ],
   },
@@ -114,7 +114,7 @@ export const site = {
       },
       {
         method: 'HornetCut R650',
-        marks: ['jedno mocowanie w pierścieniu włazu', 'jedno przejście po obwodzie', 'pierścień wychodzi w całości'],
+        marks: ['mocowanie w ramie włazu na ściskach', 'jedno przejście po obwodzie', 'pierścień wychodzi w całości'],
         highlight: true,
       },
     ],
@@ -126,26 +126,26 @@ export const site = {
     steps: [
       {
         title: 'Mocowanie',
-        body: 'Maszyna wchodzi w pierścień włazu na regulowanym uchwycie krzyżowym. Nie wymaga kotwienia w nawierzchni ani przygotowania podłoża.',
+        body: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych. Punktem odniesienia jest sama studzienka, więc nie ma kotwienia w nawierzchni ani wytyczania obszaru.',
       },
       {
         title: 'Ustawienie',
-        body: 'Ustawiasz promień cięcia w zakresie 550 do 650 mm i głębokość do 100 mm. Blokada obrotu zwalniana jest po ustawieniu.',
+        body: 'Ustawiasz średnicę cięcia i opuszczasz piłę na zadaną głębokość, maksymalnie 100 mm. Ta sama nastawa wraca przy każdej kolejnej studzience na odcinku.',
       },
       {
         title: 'Cięcie',
-        body: 'Pełny obrót ramienia o 360 stopni. Posuw głębokości i posuw obrotu prowadzi operator, więc masz kontrolę nad tempem na twardym kruszywie.',
+        body: 'Silnik spalinowy napędza wałek z tarczami tnącymi. Operator obchodzi studzienkę, przepychając ramę piły, więc sam kontroluje tempo na twardym kruszywie.',
       },
       {
         title: 'Wyjęcie',
-        body: 'Wycięty pierścień wychodzi w całości. Korpus studni i właz zostają nienaruszone, obszar wokół nadaje się od razu do regulacji.',
+        body: 'Wycięty pierścień podważa się i wyjmuje. Korpus studni i właz zostają nienaruszone, obszar nadaje się od razu do regulacji.',
       },
     ],
     video: {
       youtubeId: '', // po dostarczeniu filmu promocyjnego wpisz tu identyfikator z YouTube
-      file: '/foto/machine-loop.mp4',
-      poster: '/foto/machine-loop.webp',
-      caption: 'Wizualizacja przebiegu cięcia. Film z budowy zastąpi ją po nagraniu.',
+      file: '/foto/r-machine-loop.mp4',
+      poster: '/foto/r-machine-loop.webp',
+      caption: 'Maszyna z bliska, materiał producenta. Film promocyjny z budowy zastąpi go po nagraniu.',
       title: 'HornetCut R650 w pracy: cięcie po obwodzie włazu studzienki',
     },
   },
@@ -223,15 +223,16 @@ export const site = {
     caption: 'Dane techniczne wycinarki HornetCut R650',
     rows: [
       { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
-      { k: 'Średnica cięcia, regulowana', v: '1100–1300 mm' },
-      { k: 'Maksymalny promień cięcia', v: '650 mm' },
+      { k: 'Średnica cięcia', v: 'regulowana, do 1300 mm' },
+      { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
       { k: 'Zakres średnic studzienek', v: '500–900 mm' },
       { k: 'Silnik', v: 'spalinowy benzynowy, 11,2 KM' },
       { k: 'Rozruch', v: 'ręczny i elektryczny' },
+      { k: 'Transport', v: 'dedykowany wózek transportowy' },
       { k: 'Posuw głębokości i obrotu', v: 'ręczny' },
       { k: 'Masa robocza', v: 'ok. 125 kg' },
-      { k: 'Wymiary transportowe', v: '?840 × 1080 mm' },
-      { k: 'Tarcza diamentowa', v: '?średnica do uzupełnienia' },
+      { k: 'Wymiary', v: '?140 × 840 × 1080 mm' },
+      { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
       { k: 'Cięcie na mokro', v: '?do potwierdzenia' },
     ],
   },
@@ -242,7 +243,7 @@ export const site = {
     items: [
       {
         q: 'Na jakich studzienkach pracuje HornetCut R650?',
-        a: 'Na studzienkach o średnicy włazu od 500 do 900 mm. Maszyna mocuje się w pierścieniu włazu regulowanym uchwytem krzyżowym, więc nie wymaga kotwienia w nawierzchni. Średnicę cięcia ustawiasz niezależnie, w zakresie 1100 do 1300 mm.',
+        a: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych, więc nie wymaga kotwienia w nawierzchni. Średnicę cięcia ustawiasz niezależnie od wymiaru studzienki, do 1300 mm.',
         home: true,
       },
       {
@@ -343,90 +344,66 @@ export const site = {
 
   /** Lista ujęć do dosłania. Kolejność zgodna z układem strony. */
   photos: {
-    // Zdjęcia maszyny czekają na realne fotografie z budowy. Reszta to zdjęcia
-    // kontekstowe: droga, studzienka, nawierzchnia, ekipa. Żadne z nich nie
-    // przedstawia HornetCut R650 ani nie sugeruje konkretnych osób z firmy.
-    // Wizualizacje maszyny wygenerowane na podstawie zdjęć referencyjnych maszyn
-    // tej klasy. Pokazują mechanizm: rama z silnikiem przy włazie, ramię na
-    // promieniu, głowica tnąca prowadzona po obwodzie. DO PODMIANY na realne
-    // zdjęcia HornetCut R650, gdy tylko dotrą z budowy.
+    // Zdjęcia z 21.07.2026, materiały producenta. Maszyna jest czerwono-czarna,
+    // producent Fijalo-Poland, oznaczenie fabryczne WOSK.650R LP.
     hero: {
-      id: 'FOTO 01',
-      desc: 'Maszyna zamocowana w pierścieniu włazu, ujęcie z góry',
-      ratio: '16:9',
-      src: '/foto/machine-top.webp',
-      alt: 'Wycinarka ustawiona nad studzienką, ramię na promieniu i wycięty okrąg w asfalcie wokół włazu',
+      id: 'FOTO 01', desc: 'Maszyna w cięciu wokół włazu', ratio: '16:9',
+      src: '/foto/r-cut.webp',
+      alt: 'Wycinarka zamocowana w pierścieniu włazu, w nawierzchni widoczny wycięty okrąg',
     },
     work: {
-      id: 'FOTO 02',
-      desc: 'Operator przy pełnym obrocie ramienia',
-      ratio: '16:9',
-      src: '/foto/machine-work.webp',
-      alt: 'Operator w kamizelce odblaskowej prowadzi ramię wycinarki wokół włazu, pył przy głowicy tnącej',
+      id: 'FOTO 02', desc: 'Operator prowadzi maszynę wokół studzienki', ratio: '16:9',
+      src: '/foto/r-work.webp',
+      alt: 'Operator w kamizelce odblaskowej przepycha ramę wycinarki wokół studzienki na jezdni',
     },
-    transport: {
-      id: 'FOTO 05',
-      desc: 'Maszyna na wózku kołowym przy otwartej studzience',
-      ratio: '16:9',
-      src: '/foto/machine-ring.webp',
-      alt: 'Wycinarka na kołach obok otwartej studzienki, ramię tnące uniesione',
-    },
-    detail: {
-      id: 'FOTO 06',
-      desc: 'Rama, silnik i ramię promienia, ujęcie z boku',
-      ratio: '4:3',
-      src: '/foto/machine-side.webp',
-      alt: 'Widok z boku na ramę wycinarki z silnikiem spalinowym, kogutem i ramieniem tnącym',
-    },
-
     edge: {
-      id: 'FOTO 03',
-      desc: 'Krawędź cięcia z bliska, widoczna pionowa ścianka',
-      ratio: '16:9',
-      src: '/foto/method-cut.webp',
-      alt: 'Wycięty otwór w nawierzchni asfaltowej z równą, pionową krawędzią cięcia',
+      id: 'FOTO 03', desc: 'Krawędź cięcia z bliska', ratio: '4:3',
+      src: '/foto/r-edge.webp',
+      alt: 'Zbliżenie na równą, pionową krawędź nacięcia w nawierzchni',
     },
     ring: {
-      id: 'FOTO 04',
-      desc: 'Wyjęty pierścień asfaltu obok studzienki',
-      ratio: '16:9',
-      src: '/foto/ring-removed.webp',
-      alt: 'Okrągły otwór w nawierzchni po wyjęciu wyciętego pierścienia, widoczna konstrukcja studni',
+      id: 'FOTO 04', desc: 'Wycięty okrąg wokół włazu', ratio: '16:9',
+      src: '/foto/r-ring.webp',
+      alt: 'Gotowy okrąg wycięty w nawierzchni wokół żeliwnego włazu',
+    },
+    transport: {
+      id: 'FOTO 05', desc: 'Maszyna na wózku transportowym', ratio: '4:3',
+      src: '/foto/r-machine.webp',
+      alt: 'Wycinarka WOSK.650R LP na dedykowanym wózku transportowym',
+    },
+    detail: {
+      id: 'FOTO 06', desc: 'Silnik, rama i osłona tarcz', ratio: '4:3',
+      src: '/foto/r-guard.webp',
+      alt: 'Detal osłony tarcz tnących i ramy wycinarki',
     },
     crew: {
-      id: 'FOTO 07',
-      desc: 'Brygada przy otwartej studzience na zamkniętym pasie',
-      ratio: '16:9',
-      src: '/foto/crew-work.webp',
-      alt: 'Dwóch drogowców w kamizelkach odblaskowych przy otwartej studzience na zamkniętym pasie ruchu',
+      id: 'FOTO 07', desc: 'Cięcie na czynnej drodze', ratio: '16:9',
+      src: '/foto/r-dust.webp',
+      alt: 'Cięcie wokół studzienki z widocznym pyłem, w tle bus serwisowy i drugi pracownik',
     },
     handover: {
-      id: 'FOTO 08',
-      desc: 'Rozmowa na budowie przy sprzęcie',
-      ratio: '16:9',
-      src: '/foto/handover.webp',
-      alt: 'Dwaj mężczyźni w kamizelkach odblaskowych rozmawiają przy pojeździe serwisowym na poboczu',
+      id: 'FOTO 08', desc: 'Wyjęcie wyciętego pierścienia', ratio: '16:9',
+      src: '/foto/r-bar.webp',
+      alt: 'Pracownik podważa łomem wycięty pierścień nawierzchni wokół włazu',
     },
     site: {
-      id: 'FOTO 09',
-      desc: 'Oznakowany odcinek drogi w remoncie',
-      ratio: '16:9',
-      src: '/foto/road-repair.webp',
-      alt: 'Ulica w remoncie z zamkniętym pasem, barierami i pachołkami',
+      id: 'FOTO 09', desc: 'Stanowisko pracy, plan szeroki', ratio: '16:9',
+      src: '/foto/r-site.webp',
+      alt: 'Maszyna przy studzience na poboczu, obok bus serwisowy i ekipa',
     },
   },
 
   /** Zdjęcia nagłówkowe podstron i pasów przedzielających. */
   media: {
-    pain: { src: '/foto/pain-sunken.webp', alt: 'Zapadnięty właz otoczony pierścieniem spękanego asfaltu' },
-    dusk: { src: '/foto/dusk-works.webp', alt: 'Roboty drogowe o zmierzchu, bursztynowe światło ostrzegawcze odbite w mokrym asfalcie' },
-    footer: { src: '/foto/footer-road.webp', alt: 'Pusta mokra ulica o zmierzchu z włazem na pierwszym planie' },
-    trench: { src: '/foto/utility-trench.webp', alt: 'Otwarty wykop z rurą kanalizacyjną i studnią' },
-    yard: { src: '/foto/yard-parking.webp', alt: 'Betonowy plac manewrowy z włazem w nawierzchni' },
-    street: { src: '/foto/hero-alt.webp', alt: 'Właz w zużytym asfalcie, w tle zamknięty pas ruchu z pachołkami' },
-    lowangle: { src: '/foto/test-hero.webp', alt: 'Właz w mokrym asfalcie widziany z poziomu jezdni' },
-    machine: { src: '/foto/machine-hero.webp', alt: 'Wycinarka z ramieniem tnącym ustawiona przy włazie na zamkniętym pasie ruchu' },
-    loop: { video: '/foto/street-loop.mp4', poster: '/foto/street-loop.webp' },
+    pain: { src: '/foto/r-ring2.webp', alt: 'Okrąg wycięty w betonowej nawierzchni wokół włazu' },
+    dusk: { src: '/foto/r-dust.webp', alt: 'Cięcie wokół studzienki na czynnej drodze, unoszący się pył' },
+    footer: { src: '/foto/r-site.webp', alt: 'Stanowisko pracy przy studzience, bus serwisowy w tle' },
+    trench: { src: '/foto/r-ring3.webp', alt: 'Wycięty okrąg wokół włazu widziany z góry' },
+    yard: { src: '/foto/r-ring.webp', alt: 'Gotowy okrąg w nawierzchni wokół żeliwnego włazu' },
+    street: { src: '/foto/r-work.webp', alt: 'Operator prowadzi wycinarkę wokół studzienki' },
+    lowangle: { src: '/foto/r-machine.webp', alt: 'Wycinarka WOSK.650R LP, ujęcie z boku' },
+    machine: { src: '/foto/r-cut.webp', alt: 'Wycinarka w pierścieniu włazu podczas cięcia' },
+    loop: { video: '/foto/r-machine-loop.mp4', poster: '/foto/r-machine-loop.webp' },
   },
 
   downloads: [
@@ -442,7 +419,7 @@ export const site = {
     specs: {
       title: 'Dane techniczne HornetCut R650',
       description:
-        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, średnica 1100–1300 mm, silnik 11,2 KM, masa 125 kg, wyposażenie standardowe.',
+        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, regulowana średnica do 1300 mm, silnik spalinowy, masa 125 kg, wyposażenie standardowe.',
       h1: 'Dane techniczne\nHornetCut R650',
       lead: 'Parametry maszyny w konfiguracji standardowej. Pozycje oznaczone podkreśleniem czekają na potwierdzenie w dokumentacji technicznej producenta.',
       blocks: [
@@ -450,13 +427,13 @@ export const site = {
           h2: 'Cięcie',
           rows: [
             { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
-            { k: 'Średnica cięcia, regulowana', v: '1100–1300 mm' },
-            { k: 'Maksymalny promień cięcia', v: '650 mm' },
+            { k: 'Średnica cięcia', v: 'regulowana, do 1300 mm' },
+            { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
             { k: 'Zakres średnic studzienek', v: '500–900 mm' },
             { k: 'Zakres obrotu ramienia', v: '360°' },
             { k: 'Posuw głębokości', v: 'ręczny' },
             { k: 'Posuw obrotu', v: 'ręczny' },
-            { k: 'Tarcza diamentowa', v: '?średnica do uzupełnienia' },
+            { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
             { k: 'Cięcie na mokro', v: '?do potwierdzenia' },
           ],
         },
@@ -466,6 +443,7 @@ export const site = {
             { k: 'Typ silnika', v: 'spalinowy, benzynowy' },
             { k: 'Moc', v: '11,2 KM' },
             { k: 'Rozruch', v: 'ręczny i elektryczny' },
+      { k: 'Transport', v: 'dedykowany wózek transportowy' },
             { k: 'Pojemność zbiornika paliwa', v: '?do uzupełnienia' },
             { k: 'Licznik motogodzin', v: 'w standardzie' },
           ],
@@ -476,7 +454,7 @@ export const site = {
             { k: 'Masa robocza', v: 'ok. 125 kg' },
             { k: 'Wózek przejezdny', v: 'kołowy, w standardzie' },
             { k: 'Blokada obrotu do transportu', v: 'w standardzie' },
-            { k: 'Wymiary transportowe', v: '?840 × 1080 mm' },
+            { k: 'Wymiary', v: '?140 × 840 × 1080 mm' },
             { k: 'Światło ostrzegawcze', v: 'pomarańczowe, demontowane' },
           ],
         },
@@ -501,7 +479,7 @@ export const site = {
         },
         {
           title: 'Remonty i przebudowy dróg',
-          body: 'Przy frezowaniu i układaniu nowej nawierzchni studzienki obsługuje się seryjnie. Maszyna na wózku przejeżdża między kolejnymi włazami, a zakres średnic 1100 do 1300 mm pokrywa typowe wymiary spotykane w drogach publicznych.',
+          body: 'Przy frezowaniu i układaniu nowej nawierzchni studzienki obsługuje się seryjnie. Maszyna na dedykowanym wózku przejeżdża między kolejnymi włazami, a raz ustawiona średnica wraca przy każdej następnej.',
         },
         {
           title: 'Sieci wod-kan, ciepłownicze i gazowe',
@@ -529,7 +507,7 @@ export const site = {
         items: [
           'Oznakuj i zabezpiecz miejsce pracy zgodnie z projektem organizacji ruchu.',
           'Sprawdź, czy pierścień włazu jest stabilny i czy uchwyt krzyżowy ma pełne oparcie.',
-          'Ustaw promień i głębokość przed uruchomieniem posuwu obrotu.',
+          'Ustaw średnicę i głębokość, zanim ruszysz z ramą wokół studzienki.',
           'Pracuj w środkach ochrony: ochronniki słuchu, okulary, rękawice, obuwie ochronne.',
           '?Zasady cięcia na mokro i odprowadzania szlamu uzupełnimy zgodnie z DTR.',
         ],
