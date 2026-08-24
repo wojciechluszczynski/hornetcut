@@ -228,7 +228,10 @@ const DIM_Y = 500;
 <script>
   const CX = 310;
   const CY = 250;
-  const K = 0.27;
+  // Musi być identyczne z K we frontmatterze. Rozjazd (0,27 vs 0,15) sprawiał,
+  // że okrąg przeskakiwał przy pierwszym renderze, a przy 1300 mm wychodził
+  // poza kadr rysunku.
+  const K = 0.15;
   const RM = (600 / 2) * K;
   const DIM_Y = 500;
   const ANGLE = -0.61;

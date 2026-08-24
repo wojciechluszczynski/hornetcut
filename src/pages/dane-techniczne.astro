@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import NextLinks from '../components/NextLinks.astro';
-import Eyebrow from '../components/Eyebrow.astro';
 import SpecTable from '../components/SpecTable.astro';
 import PhotoSlot from '../components/PhotoSlot.astro';
 import { site } from '../data/site';
@@ -32,39 +31,44 @@ const schema = [
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs} schema={schema}>
-  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs}
-    image={site.media.lowangle.src}
-    imageAlt={site.media.lowangle.alt}
+  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs} sheet="03"
+    photo={site.media.lowangle}
   />
 
+  {/* Każdy blok danych jest osobnym arkuszem: numer i etykieta w szynie,
+      tabela w kolumnie treści. Wcześniej wszystkie cztery leżały w jednej
+      kolumnie pod powtórzonym eyebrow, przez co strona czytała się jak
+      jeden długi wydruk bez podziału. */}
   <section class="band band--paper">
-    <div class="shell">
-      <div class="tech">
-        <div class="tech__tables">
-          {
-            p.blocks.map((block, i) => (
-              <div class="tech__block reveal">
-                <Eyebrow index={String(i + 1).padStart(2, '0')} label={block.h2} />
-                <h2 class="sr-only">{block.h2}</h2>
-                <SpecTable caption={`${block.h2}: ${site.meta.model}`} rows={block.rows} />
-              </div>
-            ))
-          }
-          <p class="tech__note mono">{p.note}</p>
+    {
+      p.blocks.map((block, i) => (
+        <div class="sheet tech__block reveal">
+          <p class="smark">
+            <b>{String(i + 1).padStart(2, '0')}</b>
+            <span>{block.h2}</span>
+          </p>
+          <h2 class="sr-only">{block.h2}</h2>
+          <SpecTable caption={`${block.h2}: ${site.meta.model}`} rows={block.rows} />
         </div>
+      ))
+    }
 
-        <aside class="tech__aside">
-          <PhotoSlot {...site.photos.transport} />
-          <div class="tech__cta">
-            <p class="label">Zapytanie</p>
-            <p class="tech__ctaTxt">
-              Potrzebujesz karty produktu w PDF albo doboru tarczy pod konkretną nawierzchnię?
-            </p>
-            <a href="/kontakt/" class="btn btn--ghost">Napisz do nas</a>
-          </div>
-        </aside>
+    <div class="sheet tech__close">
+      <p class="smark"><b>{String(p.blocks.length + 1).padStart(2, '0')}</b><span>Zapytanie</span></p>
+
+      <div class="tech">
+        <PhotoSlot {...site.photos.transport} />
+        <div class="tech__cta">
+          <p class="tech__ctaTxt">
+            Potrzebujesz karty produktu w PDF albo doboru tarczy pod konkretną nawierzchnię?
+          </p>
+          <a href="/kontakt/" class="btn btn--ghost">Napisz do nas</a>
+        </div>
       </div>
-          <NextLinks items={[
+
+      <p class="tech__note mono">{p.note}</p>
+
+      <NextLinks items={[
         { label: 'Jak to działa', href: '/jak-to-dziala/', note: 'Cztery kroki od zamocowania w pierścieniu włazu do wyjęcia wyciętego pierścienia.' },
         { label: 'Zastosowania', href: '/zastosowania/', note: 'Regulacja studzienek, wymiana włazów, remonty dróg, sieci podziemne.' },
         { label: 'Do pobrania', href: '/do-pobrania/', note: 'Karta produktu, DTR i deklaracja zgodności w PDF.' },
@@ -74,8 +78,10 @@ const schema = [
 </Base>
 
 <style>
-  .tech { display: grid; gap: 3rem; }
-  .tech__block + .tech__block { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
+  .tech { display: grid; gap: 2rem; align-items: start; }
+  .tech__block + .tech__block,
+  .tech__close { margin-top: clamp(2.75rem, 5vw, 4.5rem); }
+  .tech__close { padding-top: clamp(2.75rem, 5vw, 4.5rem); border-top: 1px solid var(--rule); }
   .tech__note {
     margin-top: 2.5rem;
     font-size: 0.75rem;
@@ -84,15 +90,13 @@ const schema = [
     max-width: 60ch;
   }
   .tech__cta {
-    margin-top: 2rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid var(--rule);
     display: grid;
     gap: 1rem;
     justify-items: start;
+    align-content: start;
   }
   .tech__ctaTxt { font-size: 0.9375rem; color: var(--muted); max-width: 34ch; }
-  @media (min-width: 960px) {
-    .tech { grid-template-columns: 1.6fr 1fr; gap: 4.5rem; align-items: start; }
+  @media (min-width: 780px) {
+    .tech { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; }
   }
 </style>

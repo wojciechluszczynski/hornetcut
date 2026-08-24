@@ -62,7 +62,7 @@ export const site = {
     { value: 'do 1300', unit: 'mm', label: 'Maksymalny promień cięcia' },
     { value: '500–900', unit: 'mm', label: 'Zakres studzienek' },
     { value: '11,2', unit: 'KM', label: 'Silnik spalinowy' },
-    { value: '125', unit: 'kg', label: 'Masa robocza' },
+    { value: '125', unit: 'kg', label: 'Masa nominalna' },
   ],
 
   /** Ból klienta zestawiony z tym, co się zmienia. Bez obietnic bez pokrycia. */
@@ -156,13 +156,14 @@ export const site = {
     h2: 'Kto tym pracuje?',
     body: 'Maszyna jedzie na budowę z brygadą drogową albo z ekipą sieciowca. Prowadzi ją operator, który zna nawierzchnię, a nie serwisant producenta. Dlatego liczy się to, żeby obsługa była oczywista po pierwszym instruktażu, a części dało się zamówić jednym telefonem.',
     quote: {
-      text: '?Miejsce na opinię użytkownika. Jedno lub dwa zdania o tym, ile trwa wycięcie i co się zmieniło na budowie.',
-      author: '?Imię i nazwisko',
-      role: '?Firma, stanowisko',
+      text: 'Operator obniża piłę na zadaną głębokość i porusza się wokół studzienki, przepychając ramę piły.',
+      author: 'Instrukcja obsługi WOSK.650R LP',
+      role: 'dokumentacja producenta',
     },
     facts: [
-      { k: 'Obsługa', v: '?jeden operator przy cięciu' },
-      { k: 'Instruktaż', v: '?przy przekazaniu maszyny' },
+      { k: 'Obsługa', v: 'jeden operator przy cięciu' },
+      { k: 'Dokumentacja', v: 'instrukcja obsługi w komplecie' },
+      { k: 'Gwarancja', v: '24 miesiące na terenie RP' },
       { k: 'Kontakt serwisowy', v: 'ten sam numer co do sprzedaży' },
     ],
   },
@@ -227,14 +228,19 @@ export const site = {
       { k: 'Maksymalny promień cięcia', v: '1300 mm' },
       { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
       { k: 'Zakres średnic studzienek', v: '500–900 mm' },
-      { k: 'Silnik', v: 'spalinowy benzynowy, 11,2 KM' },
+      { k: 'Silnik', v: 'LONCIN G390, 389 cm³, benzynowy, 11,2 KM' },
       { k: 'Rozruch', v: 'ręczny i elektryczny' },
       { k: 'Transport', v: 'dedykowany wózek transportowy' },
       { k: 'Posuw głębokości i obrotu', v: 'ręczny' },
-      { k: 'Masa robocza', v: 'ok. 125 kg' },
-      { k: 'Wymiary', v: '?140 × 840 × 1080 mm' },
+      { k: 'Masa nominalna', v: '125 kg' },
+      { k: 'Masa robocza', v: '190 kg' },
+      { k: 'Wymiary', v: '1400 × 840 × 1080 mm' },
       { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
-      { k: 'Cięcie na mokro', v: '?do potwierdzenia' },
+      { k: 'Maksymalna średnica tarczy', v: '350 mm' },
+      { k: 'Prędkość obrotowa tarczy', v: '4750 obr/min' },
+      { k: 'Cięcie na mokro', v: 'tak, zbiornik wody 40 l' },
+      { k: 'Zbiornik paliwa', v: '7 l benzyny bezołowiowej' },
+      { k: 'Poziom hałasu', v: '106,9 dB' },
     ],
   },
 
@@ -249,57 +255,57 @@ export const site = {
       },
       {
         q: 'Czy maszyna tnie beton, czy tylko asfalt?',
-        a: 'Tnie asfalt i beton. Zakres w żelbecie zależy od doboru tarczy diamentowej, ?ustalamy go przy zamówieniu.',
+        a: 'Tnie asfalt i beton. Zakres w żelbecie zależy od doboru tarczy diamentowej. Maszyna przyjmuje tarcze o średnicy do 350 mm.',
         home: true,
       },
       {
         q: 'Ile osób obsługuje maszynę?',
-        a: '?Do samego cięcia wystarczy jeden operator. Do rozładunku i przestawienia maszyny o masie około 125 kg wygodniej pracować we dwie osoby, choć wózek kołowy pozwala przetoczyć ją w pojedynkę po równym podłożu.',
+        a: 'Do cięcia wystarczy jeden operator: obniża piłę na zadaną głębokość i przepycha ramę wokół studzienki. Przy rozładunku i przestawianiu wygodniej pracować we dwie osoby, bo maszyna waży 125 kg bez wody i 190 kg w stanie roboczym. Po równym podłożu dedykowany wózek pozwala przetoczyć ją w pojedynkę.',
         home: true,
       },
       {
         q: 'Jak transportuje się HornetCut R650?',
-        a: 'Na wózku przejezdnym kołowym. Przed transportem blokujesz obrót ramienia, a kogut ostrzegawczy jest demontowany. Masa robocza to około 125 kg, więc maszyna mieści się w zwykłej przyczepie lub w skrzyni auta dostawczego.',
+        a: 'Na dedykowanym wózku transportowym. Przed transportem blokujesz obrót ramienia, a kogut ostrzegawczy jest demontowany. Maszyna waży 125 kg bez wody i mierzy 1400 × 840 × 1080 mm, więc mieści się w zwykłej przyczepie lub w skrzyni auta dostawczego. Na czas jazdy trzeba ją zamocować.',
         home: true,
       },
       {
         q: 'Ile trwa wycięcie jednego okręgu?',
-        a: '?Czas zależy od głębokości, rodzaju nawierzchni i tarczy. Dokładny czas dla asfaltu 100 mm uzupełnimy po pomiarach na budowie.',
+        a: 'Producent nie podaje normy czasowej, bo czas zależy od głębokości, rodzaju nawierzchni i stanu tarczy. Tarcza pracuje z prędkością 4750 obrotów na minutę przy głębokości do 100 mm. Realny czas na konkretnej nawierzchni najlepiej zmierzyć przy pierwszym cięciu.',
         home: true,
       },
       {
         q: 'Ile kosztuje HornetCut R650?',
-        a: 'Cena zależy od konfiguracji i dostępności. ?Aktualny cennik wysyłamy w odpowiedzi na zapytanie, zwykle w ciągu jednego dnia roboczego.',
+        a: 'Cena zależy od konfiguracji i dostępności. Cennik wysyłamy w odpowiedzi na zapytanie, zwykle w ciągu jednego dnia roboczego.',
         home: true,
       },
       {
         q: 'Czy głębokość 100 mm osiąga się w jednym przejściu?',
-        a: '?Zalecana liczba przejść zależy od twardości nawierzchni. Uzupełnimy po potwierdzeniu z dokumentacją techniczną.',
+        a: 'Instrukcja nie narzuca liczby przejść. Mechanizm podnoszenia i opuszczania piły pozwala ustawić głębokość przed każdym obiegiem, więc w twardszej nawierzchni schodzisz do 100 mm stopniowo, zamiast wymuszać pełną głębokość od razu.',
         home: false,
       },
       {
         q: 'Czy cięcie wymaga podłączenia wody?',
-        a: '?Do potwierdzenia. Cięcie na mokro ogranicza pylenie i wydłuża żywotność tarczy, ale wymaga zasilania wodą na stanowisku.',
+        a: 'Nie. Maszyna ma własny zbiornik wody o pojemności 40 litrów wraz z układem chłodzenia tarczy, więc nie potrzebuje przyłącza na stanowisku. Poziom wody sprawdza się przed uruchomieniem, w ramach obsługi codziennej.',
         home: false,
       },
       {
         q: 'Czy da się wyciąć okrąg tam, gdzie nie ma jeszcze włazu?',
-        a: '?Do potwierdzenia. Uchwyt krzyżowy bazuje na pierścieniu włazu, więc cięcie w pełnej nawierzchni wymagałoby dodatkowego mocowania.',
+        a: 'Nie. Rama ruchoma mocuje się w kołnierzu studzienki ściskami rozporowymi nastawnymi i to on wyznacza oś obrotu. Bez pierścienia włazu maszyna nie ma się o co zaprzeć.',
         home: false,
       },
       {
         q: 'Jaka jest gwarancja i gdzie jest serwis?',
-        a: '?Warunki gwarancji i lokalizacja serwisu do uzupełnienia. Części eksploatacyjne, w tym tarcze, są dostępne z magazynu.',
+        a: 'Producent udziela 24 miesięcy gwarancji na terenie Polski. Naprawy prowadzi wyspecjalizowany zakład serwisowy producenta, a roszczenie gwarancyjne zgłasza się na piśmie, z opisem czasu, okoliczności i miejsca powstania usterki.',
         home: false,
       },
       {
         q: 'Jaki jest czas dostawy?',
-        a: '?Termin zależy od dostępności maszyn w danym momencie. Podajemy go w odpowiedzi na zapytanie.',
+        a: 'Termin zależy od dostępności maszyn w danym momencie. Podajemy go w odpowiedzi na zapytanie.',
         home: false,
       },
       {
         q: 'Czy prowadzicie szkolenie z obsługi?',
-        a: '?Do potwierdzenia. Przekazanie maszyny z instruktażem na miejscu jest możliwe do ustalenia przy zamówieniu.',
+        a: 'Z maszyną jedzie instrukcja obsługi opisująca przygotowanie stanowiska, pracę i obsługę codzienną. Zakres przekazania i instruktażu na miejscu ustalamy przy zamówieniu.',
         home: false,
       },
     ],
@@ -314,7 +320,7 @@ export const site = {
       { k: 'Druga marka', v: 'ALUSTEER, przeciski sterowane' },
       { k: 'Produkcja', v: 'Polska' },
       { k: 'Targi', v: 'TRAKO i ENERGETAB 2025' },
-      { k: 'Na rynku od', v: '?2013' },
+      { k: 'Zakład produkcyjny', v: 'Biskupnica 16, Człuchów' },
     ],
     links: [
       { label: 'fijalo.pl', href: 'https://fijalo.pl/' },
@@ -395,22 +401,33 @@ export const site = {
   },
 
   /** Zdjęcia nagłówkowe podstron i pasów przedzielających. */
+  /* w i h to realne wymiary pliku. Komponenty renderują zdjęcie w jego
+     własnych proporcjach — wcześniej wszystkie szły przez sztywną
+     wysokość i cover, przez co ujęcia 4:3 traciły ponad połowę kadru. */
   media: {
-    pain: { src: '/foto/r-ring2.webp', alt: 'Okrąg wycięty w betonowej nawierzchni wokół włazu' },
-    dusk: { src: '/foto/r-dust.webp', alt: 'Cięcie wokół studzienki na czynnej drodze, unoszący się pył' },
-    footer: { src: '/foto/r-site.webp', alt: 'Stanowisko pracy przy studzience, bus serwisowy w tle' },
-    trench: { src: '/foto/r-ring3.webp', alt: 'Wycięty okrąg wokół włazu widziany z góry' },
-    yard: { src: '/foto/r-ring.webp', alt: 'Gotowy okrąg w nawierzchni wokół żeliwnego włazu' },
-    street: { src: '/foto/r-work.webp', alt: 'Operator prowadzi wycinarkę wokół studzienki' },
-    lowangle: { src: '/foto/r-machine.webp', alt: 'Wycinarka WOSK.650R LP, ujęcie z boku' },
-    machine: { src: '/foto/r-cut.webp', alt: 'Wycinarka w pierścieniu włazu podczas cięcia' },
+    pain: { src: '/foto/r-ring2.webp', alt: 'Okrąg wycięty w betonowej nawierzchni wokół włazu', w: 1600, h: 900 },
+    dusk: { src: '/foto/r-dust.webp', alt: 'Cięcie wokół studzienki na czynnej drodze, unoszący się pył', w: 1600, h: 900 },
+    footer: { src: '/foto/r-site.webp', alt: 'Stanowisko pracy przy studzience, bus serwisowy w tle', w: 1600, h: 900 },
+    trench: { src: '/foto/r-ring3.webp', alt: 'Wycięty okrąg wokół włazu widziany z góry', w: 1600, h: 900 },
+    yard: { src: '/foto/r-ring.webp', alt: 'Gotowy okrąg w nawierzchni wokół żeliwnego włazu', w: 1600, h: 900 },
+    street: { src: '/foto/r-work.webp', alt: 'Operator prowadzi wycinarkę wokół studzienki', w: 1600, h: 900 },
+    lowangle: { src: '/foto/r-machine.webp', alt: 'Wycinarka WOSK.650R LP, ujęcie z boku', w: 1600, h: 1200 },
+    machine: { src: '/foto/r-cut.webp', alt: 'Wycinarka w pierścieniu włazu podczas cięcia', w: 1600, h: 900 },
     loop: { video: '/foto/r-machine-loop.mp4', poster: '/foto/r-machine-loop.webp' },
   },
 
   downloads: [
-    { title: 'Karta produktu HornetCut R650', file: '?do dostarczenia', format: 'PDF' },
-    { title: 'Instrukcja obsługi i DTR', file: '?do dostarczenia', format: 'PDF' },
-    { title: 'Deklaracja zgodności CE', file: '?do dostarczenia', format: 'PDF' },
+    {
+      title: 'Karta produktu WOSK.650R LP',
+      file: '/do-pobrania/hornetcut-r650-karta-produktu.pdf',
+      format: 'PDF',
+    },
+    {
+      title: 'Instrukcja obsługi i DTR WOSK.650R LP',
+      file: '/do-pobrania/hornetcut-r650-instrukcja-obslugi.pdf',
+      format: 'PDF',
+    },
+    { title: 'Deklaracja zgodności CE', file: 'na zapytanie', format: 'PDF' },
   ],
 
   /* ------------------------------------------------------------------
@@ -420,9 +437,9 @@ export const site = {
     specs: {
       title: 'Dane techniczne HornetCut R650',
       description:
-        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, maksymalny promień cięcia 1300 mm, silnik spalinowy, masa 125 kg, wyposażenie standardowe.',
+        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, maksymalny promień cięcia 1300 mm, silnik spalinowy, masa nominalna 125 kg i robocza 190 kg, wyposażenie standardowe.',
       h1: 'Dane techniczne\nHornetCut R650',
-      lead: 'Parametry maszyny w konfiguracji standardowej. Pozycje oznaczone podkreśleniem czekają na potwierdzenie w dokumentacji technicznej producenta.',
+      lead: 'Parametry maszyny w konfiguracji standardowej. Wartości pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP.',
       blocks: [
         {
           h2: 'Cięcie',
@@ -436,7 +453,7 @@ export const site = {
             { k: 'Posuw głębokości', v: 'ręczny' },
             { k: 'Posuw obrotu', v: 'ręczny' },
             { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
-            { k: 'Cięcie na mokro', v: '?do potwierdzenia' },
+            { k: 'Cięcie na mokro', v: 'tak, zbiornik wody 40 l' },
           ],
         },
         {
@@ -446,17 +463,20 @@ export const site = {
             { k: 'Moc', v: '11,2 KM' },
             { k: 'Rozruch', v: 'ręczny i elektryczny' },
       { k: 'Transport', v: 'dedykowany wózek transportowy' },
-            { k: 'Pojemność zbiornika paliwa', v: '?do uzupełnienia' },
+            { k: 'Pojemność zbiornika paliwa', v: '7 l' },
             { k: 'Licznik motogodzin', v: 'w standardzie' },
           ],
         },
         {
           h2: 'Podwozie i transport',
           rows: [
-            { k: 'Masa robocza', v: 'ok. 125 kg' },
+            /* DTR rozdziela obie masy (tabela „Masa nominalna / Masa robocza").
+               Sama „masa robocza 125 kg" była błędem: to masa nominalna. */
+            { k: 'Masa nominalna', v: '125 kg' },
+            { k: 'Masa robocza', v: '190 kg' },
             { k: 'Wózek przejezdny', v: 'kołowy, w standardzie' },
             { k: 'Blokada obrotu do transportu', v: 'w standardzie' },
-            { k: 'Wymiary', v: '?140 × 840 × 1080 mm' },
+            { k: 'Wymiary', v: '1400 × 840 × 1080 mm' },
             { k: 'Światło ostrzegawcze', v: 'pomarańczowe, demontowane' },
           ],
         },
@@ -511,7 +531,7 @@ export const site = {
           'Sprawdź, czy pierścień włazu jest stabilny i czy uchwyt krzyżowy ma pełne oparcie.',
           'Ustaw promień i głębokość, zanim ruszysz z ramą wokół studzienki.',
           'Pracuj w środkach ochrony: ochronniki słuchu, okulary, rękawice, obuwie ochronne.',
-          '?Zasady cięcia na mokro i odprowadzania szlamu uzupełnimy zgodnie z DTR.',
+          'Napełnij zbiornik wody przed pracą. Tarcza chłodzona jest wodą z maszyny, a brak wody w osłonie tarczy to typowa przyczyna usterki.',
         ],
       },
     },

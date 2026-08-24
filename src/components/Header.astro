@@ -11,8 +11,8 @@ const phoneHref = plain(site.contact.phoneHref);
 <header class="hdr">
   <div class="shell hdr__inner">
     <a href="/" class="wordmark" aria-label={`${site.meta.brand}, strona główna`}>
-      <span class="wordmark__mark" aria-hidden="true"></span>
-      <span class="wordmark__text">{site.meta.brand}</span>
+      <span class="wordmark__logo" aria-hidden="true"></span>
+      <span class="wordmark__suffix mono" aria-hidden="true">Cut</span>
     </a>
 
     <nav class="hdr__nav" aria-label="Nawigacja główna">
@@ -65,22 +65,37 @@ const phoneHref = plain(site.contact.phoneHref);
     height: 72px;
   }
 
+  /* Znak producenta. Plik "-light" ma jasny tusz (#E8E6E1) i idzie na ciemne
+     tło, "-dark" jest grafitowy i idzie na jasne. Nazwa opisuje kolor farby,
+     nie motyw strony — łatwo się pomylić.
+     Tło CSS zamiast <img>: przeglądarka pobiera tylko ten wariant, który
+     faktycznie stosuje, a plik siedzi w cache dla całej witryny. Wersja
+     z currentColor wymagałaby inline'u 30 kB w każdej podstronie. */
   .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-stretch: 118%;
-    font-size: 1.125rem;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    gap: 0.7rem;
     flex: none;
   }
-  .wordmark__mark {
-    width: 10px;
-    height: 10px;
-    background: var(--color-amber);
+  .wordmark__logo {
+    /* 3756 × 620 w pliku, czyli 6,06:1 */
+    width: 139px;
+    height: 23px;
+    background: url('/logo/hornet-wordmark-light.svg') left center / contain no-repeat;
+  }
+  :root[data-theme='light'] .wordmark__logo {
+    background-image: url('/logo/hornet-wordmark-dark.svg');
+  }
+  /* Logo producenta kończy się na słowie HORNET. "Cut" dokłada typografia
+     strony, nie znak — stąd monospace i kreska rozdzielająca. */
+  .wordmark__suffix {
+    font-size: 0.8125rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-left: 0.7rem;
+    border-left: 1px solid var(--rule);
+    line-height: 1;
+    padding-block: 0.15rem;
   }
 
   .hdr__nav {
@@ -163,6 +178,18 @@ const phoneHref = plain(site.contact.phoneHref);
     color: var(--accent-text);
     border-bottom: 0 !important;
     padding-top: 1.25rem !important;
+  }
+
+  /* Lockup jest o ~85 px szerszy od dawnego napisu i na 320 px wypychał
+     pasek poza kadr razem z telefonem i przełącznikiem. Poniżej 480 px
+     schodzi o stopień, zamiast znikać: "Cut" musi zostać, bo bez niego
+     nagłówek podaje inną nazwę niż domena. */
+  @media (max-width: 479.98px) {
+    .hdr__inner { gap: 1rem; }
+    .wordmark { gap: 0.5rem; }
+    .wordmark__logo { width: 103px; height: 17px; }
+    .wordmark__suffix { font-size: 0.6875rem; padding-left: 0.5rem; letter-spacing: 0.12em; }
+    .hdr__aside { gap: 0.75rem; }
   }
 
   @media (min-width: 1400px) {

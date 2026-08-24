@@ -56,13 +56,13 @@ const schema = [
   <PageHero
     h1="Poradnik"
     lead="Konkretne odpowiedzi na pytania, które wracają przy każdym odcinku ze studzienkami. Bez lania wody, z liczbami tam, gdzie liczby mają sens."
-    crumbs={crumbs}
-    image={site.media.pain.src}
-    imageAlt={site.media.pain.alt}
+    crumbs={crumbs} sheet="04"
+    photo={site.media.pain}
   />
 
   <section class="band">
-    <div class="shell">
+    <div class="sheet">
+      <p class="smark"><b>01</b><span>Teksty</span></p>
       <ol class="posts">
         {
           posts.map((post, i) => (
@@ -83,13 +83,15 @@ const schema = [
   </section>
 
   <section class="band band--paper band--tight">
-    <div class="shell cta">
-      <h2 class="display-l">Pytanie, którego tu nie ma?</h2>
-      <p class="lead muted">Napisz albo zadzwoń. Odpowiadamy w ciągu jednego dnia roboczego.</p>
-      <a href="/kontakt/" class="btn btn--solid">Zadaj pytanie</a>
-    </div>
+    <div class="sheet">
+      <p class="smark"><b>02</b><span>Kontakt</span></p>
 
-    <div class="shell">
+      <div class="cta">
+        <h2 class="display-l">Pytanie, którego tu nie ma?</h2>
+        <p class="lead muted">Napisz albo zadzwoń. Odpowiadamy w ciągu jednego dnia roboczego.</p>
+        <a href="/kontakt/" class="btn btn--solid">Zadaj pytanie</a>
+      </div>
+
       <NextLinks
         items={[
           { label: 'Dane techniczne', href: '/dane-techniczne/', note: 'Pełna tabela parametrów' },

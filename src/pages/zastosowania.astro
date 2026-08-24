@@ -11,13 +11,13 @@ const photos = [site.photos.hero, site.photos.edge, site.photos.ring];
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs}>
-  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs}
-    image={site.media.yard.src}
-    imageAlt={site.media.yard.alt}
+  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs} sheet="01"
+    photo={site.media.yard}
   />
 
   <section class="band">
-    <div class="shell">
+    <div class="sheet">
+      <p class="smark"><b>01</b><span>Sytuacje</span></p>
       <div class="cases">
         {
           p.details.map((item, i) => (
@@ -36,15 +36,17 @@ const photos = [site.photos.hero, site.photos.edge, site.photos.ring];
   </section>
 
   <section class="band band--paper band--tight">
-    <div class="shell cta">
-      <h2 class="display-l">Twoja nawierzchnia, nasz dobór</h2>
-      <p class="lead muted">
-        Napisz, w czym tniesz i na jakich średnicach pracujesz. Odpowiemy ceną i doborem tarczy.
-      </p>
-      <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
-    </div>
+    <div class="sheet">
+      <p class="smark"><b>02</b><span>Dobór</span></p>
 
-    <div class="shell">
+      <div class="cta">
+        <h2 class="display-l">Twoja nawierzchnia, nasz dobór</h2>
+        <p class="lead muted">
+          Napisz, w czym tniesz i na jakich średnicach pracujesz. Odpowiemy ceną i doborem tarczy.
+        </p>
+        <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
+      </div>
+
       <NextLinks
         items={[
           {

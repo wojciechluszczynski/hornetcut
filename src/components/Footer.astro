@@ -12,10 +12,23 @@ const email = plain(site.contact.email);
   <div class="shell">
     <div class="ftr__top">
       <div>
-        <p class="wordmark">
-          <span class="wordmark__mark" aria-hidden="true"></span>{site.meta.brand}
+        <p class="wordmark" role="img" aria-label={site.meta.brand}>
+          <span class="wordmark__logo" aria-hidden="true"></span>
+          <span class="wordmark__suffix mono" aria-hidden="true">Cut</span>
         </p>
         <p class="ftr__claim">Wycinarka okręgów wokół studzienek kanalizacyjnych.</p>
+
+        <a href="https://fijalo.pl/" class="ftr__maker" rel="noopener">
+          <span class="label">Producent</span>
+          <img
+            src="/logo/hornet-fijalo.png"
+            alt="Fijalo-Poland"
+            width="285"
+            height="55"
+            loading="lazy"
+            decoding="async"
+          />
+        </a>
       </div>
 
       <nav class="ftr__nav" aria-label="Nawigacja w stopce">
@@ -62,17 +75,45 @@ const email = plain(site.contact.email);
     padding-bottom: 3rem;
   }
 
+  /* Ten sam lockup co w nagłówku, opis wariantów tam. */
   .wordmark {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-stretch: 118%;
-    font-size: 1.125rem;
-    text-transform: uppercase;
+    gap: 0.7rem;
   }
-  .wordmark__mark { width: 10px; height: 10px; background: var(--color-amber); }
+  .wordmark__logo {
+    width: 151px;
+    height: 25px;
+    background: url('/logo/hornet-wordmark-light.svg') left center / contain no-repeat;
+  }
+  :root[data-theme='light'] .wordmark__logo {
+    background-image: url('/logo/hornet-wordmark-dark.svg');
+  }
+  .wordmark__suffix {
+    font-size: 0.875rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding-left: 0.7rem;
+    border-left: 1px solid var(--rule);
+    line-height: 1;
+    padding-block: 0.15rem;
+  }
+
+  /* Lockup FIJALO-POLAND zostaje rastrem: to ciemny kafel z wyciętym białym
+     napisem, więc trasowanie alfy dałoby jednolity prostokąt. Działa na obu
+     motywach bez wariantu jasnego. */
+  .ftr__maker {
+    display: inline-grid;
+    gap: 0.6rem;
+    justify-items: start;
+    margin-top: 2rem;
+  }
+  .ftr__maker img {
+    width: 143px;
+    height: auto;
+    transition: opacity 160ms ease;
+  }
+  .ftr__maker:hover img { opacity: 0.75; }
 
   .ftr__claim {
     color: var(--muted);

@@ -37,27 +37,27 @@ const schema = [
 ---
 
 <Base title={title} description={description} schema={schema} crumbs={crumbs}>
-  <article class="art">
+  {/* Szyna arkusza niesie tu czas czytania i zostaje przyklejona przy
+      przewijaniu — margines rysunku, który mówi, na czym się jest. */}
+  <article class="art sheet">
+    <p class="smark"><b>{readMin} min</b><span>czytania</span></p>
+
     <header class="art__head">
-      <div class="shell art__headInner">
-        <nav class="art__crumbs mono" aria-label="Okruszki">
-          <a href="/">Start</a>
-          <span aria-hidden="true">/</span>
-          <a href="/poradnik/">Poradnik</a>
-        </nav>
-        <h1 class="display-l art__h1">{h1}</h1>
-        <p class="lead muted art__lead">{lead}</p>
-        <p class="art__meta mono">
-          <time datetime={published}>
-            {new Date(published).toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' })}
-          </time>
-          <span aria-hidden="true">·</span>
-          <span>{readMin} min czytania</span>
-        </p>
-      </div>
+      <nav class="art__crumbs mono" aria-label="Okruszki">
+        <a href="/">Start</a>
+        <span aria-hidden="true">/</span>
+        <a href="/poradnik/">Poradnik</a>
+      </nav>
+      <h1 class="display-l art__h1">{h1}</h1>
+      <p class="lead muted art__lead">{lead}</p>
+      <p class="art__meta mono">
+        <time datetime={published}>
+          {new Date(published).toLocaleDateString('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' })}
+        </time>
+      </p>
     </header>
 
-    <div class="shell art__body">
+    <div class="art__body">
       <div class="prose">
         <slot />
       </div>
@@ -65,15 +65,17 @@ const schema = [
   </article>
 
   <section class="band band--paper band--tight">
-    <div class="shell cta">
-      <h2 class="display-l">Masz konkretny odcinek do zrobienia?</h2>
-      <p class="lead muted">
-        Napisz, ile studzienek, jaka nawierzchnia i jaki termin. Odpowiemy ceną i doborem tarczy.
-      </p>
-      <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
-    </div>
+    <div class="sheet">
+      <p class="smark"><b>01</b><span>Zapytanie</span></p>
 
-    <div class="shell">
+      <div class="cta">
+        <h2 class="display-l">Masz konkretny odcinek do zrobienia?</h2>
+        <p class="lead muted">
+          Napisz, ile studzienek, jaka nawierzchnia i jaki termin. Odpowiemy ceną i doborem tarczy.
+        </p>
+        <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
+      </div>
+
       <NextLinks
         items={[
           { label: 'Dane techniczne R650', href: '/dane-techniczne/', note: 'Pełna tabela parametrów' },
@@ -86,11 +88,12 @@ const schema = [
 </Base>
 
 <style is:global>
+  .art { padding-top: clamp(2rem, 5vw, 3.5rem); }
   .art__head {
     border-bottom: 1px solid var(--rule);
-    padding-block: clamp(2rem, 5vw, 3.5rem) clamp(1.75rem, 4vw, 2.75rem);
+    padding-bottom: clamp(1.75rem, 4vw, 2.75rem);
+    max-width: 62rem;
   }
-  .art__headInner { max-width: 62rem; }
   .art__crumbs {
     display: flex;
     gap: 0.6rem;
@@ -105,8 +108,6 @@ const schema = [
   .art__h1 { max-width: 22ch; }
   .art__lead { margin-top: 1.25rem; max-width: 60ch; }
   .art__meta {
-    display: flex;
-    gap: 0.6rem;
     margin-top: 1.5rem;
     font-size: 0.7rem;
     letter-spacing: 0.12em;

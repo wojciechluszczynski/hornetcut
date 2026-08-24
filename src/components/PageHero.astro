@@ -1,17 +1,32 @@
 ---
+import Figure from './Figure.astro';
+
 interface Props {
   h1: string;
   lead?: string;
   crumbs: { label: string; href: string }[];
-  /** Zdjęcie kontekstowe pod nagłówkiem. Pas 21:9, ładowany priorytetowo, bo jest LCP. */
-  image?: string;
-  imageAlt?: string;
+  /** Numer arkusza w szynie, np. "03". Strony bez numeru (404, podziękowanie)
+      pomijają go i dostają samą etykietę. */
+  sheet?: string;
+  /** Etykieta pod numerem. Domyślnie ostatni okruszek. */
+  sheetLabel?: string;
+  /** Wpis z site.media. Renderuje się we własnych proporcjach, bez kadrowania. */
+  photo?: { src: string; alt: string; w: number; h: number };
 }
-const { h1, lead, crumbs, image, imageAlt } = Astro.props;
+const { h1, lead, crumbs, sheet, sheetLabel, photo } = Astro.props;
+const mark = sheetLabel ?? crumbs.at(-1)?.label ?? '';
 ---
 
+{/* Ten sam arkusz co na stronie głównej: szyna z numerem po lewej, treść w
+    drugiej kolumnie. Bez tego podstrony wracały do wyśrodkowanego stosu
+    sekcji, czyli dokładnie do układu, od którego strona główna odeszła. */}
 <section class="phero">
-  <div class="shell">
+  <div class="sheet">
+    <p class="smark">
+      {sheet && <b>{sheet}</b>}
+      <span>{mark}</span>
+    </p>
+
     <nav class="phero__crumbs mono" aria-label="Okruszki">
       <a href="/">Strona główna</a>
       {
@@ -34,31 +49,16 @@ const { h1, lead, crumbs, image, imageAlt } = Astro.props;
     </h1>
 
     {lead && <p class="lead muted phero__lead">{lead}</p>}
+
+    {photo && <Figure {...photo} caption={photo.alt} priority class="phero__fig" />}
   </div>
 
-  {
-    image && (
-      <div class="shell">
-        <img
-          src={image}
-          srcset={`${image.replace('.webp', '-800.webp')} 800w, ${image} 1600w`}
-          sizes="(max-width: 900px) 100vw, 1320px"
-          alt={imageAlt ?? ''}
-          width="1800"
-          height="771"
-          fetchpriority="high"
-          decoding="async"
-          class="phero__img"
-        />
-      </div>
-    )
-  }
+  <div class="measure phero__strip" aria-hidden="true"></div>
 </section>
 
 <style>
   .phero {
-    padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(2.5rem, 4vw, 3.5rem);
-    border-bottom: 1px solid var(--rule);
+    padding-block: clamp(2.5rem, 5vw, 4.5rem) 0;
   }
   .phero__crumbs {
     display: flex;
@@ -68,18 +68,13 @@ const { h1, lead, crumbs, image, imageAlt } = Astro.props;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
   }
   .phero__crumbs a:hover { color: var(--accent-text); }
   .phero__crumbs [aria-current] { color: var(--fg); }
   .phero__lead { margin-top: 1.75rem; }
-  .phero__img {
-    display: block;
-    width: 100%;
-    height: clamp(180px, 26vw, 340px);
-    object-fit: cover;
-    margin-top: clamp(2rem, 4vw, 3rem);
-    border: 1px solid var(--rule);
-    filter: saturate(0.85) contrast(1.05);
-  }
+  .phero__fig { margin-top: clamp(2rem, 4vw, 3rem); }
+  /* Podziałka zamyka nagłówek zamiast pełnej kreski: ta sama krawędź, którą
+     hero na stronie głównej oddziela od paska liczb. */
+  .phero__strip { margin-top: clamp(2.5rem, 4vw, 3.5rem); }
 </style>

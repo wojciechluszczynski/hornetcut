@@ -20,13 +20,15 @@ const schema = [
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs} schema={schema}>
-  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs}
-    image={site.media.dusk.src}
-    imageAlt={site.media.dusk.alt}
+  <PageHero h1={p.h1} lead={p.lead} crumbs={crumbs} sheet="06"
+    photo={site.media.dusk}
   />
 
   <section class="band band--paper">
-    <div class="shell kt">
+    <div class="sheet">
+      <p class="smark"><b>01</b><span>Dane i formularz</span></p>
+
+      <div class="kt">
       <div class="kt__data">
         <dl>
           <div>
@@ -60,6 +62,7 @@ const schema = [
       <div class="kt__form">
         <h2 class="display-m kt__h2">Zapytanie ofertowe</h2>
         <LeadForm />
+      </div>
       </div>
     </div>
   </section>

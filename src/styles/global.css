@@ -30,6 +30,13 @@
 :root {
   --shell: 1320px;
 
+  /* Sheet geometry. The rail is the left margin of the drawing sheet: it holds
+     the section number and the hairline that runs the height of the section.
+     Everything on the page is measured off it, which is what stops the layout
+     from reading as a stack of equal centred blocks. */
+  --rail: 92px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
   /* dark theme, the default */
   --sA-bg: #0b0c0e;
   --sA-fg: #e8e6e1;
@@ -148,8 +155,12 @@ body,
     padding-inline: clamp(1.25rem, 4vw, 3.5rem);
   }
 
+  /* Section rhythm is deliberately uneven. Equal padding on every band is what
+     makes a page tick like a metronome; these three steps let sections breathe
+     differently depending on whether they carry a figure, a table or prose. */
   .band { padding-block: clamp(4.5rem, 9vw, 8.5rem); }
   .band--tight { padding-block: clamp(3rem, 6vw, 5rem); }
+  .band--wide { padding-block: clamp(6.5rem, 13vw, 12rem); }
 
   .muted { color: var(--muted); }
 
@@ -176,11 +187,32 @@ body,
     font-weight: 500;
   }
 
-  /* Display sizes ------------------------------------------- */
-  .display-xl { font-size: clamp(2.125rem, 4.4vw, 3.9rem);   overflow-wrap: break-word;
-  hyphens: auto;
-}
-  .display-l  { font-size: clamp(1.75rem, 3.1vw, 2.75rem); }
+  /* Display sizes -------------------------------------------
+     Wider spread than before: the h1 has to carry the hero on its own now that
+     the diagram is cropped by the viewport rather than sitting in a tidy half. */
+  /* Górna granica wynika z najdłuższej linii nagłówka („Nie rozbijaj pół
+     jezdni.", 24 znaki): przy szerszym kroju i większym stopniu linia
+     nie mieści się w kolumnie treści i łamie się w przypadkowym miejscu. */
+  .display-xl {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-stretch: 112%;
+    line-height: 0.92;
+    letter-spacing: -0.022em;
+    overflow-wrap: break-word;
+    /* Łamanie niesie copy (znak \n w site.ts staje się <br>). Balansowanie
+       dokładałoby do tego własne podziały i psuło rytm dwóch linii. */
+    text-wrap: normal;
+  }
+  /* Te same zabezpieczenia co w display-xl. Bez nich "KANALIZACYJNEGO"
+     w nagłówku artykułu wychodziło poza kadr na 320 i 375 px. */
+  .display-l {
+    font-size: clamp(1.875rem, 3.8vw, 3.35rem);
+    line-height: 0.94;
+    /* break-word łamie tylko wtedy, gdy słowo naprawdę nie mieści się
+       w kolumnie. hyphens: auto dzieliło nagłówki przy każdej okazji
+       ("NAJ-WIĘCEJ", "REGU-LACJI"), co w display wygląda amatorsko. */
+    overflow-wrap: break-word;
+  }
   .display-m  { font-size: clamp(1.25rem, 2vw, 1.625rem); }
 
   .lead {
@@ -312,6 +344,7 @@ body,
   .ct > *,
   .kt > *,
   .faq__layout > *,
+  .faq-page > *,
   .uses__layout > *,
   .tech > *,
   .safety > *,
@@ -320,6 +353,159 @@ body,
   .why__row > *,
   .next__list a > * {
     min-width: 0;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Sheet system
+   The page is drawn as an engineering sheet, not stacked as a landing
+   page: a left rail carries the section number and a hairline, content
+   hangs off that rail, and the polar geometry of the machine (pivot,
+   radius, arc) is the recurring visual device. This is what separates
+   HornetCut from HydraCut, which is built on sections and clamps.
+   ------------------------------------------------------------------ */
+@layer components {
+  .sheet {
+    width: 100%;
+    max-width: var(--shell);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  @media (min-width: 1100px) {
+    .sheet {
+      display: grid;
+      grid-template-columns: var(--rail) minmax(0, 1fr);
+      column-gap: clamp(2rem, 3.6vw, 3.75rem);
+      align-items: start;
+    }
+    .sheet > * { min-width: 0; }
+
+    /* Szyna zajmuje pierwszą kolumnę na całą wysokość sekcji, żeby numer mógł
+       być sticky przez cały jej przewijany zakres. Każde inne dziecko wpada
+       samo do kolumny drugiej — sekcje nie potrzebują dodatkowego wrappera.
+       .sheet--free wyłącza tę regułę tam, gdzie kolumn jest więcej (hero). */
+    .sheet:not(.sheet--free) > .smark {
+      grid-column: 1;
+      grid-row: 1 / -1;
+      align-self: start;
+    }
+    .sheet:not(.sheet--free) > *:not(.smark) { grid-column: 2; }
+  }
+
+  /* Section mark: the number lives in the rail with a hairline dropping the
+     full height of the section. Replaces the repeated full-width eyebrow. */
+  .smark {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: clamp(1.5rem, 2.6vw, 2.25rem);
+  }
+  .smark b { color: var(--accent-text); font-weight: 500; }
+
+  @media (min-width: 1100px) {
+    .smark {
+      position: sticky;
+      top: clamp(5rem, 8vw, 7rem);
+      display: block;
+      margin-bottom: 0;
+      padding-top: 0.45rem;
+    }
+    .smark b { display: block; font-size: 0.8125rem; margin-bottom: 0.7rem; }
+    .smark span {
+      display: block;
+      font-size: 0.625rem;
+      line-height: 1.5;
+      max-width: 9ch;
+    }
+    /* The hairline that makes the rail read as a sheet margin. */
+    .smark::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: clamp(3rem, 7vw, 6rem);
+      margin-top: 1.1rem;
+      background: var(--rule);
+    }
+  }
+
+  /* Full-bleed escape from the shell, for figures that should be cropped by
+     the viewport rather than politely contained. */
+  .bleed {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    max-width: none;
+  }
+
+  /* Oversized tabular numeral used as a display element, the way a spec plate
+     stamps a value. Plex Mono, tabular, so digits never jitter. */
+  .bignum {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    font-size: clamp(2.75rem, 8vw, 6rem);
+    line-height: 0.86;
+    letter-spacing: -0.03em;
+    color: var(--accent-text);
+  }
+  .bignum sup {
+    font-size: 0.24em;
+    letter-spacing: 0.18em;
+    vertical-align: super;
+    color: var(--muted);
+  }
+
+  /* The arc. A single circle stroked with a dash pattern long enough that only
+     one segment shows: an arc struck about a pivot that sits off-canvas, which
+     is exactly what the machine does. Used behind the hero and as a divider. */
+  .arc {
+    position: absolute;
+    pointer-events: none;
+    color: var(--accent-text);
+    opacity: 0.55;
+  }
+  .arc circle {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .arc circle.arc__live { stroke-width: 2; opacity: 0.9; }
+
+  /* Measure strip: a horizontal scale rule, the counterpart to the rail.
+     Deliberately NOT called .strip — StatStrip.astro already owns that name. */
+  .measure {
+    height: 26px;
+    border-top: 1px solid var(--rule);
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--rule) 0 1px,
+      transparent 1px 48px
+    );
+    -webkit-mask-image: linear-gradient(to bottom, #000 0 9px, transparent 9px);
+    mask-image: linear-gradient(to bottom, #000 0 9px, transparent 9px);
+  }
+}
+
+@layer components {
+  /* Cel dotykowy. Linki tekstowe w okruszkach, stopce i danych kontaktowych
+     miały 17-19 px wysokości, czyli poniżej progu WCAG 2.2 (24 px).
+     Powiększamy samo pole trafienia, nie typografię. */
+  @media (pointer: coarse), (max-width: 700px) {
+    .phero__crumbs a,
+    .art__crumbs a,
+    .ftr__bottom a,
+    .kt__data a,
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+    }
   }
 }
 

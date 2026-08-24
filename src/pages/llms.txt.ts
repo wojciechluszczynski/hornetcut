@@ -63,8 +63,8 @@ ${site.faq.items.map((f) => `### ${f.q}\n${p(f.a)}`).join('\n\n')}
 
 ## Uwagi
 
-Dane oznaczone jako "do potwierdzenia" nie zostały jeszcze zweryfikowane w dokumentacji
-technicznej producenta i nie powinny być cytowane jako pewne.
+Parametry techniczne pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP
+wydanych przez producenta. Ceny, terminu dostawy i czasu cięcia producent nie publikuje.
 `;
 
   return new Response(body, {
