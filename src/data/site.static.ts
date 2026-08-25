@@ -1,0 +1,584 @@
+/**
+ * HornetCut R650. Jedyne miejsce z treścią strony.
+ *
+ * ZASADA EDYCJI: cały widoczny tekst i każda liczba są tutaj. Komponenty
+ * nie zawierają treści. Żeby zmienić stronę, edytujesz ten plik i przebudowujesz.
+ *
+ * ZNACZNIK "?" NA POCZĄTKU WARTOŚCI = dana niepotwierdzona.
+ * Renderuje się z bursztynowym podkreśleniem i dopiskiem "do potwierdzenia".
+ * Po potwierdzeniu wystarczy usunąć znak "?" z początku wartości.
+ */
+
+export const site = {
+  meta: {
+    brand: 'HORNETCUT',
+    model: 'HornetCut R650',
+    domain: 'hornetcut.pl',
+    url: 'https://hornetcut.pl',
+    lang: 'pl-PL',
+    title: 'HornetCut R650. Wycinarka okręgów do studzienek kanalizacyjnych',
+    description:
+      'Wycinarka HornetCut R650 tnie asfalt i beton po obwodzie włazu. Regulowana średnica cięcia, maksymalny promień 1300 mm, głębokość do 100 mm. Zapytaj o cenę.',
+    // Autor i realizacja strony. Zaszyte w <meta name="author"> oraz w llms.txt.
+    maker: 'Wojciech Łuszczyński, GTM Architect, wojciech.io',
+  },
+
+  contact: {
+    // Adres za fijalo.pl. NIP i REGON potwierdzone stopką karty katalogowej
+    // producenta, więc bez znacznika niepewności.
+    company: 'Fijalo-Poland Cyprian Fijało',
+    brandLine: 'Producent maszyn dla budownictwa podziemnego',
+    phone: '+48 534 979 628',
+    phoneHref: '+48534979628',
+    email: 'biuro@fijalo.pl',
+    street: 'ul. Jana Kochanowskiego 130',
+    city: '80-405 Gdańsk',
+    nip: '843-150-44-13',
+    regon: '221964971',
+    hours: 'Poniedziałek do piątku, 9:00–18:00',
+    reply: 'Odpowiadamy w ciągu jednego dnia roboczego.',
+  },
+
+  nav: [
+    { label: 'Maszyna', href: '/#maszyna' },
+    { label: 'Zastosowania', href: '/zastosowania/' },
+    { label: 'Jak to działa', href: '/jak-to-dziala/' },
+    { label: 'Dane techniczne', href: '/dane-techniczne/' },
+    { label: 'Poradnik', href: '/poradnik/' },
+    { label: 'FAQ', href: '/faq/' },
+    { label: 'Kontakt', href: '/kontakt/' },
+  ],
+
+  hero: {
+    eyebrow: 'Wycinarka okręgów do studzienek',
+    h1: 'Wytnij właz po okręgu.\nNie rozbijaj pół jezdni.',
+    lead: 'HornetCut R650 montuje się w ramie włazu na ściskach rozporowych i tnie asfalt lub beton po obwodzie. Regulowana średnica cięcia, maksymalny promień 1300 mm, głębokość do 100 mm.',
+    ctaPrimary: { label: 'Zapytaj o cenę', href: '/kontakt/' },
+    ctaSecondary: { label: 'Dane techniczne', href: '/dane-techniczne/' },
+  },
+
+  stats: [
+    { value: '100', unit: 'mm', label: 'Głębokość cięcia' },
+    { value: 'do 1300', unit: 'mm', label: 'Maksymalny promień cięcia' },
+    { value: '500–900', unit: 'mm', label: 'Zakres studzienek' },
+    { value: '11,2', unit: 'KM', label: 'Silnik spalinowy' },
+    { value: '125', unit: 'kg', label: 'Masa nominalna' },
+  ],
+
+  /** Ból klienta zestawiony z tym, co się zmienia. Bez obietnic bez pokrycia. */
+  pains: {
+    eyebrow: 'Problem i korzyść',
+    h2: 'Co kosztuje najwięcej przy regulacji studzienki?',
+    lead: 'Nie samo cięcie. Kosztuje wszystko, co trzeba zrobić dookoła, kiedy wycinka wyjdzie większa i brzydsza, niż powinna.',
+    rows: [
+      {
+        pain: 'Rozbiórka wychodzi dwa razy większa od potrzebnej',
+        gain: 'Zdejmujesz pierścień o średnicy ustawionej pod konkretną studzienkę, nie o metr za dużo.',
+      },
+      {
+        pain: 'Wywóz gruzu i dowóz masy rosną razem z powierzchnią',
+        gain: 'Mniejsza wycinka to mniej gruzu na wywóz i mniej mieszanki do wbudowania.',
+      },
+      {
+        pain: 'Pas ruchu stoi zamknięty dłużej, niż zakładał harmonogram',
+        gain: 'Jedno mocowanie i jedno przejście po obwodzie zamiast czterech cięć i dobijania naroży.',
+      },
+      {
+        pain: 'Po zimie styk wokół włazu pęka i wraca jako reklamacja',
+        gain: 'Pionowa, równa krawędź daje czysty styk ze świeżą masą.',
+      },
+      {
+        pain: 'Młot potrafi uszkodzić korpus studni albo pierścień odciążający',
+        gain: 'Tarcze pracują w nawierzchni, maszyna bazuje na ramie włazu, konstrukcja studni zostaje nietknięta.',
+      },
+    ],
+  },
+
+  why: {
+    eyebrow: 'Porównanie metod',
+    h2: 'Młot, piła prosta czy cięcie po obwodzie?',
+    body: [
+      'Rozkuwanie młotem zabiera więcej nawierzchni, niż wymaga tego regulacja studzienki. Więcej gruzu do wywiezienia, więcej masy do wbudowania, dłuższe zajęcie pasa ruchu.',
+      'Krawędź po młocie jest poszarpana, więc styk ze świeżą masą przepuszcza wodę i pęka po pierwszej zimie. Cięcie po obwodzie zdejmuje tylko pierścień wokół włazu i zostawia równą, pionową krawędź.',
+    ],
+    rows: [
+      {
+        method: 'Młot, rozkuwanie',
+        marks: ['krawędź poszarpana', 'nadmiarowy obszar rozbiórki', 'ryzyko uszkodzenia korpusu studni'],
+        highlight: false,
+      },
+      {
+        method: 'Piła prosta, cięcie na kwadrat',
+        marks: ['równa krawędź', 'cztery przejścia i naroża do dobicia', 'wycinka większa od potrzebnej'],
+        highlight: false,
+      },
+      {
+        method: 'HornetCut R650',
+        marks: ['mocowanie w ramie włazu na ściskach', 'jedno przejście po obwodzie', 'pierścień wychodzi w całości'],
+        highlight: true,
+      },
+    ],
+  },
+
+  how: {
+    eyebrow: 'Jak to działa',
+    h2: 'Cztery kroki, jeden operator',
+    steps: [
+      {
+        title: 'Mocowanie',
+        body: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych. Punktem odniesienia jest sama studzienka, więc nie ma kotwienia w nawierzchni ani wytyczania obszaru.',
+      },
+      {
+        title: 'Ustawienie',
+        body: 'Ustawiasz promień cięcia, maksymalnie 1300 mm, i opuszczasz piłę na zadaną głębokość, maksymalnie 100 mm. Ta sama nastawa wraca przy każdej kolejnej studzience.',
+      },
+      {
+        title: 'Cięcie',
+        body: 'Silnik spalinowy napędza wałek z tarczami tnącymi. Operator obchodzi studzienkę, przepychając ramę piły, więc sam kontroluje tempo na twardym kruszywie.',
+      },
+      {
+        title: 'Wyjęcie',
+        body: 'Wycięty pierścień podważa się i wyjmuje. Korpus studni i właz zostają nienaruszone, obszar nadaje się od razu do regulacji.',
+      },
+    ],
+    video: {
+      youtubeId: '', // po dostarczeniu filmu promocyjnego wpisz tu identyfikator z YouTube
+      file: '/foto/r-machine-loop.mp4',
+      poster: '/foto/r-machine-loop.webp',
+      caption: 'Maszyna z bliska, materiał producenta. Film promocyjny z budowy zastąpi go po nagraniu.',
+      title: 'HornetCut R650 w pracy: cięcie po obwodzie włazu studzienki',
+    },
+  },
+
+  /** Warstwa ludzka. Zdjęcia i cytat dosyłamy, dlatego są tu sloty, nie wymyślone treści. */
+  people: {
+    eyebrow: 'Ludzie i maszyna',
+    h2: 'Kto tym pracuje?',
+    body: 'Maszyna jedzie na budowę z brygadą drogową albo z ekipą sieciowca. Prowadzi ją operator, który zna nawierzchnię, a nie serwisant producenta. Dlatego liczy się to, żeby obsługa była oczywista po pierwszym instruktażu, a części dało się zamówić jednym telefonem.',
+    quote: {
+      text: 'Operator obniża piłę na zadaną głębokość i porusza się wokół studzienki, przepychając ramę piły.',
+      author: 'Instrukcja obsługi WOSK.650R LP',
+      role: 'dokumentacja producenta',
+    },
+    facts: [
+      { k: 'Obsługa', v: 'jeden operator przy cięciu' },
+      { k: 'Dokumentacja', v: 'instrukcja obsługi w komplecie' },
+      { k: 'Gwarancja', v: '24 miesiące na terenie RP' },
+      { k: 'Kontakt serwisowy', v: 'ten sam numer co do sprzedaży' },
+    ],
+  },
+
+  uses: {
+    eyebrow: 'Zastosowania',
+    h2: 'Gdzie pracuje?',
+    items: [
+      {
+        title: 'Regulacja wysokości studzienek',
+        icon: 'poziom',
+        body: 'Podniesienie lub obniżenie włazu do poziomu nowej nawierzchni bez rozbierania obszaru wokół.',
+      },
+      {
+        title: 'Wymiana włazów i pierścieni',
+        icon: 'wlaz',
+        body: 'Wymiana skorodowanego lub pękniętego włazu razem z pierścieniem odciążającym.',
+      },
+      {
+        title: 'Remonty i przebudowy dróg',
+        icon: 'droga',
+        body: 'Przygotowanie studzienek przed frezowaniem i układaniem nowej warstwy ścieralnej.',
+      },
+      {
+        title: 'Sieci wod-kan, ciepłownicze i gazowe',
+        icon: 'siec',
+        body: 'Dostęp do armatury i zasuw w nawierzchni utwardzonej, bez rozkuwania połowy pasa.',
+      },
+      {
+        title: 'Place manewrowe i parkingi',
+        icon: 'plac',
+        body: 'Punktowa naprawa nawierzchni betonowej i asfaltowej na terenach zakładowych.',
+      },
+      {
+        title: 'Awarie i szybkie interwencje',
+        icon: 'awaria',
+        body: 'Wejście w nawierzchnię i jej odtworzenie w tym samym dniu roboczym, z krótkim zajęciem pasa.',
+      },
+    ],
+  },
+
+  equipment: {
+    eyebrow: 'Wyposażenie',
+    h2: 'Co jest w standardzie?',
+    items: [
+      { title: 'Wózek przejezdny kołowy', body: 'Przestawienie maszyny między studzienkami bez dźwigu.' },
+      { title: 'Rozruch ręczny i elektryczny', body: 'Rozruch elektryczny na co dzień, linka jako zabezpieczenie.' },
+      { title: 'Regulowany uchwyt krzyżowy', body: 'Mocowanie w pierścieniu włazu, bez kotwienia w nawierzchni.' },
+      { title: 'Kogut ostrzegawczy', body: 'Światło pomarańczowe, demontowane na czas transportu.' },
+      { title: 'Licznik motogodzin', body: 'Kontrola przeglądów i realnego przebiegu pracy silnika.' },
+      { title: 'Blokada obrotu do transportu', body: 'Ramię unieruchomione na czas przewozu i rozładunku.' },
+    ],
+  },
+
+  specs: {
+    eyebrow: 'Dane techniczne',
+    h2: 'Parametry',
+    caption: 'Dane techniczne wycinarki HornetCut R650',
+    rows: [
+      { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
+      { k: 'Średnica cięcia', v: 'regulowana' },
+      { k: 'Maksymalny promień cięcia', v: '1300 mm' },
+      { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
+      { k: 'Zakres średnic studzienek', v: '500–900 mm' },
+      { k: 'Silnik', v: 'LONCIN G390, 389 cm³, benzynowy, 11,2 KM' },
+      { k: 'Rozruch', v: 'ręczny i elektryczny' },
+      { k: 'Transport', v: 'dedykowany wózek transportowy' },
+      { k: 'Posuw głębokości i obrotu', v: 'ręczny' },
+      { k: 'Masa nominalna', v: '125 kg' },
+      { k: 'Masa robocza', v: '190 kg' },
+      { k: 'Wymiary', v: '1400 × 840 × 1080 mm' },
+      { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
+      { k: 'Maksymalna średnica tarczy', v: '350 mm' },
+      { k: 'Prędkość obrotowa tarczy', v: '4750 obr/min' },
+      { k: 'Cięcie na mokro', v: 'tak, zbiornik wody 40 l' },
+      { k: 'Zbiornik paliwa', v: '7 l benzyny bezołowiowej' },
+      { k: 'Poziom hałasu', v: '106,9 dB' },
+    ],
+  },
+
+  faq: {
+    eyebrow: 'FAQ',
+    h2: 'Najczęściej pytane',
+    items: [
+      {
+        q: 'Na jakich studzienkach pracuje HornetCut R650?',
+        a: 'Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych, więc nie wymaga kotwienia w nawierzchni. Promień cięcia ustawiasz niezależnie od wymiaru studzienki, maksymalnie 1300 mm.',
+        home: true,
+      },
+      {
+        q: 'Czy maszyna tnie beton, czy tylko asfalt?',
+        a: 'Tnie asfalt i beton. Zakres w żelbecie zależy od doboru tarczy diamentowej. Maszyna przyjmuje tarcze o średnicy do 350 mm.',
+        home: true,
+      },
+      {
+        q: 'Ile osób obsługuje maszynę?',
+        a: 'Do cięcia wystarczy jeden operator: obniża piłę na zadaną głębokość i przepycha ramę wokół studzienki. Przy rozładunku i przestawianiu wygodniej pracować we dwie osoby, bo maszyna waży 125 kg bez wody i 190 kg w stanie roboczym. Po równym podłożu dedykowany wózek pozwala przetoczyć ją w pojedynkę.',
+        home: true,
+      },
+      {
+        q: 'Jak transportuje się HornetCut R650?',
+        a: 'Na dedykowanym wózku transportowym. Przed transportem blokujesz obrót ramienia, a kogut ostrzegawczy jest demontowany. Maszyna waży 125 kg bez wody i mierzy 1400 × 840 × 1080 mm, więc mieści się w zwykłej przyczepie lub w skrzyni auta dostawczego. Na czas jazdy trzeba ją zamocować.',
+        home: true,
+      },
+      {
+        q: 'Ile trwa wycięcie jednego okręgu?',
+        a: 'Producent nie podaje normy czasowej, bo czas zależy od głębokości, rodzaju nawierzchni i stanu tarczy. Tarcza pracuje z prędkością 4750 obrotów na minutę przy głębokości do 100 mm. Realny czas na konkretnej nawierzchni najlepiej zmierzyć przy pierwszym cięciu.',
+        home: true,
+      },
+      {
+        q: 'Ile kosztuje HornetCut R650?',
+        a: 'Cena zależy od konfiguracji i dostępności. Cennik wysyłamy w odpowiedzi na zapytanie, zwykle w ciągu jednego dnia roboczego.',
+        home: true,
+      },
+      {
+        q: 'Czy głębokość 100 mm osiąga się w jednym przejściu?',
+        a: 'Instrukcja nie narzuca liczby przejść. Mechanizm podnoszenia i opuszczania piły pozwala ustawić głębokość przed każdym obiegiem, więc w twardszej nawierzchni schodzisz do 100 mm stopniowo, zamiast wymuszać pełną głębokość od razu.',
+        home: false,
+      },
+      {
+        q: 'Czy cięcie wymaga podłączenia wody?',
+        a: 'Nie. Maszyna ma własny zbiornik wody o pojemności 40 litrów wraz z układem chłodzenia tarczy, więc nie potrzebuje przyłącza na stanowisku. Poziom wody sprawdza się przed uruchomieniem, w ramach obsługi codziennej.',
+        home: false,
+      },
+      {
+        q: 'Czy da się wyciąć okrąg tam, gdzie nie ma jeszcze włazu?',
+        a: 'Nie. Rama ruchoma mocuje się w kołnierzu studzienki ściskami rozporowymi nastawnymi i to on wyznacza oś obrotu. Bez pierścienia włazu maszyna nie ma się o co zaprzeć.',
+        home: false,
+      },
+      {
+        q: 'Jaka jest gwarancja i gdzie jest serwis?',
+        a: 'Producent udziela 24 miesięcy gwarancji na terenie Polski. Naprawy prowadzi wyspecjalizowany zakład serwisowy producenta, a roszczenie gwarancyjne zgłasza się na piśmie, z opisem czasu, okoliczności i miejsca powstania usterki.',
+        home: false,
+      },
+      {
+        q: 'Jaki jest czas dostawy?',
+        a: 'Termin zależy od dostępności maszyn w danym momencie. Podajemy go w odpowiedzi na zapytanie.',
+        home: false,
+      },
+      {
+        q: 'Czy prowadzicie szkolenie z obsługi?',
+        a: 'Z maszyną jedzie instrukcja obsługi opisująca przygotowanie stanowiska, pracę i obsługę codzienną. Zakres przekazania i instruktażu na miejscu ustalamy przy zamówieniu.',
+        home: false,
+      },
+    ],
+  },
+
+  maker: {
+    eyebrow: 'Producent',
+    h2: 'Kto za tym stoi?',
+    body: 'Fijalo-Poland z Gdańska, polski producent maszyn do robót bezwykopowych. Ich sterowana maszyna przeciskowa ALUSTEER jeździ na targi branżowe i na szkolenia w terenie. Ta sama firma, ten sam serwis, ten sam numer telefonu, pod który dzwonisz po części.',
+    facts: [
+      { k: 'Siedziba', v: 'Gdańsk, Kochanowskiego 130' },
+      { k: 'Druga marka', v: 'ALUSTEER, przeciski sterowane' },
+      { k: 'Produkcja', v: 'Polska' },
+      { k: 'Targi', v: 'TRAKO i ENERGETAB 2025' },
+      { k: 'Zakład produkcyjny', v: 'Biskupnica 16, Człuchów' },
+    ],
+    links: [
+      { label: 'fijalo.pl', href: 'https://fijalo.pl/' },
+      { label: 'YouTube', href: 'https://www.youtube.com/@fijalopoland' },
+    ],
+  },
+
+  form: {
+    eyebrow: 'Kontakt',
+    h2: 'Zapytaj o cenę i dostępność',
+    intro: 'Napisz, na jakich studzienkach pracujesz i w jakiej nawierzchni. Odpowiemy konkretną ceną i terminem.',
+    endpoint: '/api/kontakt.php',
+    fields: {
+      name: 'Imię i nazwisko',
+      company: 'Firma',
+      phone: 'Telefon',
+      email: 'E-mail',
+      scope: 'Zakres średnic studzienek',
+      message: 'Wiadomość',
+    },
+    scopeOptions: ['500–600 mm', '600–800 mm', '800–900 mm', 'Różne średnice'],
+    consent:
+      'Wyrażam zgodę na kontakt w sprawie mojego zapytania. Dane przetwarzamy zgodnie z polityką prywatności.',
+    submit: 'Wyślij zapytanie',
+    success: 'Zapytanie wysłane. Odezwiemy się w ciągu jednego dnia roboczego.',
+    error: 'Nie udało się wysłać formularza. Zadzwoń albo napisz bezpośrednio na adres e-mail.',
+  },
+
+  /** Lista ujęć do dosłania. Kolejność zgodna z układem strony. */
+  photos: {
+    // Zdjęcia z 21.07.2026, materiały producenta. Maszyna jest czerwono-czarna,
+    // producent Fijalo-Poland, oznaczenie fabryczne WOSK.650R LP.
+    hero: {
+      id: 'FOTO 01', desc: 'Maszyna w cięciu wokół włazu', ratio: '16:9',
+      src: '/foto/r-cut.webp',
+      alt: 'Wycinarka zamocowana w pierścieniu włazu, w nawierzchni widoczny wycięty okrąg',
+    },
+    work: {
+      id: 'FOTO 02', desc: 'Operator prowadzi maszynę wokół studzienki', ratio: '16:9',
+      src: '/foto/r-work.webp',
+      alt: 'Operator w kamizelce odblaskowej przepycha ramę wycinarki wokół studzienki na jezdni',
+    },
+    edge: {
+      id: 'FOTO 03', desc: 'Krawędź cięcia z bliska', ratio: '4:3',
+      src: '/foto/r-edge.webp',
+      alt: 'Zbliżenie na równą, pionową krawędź nacięcia w nawierzchni',
+    },
+    ring: {
+      id: 'FOTO 04', desc: 'Wycięty okrąg wokół włazu', ratio: '16:9',
+      src: '/foto/r-ring.webp',
+      alt: 'Gotowy okrąg wycięty w nawierzchni wokół żeliwnego włazu',
+    },
+    transport: {
+      id: 'FOTO 05', desc: 'Maszyna na wózku transportowym', ratio: '4:3',
+      src: '/foto/r-machine.webp',
+      alt: 'Wycinarka WOSK.650R LP na dedykowanym wózku transportowym',
+    },
+    detail: {
+      id: 'FOTO 06', desc: 'Silnik, rama i osłona tarcz', ratio: '4:3',
+      src: '/foto/r-guard.webp',
+      alt: 'Detal osłony tarcz tnących i ramy wycinarki',
+    },
+    crew: {
+      id: 'FOTO 07', desc: 'Cięcie na czynnej drodze', ratio: '16:9',
+      src: '/foto/r-dust.webp',
+      alt: 'Cięcie wokół studzienki z widocznym pyłem, w tle bus serwisowy i drugi pracownik',
+    },
+    handover: {
+      id: 'FOTO 08', desc: 'Wyjęcie wyciętego pierścienia', ratio: '16:9',
+      src: '/foto/r-bar.webp',
+      alt: 'Pracownik podważa łomem wycięty pierścień nawierzchni wokół włazu',
+    },
+    site: {
+      id: 'FOTO 09', desc: 'Stanowisko pracy, plan szeroki', ratio: '16:9',
+      src: '/foto/r-site.webp',
+      alt: 'Maszyna przy studzience na poboczu, obok bus serwisowy i ekipa',
+    },
+  },
+
+  /** Zdjęcia nagłówkowe podstron i pasów przedzielających. */
+  /* w i h to realne wymiary pliku. Komponenty renderują zdjęcie w jego
+     własnych proporcjach — wcześniej wszystkie szły przez sztywną
+     wysokość i cover, przez co ujęcia 4:3 traciły ponad połowę kadru. */
+  media: {
+    pain: { src: '/foto/r-ring2.webp', alt: 'Okrąg wycięty w betonowej nawierzchni wokół włazu', w: 1600, h: 900 },
+    dusk: { src: '/foto/r-dust.webp', alt: 'Cięcie wokół studzienki na czynnej drodze, unoszący się pył', w: 1600, h: 900 },
+    footer: { src: '/foto/r-site.webp', alt: 'Stanowisko pracy przy studzience, bus serwisowy w tle', w: 1600, h: 900 },
+    trench: { src: '/foto/r-ring3.webp', alt: 'Wycięty okrąg wokół włazu widziany z góry', w: 1600, h: 900 },
+    yard: { src: '/foto/r-ring.webp', alt: 'Gotowy okrąg w nawierzchni wokół żeliwnego włazu', w: 1600, h: 900 },
+    street: { src: '/foto/r-work.webp', alt: 'Operator prowadzi wycinarkę wokół studzienki', w: 1600, h: 900 },
+    lowangle: { src: '/foto/r-machine.webp', alt: 'Wycinarka WOSK.650R LP, ujęcie z boku', w: 1600, h: 1200 },
+    machine: { src: '/foto/r-cut.webp', alt: 'Wycinarka w pierścieniu włazu podczas cięcia', w: 1600, h: 900 },
+    loop: { video: '/foto/r-machine-loop.mp4', poster: '/foto/r-machine-loop.webp' },
+  },
+
+  downloads: [
+    {
+      title: 'Karta produktu WOSK.650R LP',
+      file: '/do-pobrania/hornetcut-r650-karta-produktu.pdf',
+      format: 'PDF',
+    },
+    {
+      title: 'Instrukcja obsługi i DTR WOSK.650R LP',
+      file: '/do-pobrania/hornetcut-r650-instrukcja-obslugi.pdf',
+      format: 'PDF',
+    },
+    { title: 'Deklaracja zgodności CE', file: 'na zapytanie', format: 'PDF' },
+  ],
+
+  /* ------------------------------------------------------------------
+     PODSTRONY
+     ------------------------------------------------------------------ */
+  pages: {
+    specs: {
+      title: 'Dane techniczne HornetCut R650',
+      description:
+        'Pełna specyfikacja wycinarki HornetCut R650: głębokość cięcia 100 mm, maksymalny promień cięcia 1300 mm, silnik spalinowy, masa nominalna 125 kg i robocza 190 kg, wyposażenie standardowe.',
+      h1: 'Dane techniczne\nHornetCut R650',
+      lead: 'Parametry maszyny w konfiguracji standardowej. Wartości pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP.',
+      blocks: [
+        {
+          h2: 'Cięcie',
+          rows: [
+            { k: 'Maksymalna głębokość cięcia', v: '100 mm' },
+            { k: 'Średnica cięcia', v: 'regulowana' },
+      { k: 'Maksymalny promień cięcia', v: '1300 mm' },
+            { k: 'Oznaczenie fabryczne', v: 'WOSK.650R LP' },
+            { k: 'Zakres średnic studzienek', v: '500–900 mm' },
+            { k: 'Zakres obrotu ramienia', v: '360°' },
+            { k: 'Posuw głębokości', v: 'ręczny' },
+            { k: 'Posuw obrotu', v: 'ręczny' },
+            { k: 'Układ tnący', v: 'wałek napędowy z tarczami tnącymi' },
+            { k: 'Cięcie na mokro', v: 'tak, zbiornik wody 40 l' },
+          ],
+        },
+        {
+          h2: 'Napęd',
+          rows: [
+            { k: 'Typ silnika', v: 'spalinowy, benzynowy' },
+            { k: 'Moc', v: '11,2 KM' },
+            { k: 'Rozruch', v: 'ręczny i elektryczny' },
+      { k: 'Transport', v: 'dedykowany wózek transportowy' },
+            { k: 'Pojemność zbiornika paliwa', v: '7 l' },
+            { k: 'Licznik motogodzin', v: 'w standardzie' },
+          ],
+        },
+        {
+          h2: 'Podwozie i transport',
+          rows: [
+            /* DTR rozdziela obie masy (tabela „Masa nominalna / Masa robocza").
+               Sama „masa robocza 125 kg" była błędem: to masa nominalna. */
+            { k: 'Masa nominalna', v: '125 kg' },
+            { k: 'Masa robocza', v: '190 kg' },
+            { k: 'Wózek przejezdny', v: 'kołowy, w standardzie' },
+            { k: 'Blokada obrotu do transportu', v: 'w standardzie' },
+            { k: 'Wymiary', v: '1400 × 840 × 1080 mm' },
+            { k: 'Światło ostrzegawcze', v: 'pomarańczowe, demontowane' },
+          ],
+        },
+      ],
+      note: 'Producent zastrzega prawo do zmian konstrukcyjnych. Dane nie stanowią oferty w rozumieniu Kodeksu cywilnego.',
+    },
+
+    uses: {
+      title: 'Zastosowania wycinarki do studzienek',
+      description:
+        'Gdzie pracuje HornetCut R650: regulacja studzienek, wymiana włazów, remonty dróg, sieci wod-kan, place manewrowe i szybkie interwencje awaryjne.',
+      h1: 'Zastosowania',
+      lead: 'Wszędzie tam, gdzie trzeba wejść w utwardzoną nawierzchnię wokół włazu i odtworzyć ją tego samego dnia.',
+      details: [
+        {
+          title: 'Regulacja wysokości studzienek',
+          body: 'Po nałożeniu nowej warstwy ścieralnej właz zostaje poniżej poziomu jezdni. Cięcie po obwodzie pozwala zdjąć pierścień nawierzchni, wyregulować właz na docelową rzędną i uzupełnić masę tylko w wyciętym pierścieniu. Obszar naprawy jest przewidywalny, a krawędź pionowa, więc styk trzyma szczelność.',
+        },
+        {
+          title: 'Wymiana włazów i pierścieni odciążających',
+          body: 'Skorodowany właz albo pęknięty pierścień odciążający wymaga dostępu do korpusu studni. Wycięcie okręgu odsłania konstrukcję bez rozkuwania nawierzchni młotem, więc korpus studni nie dostaje udarów.',
+        },
+        {
+          title: 'Remonty i przebudowy dróg',
+          body: 'Przy frezowaniu i układaniu nowej nawierzchni studzienki obsługuje się seryjnie. Maszyna na dedykowanym wózku przejeżdża między kolejnymi włazami, a raz ustawiona średnica wraca przy każdej następnej.',
+        },
+        {
+          title: 'Sieci wod-kan, ciepłownicze i gazowe',
+          body: 'Dostęp do zasuw, hydrantów i armatury schowanej pod nawierzchnią. Punktowa wycinka ogranicza zakres odtworzenia i skraca czas zajęcia pasa ruchu, co ma bezpośrednie przełożenie na koszt zajęcia terenu.',
+        },
+        {
+          title: 'Place manewrowe, parkingi i tereny zakładowe',
+          body: 'Nawierzchnie betonowe i asfaltowe na terenach przemysłowych. Naprawa punktowa zamiast wymiany całych płyt, przy zachowanym ruchu na pozostałej części placu.',
+        },
+        {
+          title: 'Awarie i szybkie interwencje',
+          body: 'Przy awarii liczy się czas wejścia i czas odtworzenia. Maszyna nie wymaga przygotowania podłoża ani kotwienia, więc od dojazdu do pierwszego cięcia mija tyle, ile zajmuje ustawienie uchwytu w pierścieniu włazu.',
+        },
+      ],
+    },
+
+    how: {
+      title: 'Jak działa wycinarka okręgów HornetCut R650',
+      description:
+        'Cięcie po obwodzie włazu krok po kroku: mocowanie w pierścieniu, ustawienie promienia i głębokości, pełny obrót 360 stopni, wyjęcie pierścienia nawierzchni.',
+      h1: 'Jak to działa',
+      lead: 'Maszyna bazuje na pierścieniu włazu, a nie na nawierzchni. To jedyny powód, dla którego cięcie po okręgu jest powtarzalne bez wytyczania i bez kotwienia.',
+      safety: {
+        h2: 'Zanim zaczniesz ciąć',
+        items: [
+          'Oznakuj i zabezpiecz miejsce pracy zgodnie z projektem organizacji ruchu.',
+          'Sprawdź, czy pierścień włazu jest stabilny i czy uchwyt krzyżowy ma pełne oparcie.',
+          'Ustaw promień i głębokość, zanim ruszysz z ramą wokół studzienki.',
+          'Pracuj w środkach ochrony: ochronniki słuchu, okulary, rękawice, obuwie ochronne.',
+          'Napełnij zbiornik wody przed pracą. Tarcza chłodzona jest wodą z maszyny, a brak wody w osłonie tarczy to typowa przyczyna usterki.',
+        ],
+      },
+    },
+
+    faq: {
+      title: 'FAQ: wycinarka do studzienek kanalizacyjnych',
+      description:
+        'Odpowiedzi na pytania o HornetCut R650: zakres studzienek, głębokość cięcia, obsługa, transport, tarcze, cena i dostawa.',
+      h1: 'Pytania i odpowiedzi',
+      lead: 'Jeśli czegoś tu brakuje, zadzwoń albo wyślij zapytanie. Odpowiadamy konkretem, nie folderem reklamowym.',
+    },
+
+    contact: {
+      title: 'Kontakt i zapytanie ofertowe',
+      description:
+        'Zapytaj o cenę i dostępność wycinarki HornetCut R650. Odpowiadamy w ciągu jednego dnia roboczego.',
+      h1: 'Kontakt',
+      lead: 'Napisz, na jakich studzienkach pracujesz i w jakiej nawierzchni. Odpowiemy ceną, terminem i doborem tarczy.',
+    },
+
+    downloads: {
+      title: 'Materiały do pobrania',
+      description: 'Karta produktu, instrukcja obsługi i deklaracja zgodności CE wycinarki HornetCut R650.',
+      h1: 'Do pobrania',
+      lead: 'Dokumentacja maszyny w formacie PDF. Jeśli potrzebujesz czegoś, czego tu nie ma, napisz.',
+    },
+
+    thanks: {
+      title: 'Zapytanie wysłane',
+      description: 'Dziękujemy za zapytanie o HornetCut R650.',
+      h1: 'Zapytanie wysłane',
+      lead: 'Odezwiemy się w ciągu jednego dnia roboczego. Jeśli sprawa jest pilna, zadzwoń.',
+    },
+
+    privacy: {
+      title: 'Polityka prywatności',
+      description: 'Zasady przetwarzania danych osobowych w serwisie hornetcut.pl.',
+      h1: 'Polityka prywatności',
+    },
+
+    notFound: {
+      title: 'Strona nie istnieje',
+      description: 'Pod tym adresem nic nie ma.',
+      h1: 'Błąd 404',
+      lead: 'Pod tym adresem nic nie ma. Wróć na stronę główną albo zajrzyj do danych technicznych.',
+    },
+  },
+} as const;
+
+export type Site = typeof site;
