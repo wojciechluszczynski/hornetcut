@@ -1,0 +1,41 @@
+---
+/** A table inside a guide article, drawn with the same 1px rules as the rest. */
+/** astro-portabletext hands custom types the raw node. */
+interface Props { node: { head?: string[]; rows?: { cells?: string[] }[] } }
+const { node } = Astro.props;
+const head = node?.head ?? [];
+const rows = node?.rows ?? [];
+---
+<div class="atbl__wrap">
+  <table class="atbl">
+    {head.length > 0 && (
+      <thead>
+        <tr>{head.map((cell) => <th scope="col" class="mono">{cell}</th>)}</tr>
+      </thead>
+    )}
+    <tbody>
+      {rows.map((row) => (
+        <tr>{(row.cells ?? []).map((cell) => <td>{cell}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .atbl__wrap { overflow-x: auto; margin-block: 1.75rem; }
+  .atbl { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+  .atbl th, .atbl td {
+    border-top: 1px solid var(--rule);
+    padding: 0.7rem 0.9rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .atbl th {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-top: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+</style>

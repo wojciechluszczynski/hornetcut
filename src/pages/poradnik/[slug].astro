@@ -1,0 +1,32 @@
+---
+/**
+ * Guide articles, one page per article, content from the CMS.
+ *
+ * These used to be three hand-written pages. The layout and the wrapper are
+ * unchanged; only the body now comes from Sanity so Piotr can edit it.
+ */
+import Article from '../../layouts/Article.astro';
+import ArticleBody from '../../components/ArticleBody.astro';
+
+export async function getStaticPaths() {
+  const { site } = await import('../../data/site');
+  return (site.articles ?? []).map((a: any) => ({
+    params: { slug: a.slug },
+    props: { article: a },
+  }));
+}
+
+const { article } = Astro.props;
+---
+
+<Article
+  title={article.title}
+  description={article.description}
+  h1={article.h1}
+  lead={article.lead}
+  published={article.published}
+  readMin={article.readMin}
+  slug={article.slug}
+>
+  <ArticleBody value={article.body} />
+</Article>

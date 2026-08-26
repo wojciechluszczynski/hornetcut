@@ -6,29 +6,13 @@ import { site } from '../../data/site';
 
 const crumbs = [{ label: 'Poradnik', href: '/poradnik/' }];
 
-const posts = [
-  {
-    slug: 'regulacja-wysokosci-studzienki',
-    title: 'Regulacja wysokości studzienki w jezdni',
-    lead: 'Kiedy studzienka wymaga regulacji, jak przebiega robota i dlaczego sposób rozbiórki decyduje o trwałości naprawy.',
-    read: 6,
-    date: '2026-08-06',
-  },
-  {
-    slug: 'wymiana-wlazu-kanalizacyjnego',
-    title: 'Wymiana włazu kanalizacyjnego w jezdni',
-    lead: 'Po czym poznać, że właz nadaje się do wymiany, jakiej klasy szukać i gdzie najczęściej popełnia się błąd, który wraca po zimie.',
-    read: 5,
-    date: '2026-08-06',
-  },
-  {
-    slug: 'ciecie-po-obwodzie-czy-rozkuwanie',
-    title: 'Cięcie po obwodzie czy rozkuwanie młotem?',
-    lead: 'Trzy metody otwarcia nawierzchni wokół studzienki i to, co każda robi z krawędzią, ilością odpadu i czasem zajęcia pasa.',
-    read: 5,
-    date: '2026-08-06',
-  },
-];
+const posts = site.articles.map((a) => ({
+  slug: a.slug,
+  title: a.title,
+  lead: a.lead,
+  readMin: a.readMin,
+  published: a.published,
+}));
 
 const schema = [
   {

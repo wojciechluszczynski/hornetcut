@@ -1,0 +1,19 @@
+---
+/**
+ * Renders a guide article stored as Portable Text.
+ *
+ * Two block types are ours rather than Sanity's: `table`, and `diagram`, which
+ * places an authored SVG drawing that lives in the repository. Editors choose
+ * where a drawing goes; they do not paste artwork.
+ */
+import { PortableText } from 'astro-portabletext';
+import ArticleTable from './ArticleTable.astro';
+import RoadSection from './RoadSection.astro';
+
+interface Props { value: unknown[] }
+const { value } = Astro.props;
+---
+<PortableText
+  value={value}
+  components={{ type: { table: ArticleTable, diagram: RoadSection } }}
+/>
