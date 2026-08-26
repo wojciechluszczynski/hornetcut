@@ -161,6 +161,31 @@ export const site = {
       : staticSite.people.quote,
   },
 
+  uses: {
+    ...staticSite.uses,
+    eyebrow: keep(h?.sectionHeadings?.usesEyebrow, staticSite.uses.eyebrow),
+    h2: keep(h?.sectionHeadings?.usesHeading, staticSite.uses.h2),
+    items: keep(
+      h?.uses?.map((u: any, i: number) => ({
+        title: u.title,
+        body: u.body,
+        icon: u.icon ?? staticSite.uses.items[i]?.icon,
+      })),
+      staticSite.uses.items,
+    ),
+  },
+
+  maker: {
+    ...staticSite.maker,
+    eyebrow: keep(h?.sectionHeadings?.makerEyebrow, staticSite.maker.eyebrow),
+    h2: keep(h?.sectionHeadings?.makerHeading, staticSite.maker.h2),
+    body: keep(h?.makerBody, staticSite.maker.body),
+    facts: keep(
+      h?.makerFacts?.map((f: any) => ({k: f.label, v: f.value})),
+      staticSite.maker.facts,
+    ),
+  },
+
   equipment: {
     ...staticSite.equipment,
     items: keep(
