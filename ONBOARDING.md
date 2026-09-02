@@ -79,3 +79,5 @@ wersji, zamiast pokazać się w połowie.
 | hosting | Hostinger, katalog `public_html` |
 | panel treści | Sanity, dataset `hornetcut` |
 | budowanie i wdrożenie | GitHub Actions w tym repo |
+
+<!-- test crona 15:03 -->
