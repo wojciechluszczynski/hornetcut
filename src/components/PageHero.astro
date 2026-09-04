@@ -1,4 +1,5 @@
 ---
+import { localizeHref } from '../lib/i18n';
 import Figure from './Figure.astro';
 
 interface Props {
@@ -28,12 +29,12 @@ const mark = sheetLabel ?? crumbs.at(-1)?.label ?? '';
     </p>
 
     <nav class="phero__crumbs mono" aria-label="Okruszki">
-      <a href="/">Strona główna</a>
+      <a href={localizeHref("/")}>Strona główna</a>
       {
         crumbs.map((c, i) => (
           <>
             <span aria-hidden="true">/</span>
-            {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : <a href={c.href}>{c.label}</a>}
+            {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : <a href={localizeHref(c.href)}>{c.label}</a>}
           </>
         ))
       }
