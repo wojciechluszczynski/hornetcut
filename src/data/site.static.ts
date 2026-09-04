@@ -26,7 +26,7 @@ export const site = {
   contact: {
     // Adres za fijalo.pl. NIP i REGON potwierdzone stopką karty katalogowej
     // producenta, więc bez znacznika niepewności.
-    company: 'Fijalo-Poland Cyprian Fijało',
+    company: 'FIJALO-POLAND Cyprian Fijało',
     brandLine: 'Producent maszyn dla budownictwa podziemnego',
     phone: '+48 534 979 628',
     phoneHref: '+48534979628',
@@ -246,7 +246,7 @@ export const site = {
 
   faq: {
     eyebrow: 'FAQ',
-    h2: 'Najczęściej pytane',
+    h2: 'FAQ',
     items: [
       {
         q: 'Na jakich studzienkach pracuje HornetCut R650?',
@@ -314,7 +314,7 @@ export const site = {
   maker: {
     eyebrow: 'Producent',
     h2: 'Kto za tym stoi?',
-    body: 'Fijalo-Poland z Gdańska, polski producent maszyn do robót bezwykopowych. Ich sterowana maszyna przeciskowa ALUSTEER jeździ na targi branżowe i na szkolenia w terenie. Ta sama firma, ten sam serwis, ten sam numer telefonu, pod który dzwonisz po części.',
+    body: 'FIJALO-POLAND z Gdańska, polski producent maszyn do robót bezwykopowych. Ich sterowana maszyna przeciskowa ALUSTEER jeździ na targi branżowe i na szkolenia w terenie. Ta sama firma, ten sam serwis, ten sam numer telefonu, pod który dzwonisz po części.',
     facts: [
       { k: 'Siedziba', v: 'Gdańsk, Kochanowskiego 130' },
       { k: 'Druga marka', v: 'ALUSTEER, przeciski sterowane' },
@@ -352,7 +352,7 @@ export const site = {
   /** Lista ujęć do dosłania. Kolejność zgodna z układem strony. */
   photos: {
     // Zdjęcia z 21.07.2026, materiały producenta. Maszyna jest czerwono-czarna,
-    // producent Fijalo-Poland, oznaczenie fabryczne WOSK.650R LP.
+    // producent FIJALO-POLAND, oznaczenie fabryczne WOSK.650R LP.
     hero: {
       id: 'FOTO 01', desc: 'Maszyna w cięciu wokół włazu', ratio: '16:9',
       src: '/foto/r-cut.webp',
