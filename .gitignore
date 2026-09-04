@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # internal working notes (budget, contacts, tooling) — not part of the deliverable
 HANDOFF.md
+.i18n-build/

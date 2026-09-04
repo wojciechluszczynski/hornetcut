@@ -1,4 +1,5 @@
 ---
+import { localizeHref } from '../lib/i18n';
 import Base from './Base.astro';
 import NextLinks from '../components/NextLinks.astro';
 import { site } from '../data/site';
@@ -17,7 +18,7 @@ const { title, description, h1, lead, published, updated, readMin, slug } = Astr
 
 const crumbs = [
   { label: 'Poradnik', href: '/poradnik/' },
-  { label: h1, href: `/poradnik/${slug}/` },
+  { label: h1, href: localizeHref(`/poradnik/${slug}/`) },
 ];
 
 const schema = [
@@ -30,7 +31,7 @@ const schema = [
     inLanguage: 'pl-PL',
     author: { '@id': `${site.meta.url}/#organizacja` },
     publisher: { '@id': `${site.meta.url}/#organizacja` },
-    mainEntityOfPage: `${site.meta.url}/poradnik/${slug}/`,
+    mainEntityOfPage: new URL(localizeHref(`/poradnik/${slug}/`), site.meta.url).href,
     about: { '@id': `${site.meta.url}/#produkt` },
   },
 ];
@@ -44,9 +45,9 @@ const schema = [
 
     <header class="art__head">
       <nav class="art__crumbs mono" aria-label="Okruszki">
-        <a href="/">Start</a>
+        <a href={localizeHref("/")}>Start</a>
         <span aria-hidden="true">/</span>
-        <a href="/poradnik/">Poradnik</a>
+        <a href={localizeHref("/poradnik/")}>Poradnik</a>
       </nav>
       <h1 class="display-l art__h1">{h1}</h1>
       <p class="lead muted art__lead">{lead}</p>
@@ -73,7 +74,7 @@ const schema = [
         <p class="lead muted">
           Napisz, ile studzienek, jaka nawierzchnia i jaki termin. Odpowiemy ceną i doborem tarczy.
         </p>
-        <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
+        <a href={localizeHref("/kontakt/")} class="btn btn--solid">Zapytaj o cenę</a>
       </div>
 
       <NextLinks
