@@ -276,4 +276,52 @@ const DIM_Y = 500;
 
   if (slider) render(Number(slider.value) * 2);
   slider?.addEventListener('input', () => render(Number(slider.value) * 2));
+
+  // Sam suwak bywa niezauwazony: ludzie nie domyslaja sie, ze rysunek reaguje.
+  // Przy pierwszym wejsciu w kadr przejezdza wiec raz sam, od najmniejszej
+  // wartosci do wyjsciowej, i wraca do bezruchu. Dotkniecie przerywa pokaz.
+  if (slider) {
+    const start = Number(slider.value);
+    const min = Number(slider.min);
+    let pokazPoszedl = false;
+    let klatka = 0;
+
+    const przerwij = () => {
+      pokazPoszedl = true;
+      if (klatka) cancelAnimationFrame(klatka);
+    };
+    slider.addEventListener('pointerdown', przerwij, { once: true });
+    slider.addEventListener('keydown', przerwij, { once: true });
+
+    const pokaz = () => {
+      if (pokazPoszedl) return;
+      pokazPoszedl = true;
+      const czas = 1600;
+      const t0 = performance.now();
+      const krok = (teraz: number) => {
+        const p = Math.min((teraz - t0) / czas, 1);
+        const e = 1 - Math.pow(1 - p, 3);
+        const v = Math.round(min + (start - min) * e);
+        slider.value = String(v);
+        render(v * 2);
+        if (p < 1) klatka = requestAnimationFrame(krok);
+      };
+      slider.value = String(min);
+      render(min * 2);
+      klatka = requestAnimationFrame(krok);
+    };
+
+    const ruch = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!ruch.matches && 'IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((wpisy) => {
+        for (const w of wpisy) {
+          if (w.isIntersecting) {
+            obs.disconnect();
+            pokaz();
+          }
+        }
+      }, { threshold: 0.45 });
+      obs.observe(slider.closest('.dgm') ?? slider);
+    }
+  }
 </script>

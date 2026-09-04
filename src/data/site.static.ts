@@ -405,6 +405,7 @@ export const site = {
      własnych proporcjach — wcześniej wszystkie szły przez sztywną
      wysokość i cover, przez co ujęcia 4:3 traciły ponad połowę kadru. */
   media: {
+    hero: { src: '/foto/r-machine.webp', alt: 'Wycinarka zamocowana w pierścieniu włazu, w nawierzchni widoczny wycięty okrąg', w: 1600, h: 900 },
     pain: { src: '/foto/r-ring2.webp', alt: 'Okrąg wycięty w betonowej nawierzchni wokół włazu', w: 1600, h: 900 },
     dusk: { src: '/foto/r-dust.webp', alt: 'Cięcie wokół studzienki na czynnej drodze, unoszący się pył', w: 1600, h: 900 },
     footer: { src: '/foto/r-site.webp', alt: 'Stanowisko pracy przy studzience, bus serwisowy w tle', w: 1600, h: 900 },
