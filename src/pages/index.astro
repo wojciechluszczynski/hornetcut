@@ -293,7 +293,9 @@ const schema = [
             ))
           }
         </div>
-        <PhotoSlot {...site.photos.hero} class="uses__photo" />
+        {/* Nie hero: to samo zdjecie stoi juz na gorze strony i klient slusznie
+            zauwazyl, ze sie dubluje. Tutaj pasuje szeroki plan stanowiska. */}
+        <PhotoSlot {...site.photos.edge} class="uses__photo" />
       </div>
     </div>
   </section>
