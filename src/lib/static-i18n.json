@@ -1,0 +1,214 @@
+{
+ "Po nałożeniu nowej warstwy ścieralnej właz zostaje poniżej poziomu jezdni. Cięcie po obwodzie pozwala zdjąć pierścień nawierzchni, wyregulować właz na docelową rzędną i uzupełnić masę tylko w wyciętym pierścieniu. Obszar naprawy jest przewidywalny, a krawędź pionowa, więc styk trzyma szczelność.": {
+  "en": "Once a new wearing course is laid, the cover sits below the road level. A circular cut lets you lift out the ring of pavement, set the cover to its final level and fill only the ring you cut. The repair area is predictable and the edge is vertical, so the joint stays watertight.",
+  "de": "Nach dem Einbau einer neuen Deckschicht liegt die Abdeckung unter dem Fahrbahnniveau. Mit dem Ringschnitt heben Sie den Fahrbahnring heraus, regulieren die Abdeckung auf die Sollhöhe und füllen nur den ausgeschnittenen Ring wieder auf. Die Reparaturfläche ist berechenbar und die Kante senkrecht, die Fuge bleibt dicht."
+ },
+ "Przy awarii liczy się czas wejścia i czas odtworzenia. Maszyna nie wymaga przygotowania podłoża ani kotwienia, więc od dojazdu do pierwszego cięcia mija tyle, ile zajmuje ustawienie uchwytu w pierścieniu włazu.": {
+  "en": "In a failure what counts is how fast you get in and how fast you restore. The machine needs no ground preparation and no anchoring, so the time from arrival to the first cut is the time it takes to set the clamp in the manhole frame.",
+  "de": "Bei einer Störung zählen Zugriffszeit und Wiederherstellungszeit. Die Maschine braucht weder Untergrundvorbereitung noch Verankerung, von der Ankunft bis zum ersten Schnitt vergeht also nur die Zeit, die das Aufspannen im Schachtrahmen dauert."
+ },
+ "Dostęp do zasuw, hydrantów i armatury schowanej pod nawierzchnią. Punktowa wycinka ogranicza zakres odtworzenia i skraca czas zajęcia pasa ruchu, co ma bezpośrednie przełożenie na koszt zajęcia terenu.": {
+  "en": "Access to valves, hydrants and fittings buried under the surface. A spot cut-out limits how much has to be restored and shortens the lane closure, which feeds straight into the cost of occupying the road.",
+  "de": "Zugang zu Schiebern, Hydranten und Armaturen unter der Decke. Ein punktueller Ausschnitt begrenzt den Wiederherstellungsumfang und verkürzt die Sperrzeit, was sich direkt auf die Kosten der Flächennutzung auswirkt."
+ },
+ "Przy frezowaniu i układaniu nowej nawierzchni studzienki obsługuje się seryjnie. Maszyna na dedykowanym wózku przejeżdża między kolejnymi włazami, a raz ustawiona średnica wraca przy każdej następnej.": {
+  "en": "When milling and laying a new surface, manholes are handled one after another. The machine rolls between covers on its trolley, and the diameter you set once comes back at every following one.",
+  "de": "Beim Fräsen und beim Einbau einer neuen Decke werden die Schächte der Reihe nach abgearbeitet. Die Maschine fährt auf ihrem Wagen von Abdeckung zu Abdeckung, der einmal eingestellte Durchmesser gilt am nächsten Schacht wieder."
+ },
+ "Skorodowany właz albo pęknięty pierścień odciążający wymaga dostępu do korpusu studni. Wycięcie okręgu odsłania konstrukcję bez rozkuwania nawierzchni młotem, więc korpus studni nie dostaje udarów.": {
+  "en": "A corroded cover or a cracked load-relief ring means getting at the shaft. Cutting a circle exposes the structure without breaking the surface with a hammer, so the shaft takes no impact.",
+  "de": "Eine korrodierte Abdeckung oder ein gerissener Entlastungsring erfordert Zugang zum Schachtkörper. Der Kreisschnitt legt die Konstruktion frei, ohne die Decke aufzustemmen, der Schachtkörper bekommt also keine Schläge ab."
+ },
+ "Krawędź po młocie jest poszarpana, więc styk ze świeżą masą przepuszcza wodę i pęka po pierwszej zimie. Cięcie po obwodzie zdejmuje tylko pierścień wokół włazu i zostawia równą, pionową krawędź.": {
+  "en": "A breaker leaves a ragged edge, so the joint with fresh asphalt lets water through and cracks after the first winter. A circular cut takes out only the ring around the manhole and leaves an even, vertical edge.",
+  "de": "Der Abbruchhammer hinterlässt eine ausgefranste Kante, die Fuge zum frischen Mischgut lässt Wasser durch und reißt nach dem ersten Winter. Der Ringschnitt nimmt nur den Ring um den Schacht heraus und hinterlässt eine gleichmäßige, senkrechte Kante."
+ },
+ "Rozkuwanie młotem zabiera więcej nawierzchni, niż wymaga tego regulacja studzienki. Więcej gruzu do wywiezienia, więcej masy do wbudowania, dłuższe zajęcie pasa ruchu.": {
+  "en": "Breaking out with a hammer takes more surface than adjusting a manhole requires. More rubble to haul away, more mix to lay, a longer lane closure.",
+  "de": "Das Aufstemmen nimmt mehr Decke weg, als die Schachtregulierung verlangt. Mehr Bauschutt zum Abfahren, mehr Mischgut zum Einbauen, längere Sperrung."
+ },
+ "Nawierzchnie betonowe i asfaltowe na terenach przemysłowych. Naprawa punktowa zamiast wymiany całych płyt, przy zachowanym ruchu na pozostałej części placu.": {
+  "en": "Concrete and asphalt surfaces on industrial sites. A spot repair instead of replacing whole slabs, with traffic still running on the rest of the yard.",
+  "de": "Beton- und Asphaltflächen auf Industriegeländen. Punktuelle Reparatur statt Austausch ganzer Platten, während der Verkehr auf der übrigen Fläche weiterläuft."
+ },
+ "Napełnij zbiornik wody przed pracą. Tarcza chłodzona jest wodą z maszyny, a brak wody w osłonie tarczy to typowa przyczyna usterki.": {
+  "en": "Fill the water tank before work. The blade is cooled with water from the machine, and no water in the blade guard is a common cause of failure.",
+  "de": "Füllen Sie den Wassertank vor der Arbeit. Die Scheibe wird mit Wasser aus der Maschine gekühlt, fehlendes Wasser in der Scheibenabdeckung ist eine typische Schadensursache."
+ },
+ "Nie samo cięcie. Kosztuje wszystko, co trzeba zrobić dookoła, kiedy wycinka wyjdzie większa i brzydsza, niż powinna.": {
+  "en": "Not the cutting itself. What costs is everything you have to do around it once the cut-out turns out bigger and uglier than it should be.",
+  "de": "Nicht das Schneiden selbst. Teuer wird alles, was drumherum anfällt, wenn der Ausschnitt größer und unsauberer ausfällt als nötig."
+ },
+ "Producent zastrzega prawo do zmian konstrukcyjnych. Dane nie stanowią oferty w rozumieniu Kodeksu cywilnego.": {
+  "en": "The manufacturer reserves the right to make design changes. This data does not constitute an offer within the meaning of the Polish Civil Code.",
+  "de": "Der Hersteller behält sich Konstruktionsänderungen vor. Die Angaben stellen kein Angebot im Sinne des polnischen Zivilgesetzbuchs dar."
+ },
+ "Maszyna z bliska, materiał producenta. Film promocyjny z budowy zastąpi go po nagraniu.": {
+  "en": "The machine close up, manufacturer footage. A promotional film from site will replace it once shot.",
+  "de": "Die Maschine aus der Nähe, Herstellermaterial. Ein Imagefilm von der Baustelle ersetzt es nach der Aufnahme."
+ },
+ "Sprawdź, czy pierścień włazu jest stabilny i czy uchwyt krzyżowy ma pełne oparcie.": {
+  "en": "Check that the manhole frame is stable and that the cross clamp has full support.",
+  "de": "Prüfen Sie, ob der Schachtrahmen stabil ist und die Kreuzhalterung voll aufliegt."
+ },
+ "Nie udało się wysłać formularza. Zadzwoń albo napisz bezpośrednio na adres e-mail.": {
+  "en": "The form could not be sent. Call us or write directly to the e-mail address.",
+  "de": "Das Formular konnte nicht gesendet werden. Rufen Sie an oder schreiben Sie direkt an die E-Mail-Adresse."
+ },
+ "Pracuj w środkach ochrony: ochronniki słuchu, okulary, rękawice, obuwie ochronne.": {
+  "en": "Work in protective equipment: ear defenders, goggles, gloves, safety footwear.",
+  "de": "Arbeiten Sie mit Schutzausrüstung: Gehörschutz, Schutzbrille, Handschuhe, Sicherheitsschuhe."
+ },
+ "Ustaw promień i głębokość, zanim ruszysz z ramą wokół studzienki.": {
+  "en": "Set the radius and the depth before you start moving the frame around the manhole.",
+  "de": "Stellen Sie Radius und Tiefe ein, bevor Sie den Rahmen um den Schacht bewegen."
+ },
+ "Zapytanie wysłane. Odezwiemy się w ciągu jednego dnia roboczego.": {
+  "en": "Enquiry sent. We will get back to you within one working day.",
+  "de": "Anfrage gesendet. Wir melden uns innerhalb eines Werktags."
+ },
+ "Place manewrowe, parkingi i tereny zakładowe": {
+  "en": "Yards, car parks and industrial sites",
+  "de": "Betriebsflächen, Parkplätze und Werksgelände"
+ },
+ "Odpowiadamy w ciągu jednego dnia roboczego.": {
+  "en": "We reply within one working day.",
+  "de": "Wir antworten innerhalb eines Werktags."
+ },
+ "Wymiana włazów i pierścieni odciążających": {
+  "en": "Cover and load-relief ring replacement",
+  "de": "Tausch von Abdeckungen und Entlastungsringen"
+ },
+ "Instrukcja obsługi i DTR WOSK.650R LP": {
+  "en": "Operating manual and technical documentation WOSK.650R LP",
+  "de": "Betriebsanleitung und technische Dokumentation WOSK.650R LP"
+ },
+ "Sieci wod-kan, ciepłownicze i gazowe": {
+  "en": "Water, sewer, heating and gas networks",
+  "de": "Wasser-, Abwasser-, Fernwärme- und Gasnetze"
+ },
+ "wałek napędowy z tarczami tnącymi": {
+  "en": "drive shaft with cutting blades",
+  "de": "Antriebswelle mit Trennscheiben"
+ },
+ "Wycinarka okręgów do studzienek": {
+  "en": "Circular cutter for sewer manholes",
+  "de": "Kreisschneider für Kanalschächte"
+ },
+ "Regulacja wysokości studzienek": {
+  "en": "Manhole height adjustment",
+  "de": "Schachthöhenregulierung"
+ },
+ "dedykowany wózek transportowy": {
+  "en": "dedicated transport trolley",
+  "de": "zugehöriger Transportwagen"
+ },
+ "Rozruch ręczny i elektryczny": {
+  "en": "Manual and electric start",
+  "de": "Hand- und Elektrostart"
+ },
+ "Maksymalna głębokość cięcia": {
+  "en": "Maximum cutting depth",
+  "de": "Maximale Schnitttiefe"
+ },
+ "Wymiana włazów i pierścieni": {
+  "en": "Cover and ring replacement",
+  "de": "Tausch von Abdeckungen und Ringen"
+ },
+ "Pojemność zbiornika paliwa": {
+  "en": "Fuel tank capacity",
+  "de": "Kraftstofftankinhalt"
+ },
+ "Remonty i przebudowy dróg": {
+  "en": "Road repairs and rebuilds",
+  "de": "Straßensanierung und Umbau"
+ },
+ "pomarańczowe, demontowane": {
+  "en": "orange, removable",
+  "de": "orange, abnehmbar"
+ },
+ "Maksymalny promień cięcia": {
+  "en": "Maximum cutting radius",
+  "de": "Maximaler Schnittradius"
+ },
+ "Zakres średnic studzienek": {
+  "en": "Manhole diameter range",
+  "de": "Durchmesserbereich der Schächte"
+ },
+ "Deklaracja zgodności CE": {
+  "en": "CE declaration of conformity",
+  "de": "CE-Konformitätserklärung"
+ },
+ "Wózek przejezdny kołowy": {
+  "en": "Wheeled transport trolley",
+  "de": "Fahrbarer Transportwagen"
+ },
+ "kołowy, w standardzie": {
+  "en": "wheeled, standard",
+  "de": "fahrbar, serienmäßig"
+ },
+ "Polityka prywatności": {
+  "en": "Privacy policy",
+  "de": "Datenschutzerklärung"
+ },
+ "ręczny i elektryczny": {
+  "en": "manual and electric",
+  "de": "Hand und elektrisch"
+ },
+ "Zanim zaczniesz ciąć": {
+  "en": "Before you start cutting",
+  "de": "Bevor Sie zu schneiden beginnen"
+ },
+ "Światło ostrzegawcze": {
+  "en": "Warning light",
+  "de": "Warnleuchte"
+ },
+ "Zapytanie wysłane": {
+  "en": "Enquiry sent",
+  "de": "Anfrage gesendet"
+ },
+ "Wózek przejezdny": {
+  "en": "Transport trolley",
+  "de": "Transportwagen"
+ },
+ "Wyślij zapytanie": {
+  "en": "Send enquiry",
+  "de": "Anfrage senden"
+ },
+ "Posuw głębokości": {
+  "en": "Depth feed",
+  "de": "Tiefenvorschub"
+ },
+ "Średnica cięcia": {
+  "en": "Cutting diameter",
+  "de": "Schnittdurchmesser"
+ },
+ "Cięcie na mokro": {
+  "en": "Wet cutting",
+  "de": "Nassschnitt"
+ },
+ "Zapytaj o cenę": {
+  "en": "Request a quote",
+  "de": "Preis anfragen"
+ },
+ "Jak to działa": {
+  "en": "How it works",
+  "de": "Funktionsweise"
+ },
+ "Układ tnący": {
+  "en": "Cutting system",
+  "de": "Schneidsystem"
+ },
+ "ręczny": {
+  "en": "manual",
+  "de": "manuell"
+ },
+ "Cięcie": {
+  "en": "Cutting",
+  "de": "Schneiden"
+ },
+ "Napęd": {
+  "en": "Drive",
+  "de": "Antrieb"
+ }
+}

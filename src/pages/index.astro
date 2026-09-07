@@ -100,8 +100,8 @@ const schema = [
       <div class="hero__text">
         <p class="lead muted hero__lead">{site.hero.lead}</p>
         <div class="hero__cta">
-          <a href={site.hero.ctaPrimary.href} class="btn btn--solid">{site.hero.ctaPrimary.label}</a>
-          <a href={site.hero.ctaSecondary.href} class="link-amber">{site.hero.ctaSecondary.label}</a>
+          <a href={site.hero.ctaPrimary.href} class="btn btn--solid">{ui("quote")}</a>
+          <a href={site.hero.ctaSecondary.href} class="link-amber">{ui("ctaSpecs")}</a>
         </div>
       </div>
 
@@ -164,7 +164,7 @@ const schema = [
       <figure class="why__shot reveal">
         <PhotoSlot {...site.photos.ring} />
         <figcaption class="mono why__cap">
-          Pierścień nawierzchni zdjęty wokół włazu. Krawędź pionowa, korpus studni nietknięty.
+          {ui("ringCaption")}
         </figcaption>
       </figure>
 
@@ -332,8 +332,7 @@ const schema = [
         <div class="specs__left">
           <h2 class="display-l">{site.specs.h2}</h2>
           <p class="muted specs__note">
-            Dane katalogowe maszyny w konfiguracji standardowej, wprost z karty producenta
-            i instrukcji obsługi WOSK.650R LP.
+            {ui("specsNote")}
           </p>
           <a href={localizeHref("/dane-techniczne/")} class="link-amber">{ui("fullSpec")}</a>
         </div>
