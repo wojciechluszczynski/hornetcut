@@ -58,7 +58,9 @@ const schema = [
       <p class="smark"><b>{String(p.blocks.length + 1).padStart(2, '0')}</b><span>Zapytanie</span></p>
 
       <div class="tech">
-        <PhotoSlot {...site.photos.transport} />
+        {/* Nie transport: w CMS-ie 'transport' i 'lowangle' wskazuja ten sam
+            plik, a 'lowangle' stoi juz w naglowku tej podstrony. */}
+        <PhotoSlot {...site.photos.detail} />
         <div class="tech__cta">
           <p class="tech__ctaTxt">
             {ui("specsCta")}
