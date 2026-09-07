@@ -1,5 +1,5 @@
 ---
-import { localizeHref } from '../../lib/i18n';
+import { localizeHref, ui } from '../../lib/i18n';
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import NextLinks from '../../components/NextLinks.astro';
@@ -33,7 +33,7 @@ const schema = [
 ---
 
 <Base
-  title="Poradnik: studzienki, włazy, nawierzchnia"
+  title={ui("guideTitle")}
   description="Praktyczne teksty o regulacji wysokości studzienek, wymianie włazów kanalizacyjnych i metodach otwierania nawierzchni w jezdni."
   schema={schema}
   crumbs={crumbs}
@@ -72,8 +72,8 @@ const schema = [
       <p class="smark"><b>02</b><span>Kontakt</span></p>
 
       <div class="cta">
-        <h2 class="display-l">Pytanie, którego tu nie ma?</h2>
-        <p class="lead muted">Napisz albo zadzwoń. Odpowiadamy w ciągu jednego dnia roboczego.</p>
+        <h2 class="display-l">{ui("missingQ")}</h2>
+        <p class="lead muted">{ui("writeOrCall")}</p>
         <a href={localizeHref("/kontakt/")} class="btn btn--solid">Zadaj pytanie</a>
       </div>
 

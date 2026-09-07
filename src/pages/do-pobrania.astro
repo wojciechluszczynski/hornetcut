@@ -1,5 +1,5 @@
 ---
-import { localizeHref } from '../lib/i18n';
+import { localizeHref , ui } from '../lib/i18n';
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import NextLinks from '../components/NextLinks.astro';
@@ -29,7 +29,7 @@ const crumbs = [{ label: 'Do pobrania', href: '/do-pobrania/' }];
                     plik. Pozostałe wysyłamy na zapytanie i piszemy to wprost. */}
                 {d.file.startsWith('/') ? (
                   <a href={d.file} class="link-amber" target="_blank" rel="noopener">
-                    Otwórz PDF
+                    {ui("openPdf")}
                   </a>
                 ) : (
                   <span class="muted">{d.file}</span>
@@ -40,7 +40,7 @@ const crumbs = [{ label: 'Do pobrania', href: '/do-pobrania/' }];
         }
       </ul>
       <p class="dl__note mono">
-        Potrzebujesz dokumentu, którego tu nie ma? <a href={localizeHref("/kontakt/")} class="link-amber">Napisz</a>
+        {ui("missingDoc")} <a href={localizeHref("/kontakt/")} class="link-amber">Napisz</a>
       </p>
           <NextLinks items={[
         { label: 'Dane techniczne', href: '/dane-techniczne/', note: 'Parametry maszyny bez pobierania PDF.' },

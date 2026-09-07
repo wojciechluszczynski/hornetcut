@@ -1,4 +1,5 @@
 ---
+import { ui } from '../lib/i18n';
 /**
  * Przekrój nawierzchni przez właz studzienki. Pokazuje, co dokładnie zabiera
  * cięcie na 100 mm i gdzie kończy się wycinka. Rysunek techniczny, nie ilustracja.
@@ -59,29 +60,29 @@
       <line x1="318" y1="80" x2="352" y2="80" stroke-dasharray="3 3"></line>
       <line x1="318" y1="158" x2="352" y2="158" stroke-dasharray="3 3"></line>
       <text x="296" y="114" text-anchor="end" class="rs__t rs__t--acc">100 mm</text>
-      <text x="296" y="132" text-anchor="end" class="rs__t rs__t--s">GŁĘBOKOŚĆ CIĘCIA</text>
+      <text x="296" y="132" text-anchor="end" class="rs__t rs__t--s">{ui("secCutDepth")}</text>
     </g>
 
     {/* opisy warstw po prawej */}
     <g class="rs__labels">
       <line x1="860" y1="96" x2="874" y2="96"></line>
-      <text x="882" y="101" class="rs__t rs__t--s">WARSTWA ŚCIERALNA</text>
+      <text x="882" y="101" class="rs__t rs__t--s">{ui("secWearing")}</text>
       <line x1="860" y1="135" x2="874" y2="135"></line>
-      <text x="882" y="140" class="rs__t rs__t--s">WARSTWA WIĄŻĄCA</text>
+      <text x="882" y="140" class="rs__t rs__t--s">{ui("secBinder")}</text>
       <line x1="860" y1="193" x2="874" y2="193"></line>
       <text x="882" y="198" class="rs__t rs__t--s">PODBUDOWA</text>
       <line x1="860" y1="300" x2="874" y2="300"></line>
       <text x="882" y="305" class="rs__t rs__t--s">GRUNT RODZIMY</text>
 
-      <text x="505" y="70" text-anchor="middle" class="rs__t rs__t--s">WŁAZ</text>
-      <text x="505" y="146" text-anchor="middle" class="rs__t rs__t--s">PIERŚCIEŃ ODCIĄŻAJĄCY</text>
+      <text x="505" y="70" text-anchor="middle" class="rs__t rs__t--s">{ui("secManhole")}</text>
+      <text x="505" y="146" text-anchor="middle" class="rs__t rs__t--s">{ui("secRelief")}</text>
       <text x="505" y="330" text-anchor="middle" class="rs__t rs__t--s">KORPUS STUDNI</text>
 
       {/* opis wycinki wyniesiony nad przekrój */}
       <path d="M382 78 V40" class="rs__lead" stroke-dasharray="3 4"></path>
       <path d="M628 78 V40" class="rs__lead" stroke-dasharray="3 4"></path>
       <line x1="382" y1="40" x2="628" y2="40" class="rs__lead"></line>
-      <text x="505" y="28" text-anchor="middle" class="rs__t rs__t--acc rs__t--s">WYCIĘTY PIERŚCIEŃ NAWIERZCHNI</text>
+      <text x="505" y="28" text-anchor="middle" class="rs__t rs__t--acc rs__t--s">{ui("secCutRing")}</text>
     </g>
   </svg>
 

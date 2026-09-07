@@ -1,5 +1,5 @@
 ---
-import { localizeHref } from '../lib/i18n';
+import { localizeHref, ui } from '../lib/i18n';
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import NextLinks from '../components/NextLinks.astro';
@@ -38,7 +38,7 @@ const schema = [
           <p class="faq-page__txt">
             Zadzwoń albo wyślij zapytanie. Odpowiadamy w ciągu jednego dnia roboczego.
           </p>
-          <a href={localizeHref("/kontakt/")} class="btn btn--solid">Zapytaj o cenę</a>
+          <a href={localizeHref("/kontakt/")} class="btn btn--solid">{ui("quote")}</a>
         </aside>
       </div>
 

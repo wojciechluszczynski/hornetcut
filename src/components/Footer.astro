@@ -1,5 +1,5 @@
 ---
-import { localizeHref } from '../lib/i18n';
+import { localizeHref, ui } from '../lib/i18n';
 import { site } from '../data/site';
 import { plain } from '../lib/val';
 import Val from './Val.astro';
@@ -17,7 +17,7 @@ const email = plain(site.contact.email);
           <span class="wordmark__logo" aria-hidden="true"></span>
           <span class="wordmark__suffix mono" aria-hidden="true">Cut</span>
         </p>
-        <p class="ftr__claim">Wycinarka okręgów wokół studzienek kanalizacyjnych.</p>
+        <p class="ftr__claim">{ui("tagline")}</p>
 
         <a href="https://fijalo.pl/" class="ftr__maker" rel="noopener">
           <span class="label">Producent</span>
@@ -56,8 +56,8 @@ const email = plain(site.contact.email);
     </div>
 
     <div class="ftr__bottom">
-      <p class="mono">© {year} <Val text={site.contact.company} />. Wszystkie prawa zastrzeżone.</p>
-      <a href={localizeHref("/polityka-prywatnosci/")} class="mono">Polityka prywatności</a>
+      <p class="mono">© {year} <Val text={site.contact.company} />{ui("rights")}</p>
+      <a href={localizeHref("/polityka-prywatnosci/")} class="mono">{ui("privacy")}</a>
     </div>
   </div>
 </footer>

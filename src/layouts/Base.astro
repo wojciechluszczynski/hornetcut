@@ -6,7 +6,7 @@ import Tracking from '../components/Tracking.astro';
 import ConsentBanner from '../components/ConsentBanner.astro';
 import { site } from '../data/site';
 import { plain } from '../lib/val';
-import { LANG, LOCALES, BCP47, OG_LOCALE, localizeHref, t } from '../lib/i18n';
+import { LANG, LOCALES, BCP47, OG_LOCALE, localizeHref, t, ui } from '../lib/i18n';
 // Hashed URLs of the two font files the first paint actually needs.
 import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 import archivoLatinExt from '@fontsource-variable/archivo/files/archivo-latin-ext-wdth-normal.woff2?url';
@@ -143,7 +143,7 @@ const graph = {
   </head>
 
   <body>
-    <a href="#tresc" class="skip">Przejdź do treści</a>
+    <a href="#tresc" class="skip">{ui("skip")}</a>
     <Header />
     <main id="tresc">
       <slot />
@@ -151,8 +151,8 @@ const graph = {
     <Footer />
 
     <div class="sticky-cta">
-      <a href={`tel:${plain(site.contact.phoneHref)}`} class="sticky-cta__phone mono">Zadzwoń</a>
-      <a href={localizeHref("/kontakt/")} class="sticky-cta__ask mono">Zapytaj o cenę</a>
+      <a href={`tel:${plain(site.contact.phoneHref)}`} class="sticky-cta__phone mono">{ui("call")}</a>
+      <a href={localizeHref("/kontakt/")} class="sticky-cta__ask mono">{ui("quote")}</a>
     </div>
 
     <style is:global>

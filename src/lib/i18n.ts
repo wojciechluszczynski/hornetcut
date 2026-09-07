@@ -9,6 +9,7 @@
  * router did.
  */
 import routes from './routes.json'
+import strings from './ui.json'
 
 export const LOCALES = ['pl', 'en', 'de'] as const
 export type Locale = (typeof LOCALES)[number]
@@ -58,6 +59,14 @@ export const UI = {
 } as const
 
 export const t = (key: keyof typeof UI, lang: Locale = LANG): string => UI[key][lang]
+
+/**
+ * Interface text that never belonged in the CMS: button labels, aria labels,
+ * the words drawn on the cutting diagram. Editors do not touch these, so they
+ * live in the repo rather than adding forty fields to every Sanity document.
+ */
+export const ui = (key: keyof typeof strings, lang: Locale = LANG): string =>
+  (strings as Record<string, Record<Locale, string>>)[key][lang]
 
 const KEY_BY_PL = Object.fromEntries(
   (Object.keys(ROUTES) as RouteKey[]).map((k) => [ROUTES[k].pl, k]),

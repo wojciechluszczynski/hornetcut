@@ -1,5 +1,5 @@
 ---
-import { localizeHref } from '../lib/i18n';
+import { localizeHref, ui } from '../lib/i18n';
 import Base from './Base.astro';
 import NextLinks from '../components/NextLinks.astro';
 import { site } from '../data/site';
@@ -74,7 +74,7 @@ const schema = [
         <p class="lead muted">
           Napisz, ile studzienek, jaka nawierzchnia i jaki termin. Odpowiemy ceną i doborem tarczy.
         </p>
-        <a href={localizeHref("/kontakt/")} class="btn btn--solid">Zapytaj o cenę</a>
+        <a href={localizeHref("/kontakt/")} class="btn btn--solid">{ui("quote")}</a>
       </div>
 
       <NextLinks
