@@ -1,5 +1,5 @@
 ---
-import { localizeHref, ui } from '../lib/i18n';
+import { localizeHref, ui , tx } from '../lib/i18n';
 import Figure from './Figure.astro';
 
 interface Props {
@@ -34,7 +34,7 @@ const mark = sheetLabel ?? crumbs.at(-1)?.label ?? '';
         crumbs.map((c, i) => (
           <>
             <span aria-hidden="true">/</span>
-            {i === crumbs.length - 1 ? <span aria-current="page">{c.label}</span> : <a href={localizeHref(c.href)}>{c.label}</a>}
+            {i === crumbs.length - 1 ? <span aria-current="page">{tx(c.label)}</span> : <a href={localizeHref(c.href)}>{tx(c.label)}</a>}
           </>
         ))
       }

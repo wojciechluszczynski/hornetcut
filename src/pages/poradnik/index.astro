@@ -1,5 +1,5 @@
 ---
-import { localizeHref, ui } from '../../lib/i18n';
+import { localizeHref, ui , tx } from '../../lib/i18n';
 import Base from '../../layouts/Base.astro';
 import PageHero from '../../components/PageHero.astro';
 import NextLinks from '../../components/NextLinks.astro';
@@ -40,7 +40,7 @@ const schema = [
 >
   <PageHero
     h1="Poradnik"
-    lead="Konkretne odpowiedzi na pytania, które wracają przy każdym odcinku ze studzienkami. Bez lania wody, z liczbami tam, gdzie liczby mają sens."
+    lead={tx("Konkretne odpowiedzi na pytania, które wracają przy każdym odcinku ze studzienkami. Bez lania wody, z liczbami tam, gdzie liczby mają sens.")}
     crumbs={crumbs} sheet="04"
     photo={site.media.pain}
   />

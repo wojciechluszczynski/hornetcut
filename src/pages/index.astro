@@ -1,5 +1,5 @@
 ---
-import { localizeHref, ui } from '../lib/i18n';
+import { localizeHref, ui , tx } from '../lib/i18n';
 import Base from '../layouts/Base.astro';
 import CutDiagram from '../components/CutDiagram.astro';
 import StatStrip from '../components/StatStrip.astro';
@@ -225,8 +225,8 @@ const schema = [
   <TextureBand
     video={site.media.loop.video}
     poster={site.media.loop.poster}
-    quote="Studzienka nie jest problemem. Problemem jest to, co trzeba rozebrać, żeby się do niej dostać."
-    source="WOSK.650R LP, cięcie po obwodzie"
+    quote={tx("Studzienka nie jest problemem. Problemem jest to, co trzeba rozebrać, żeby się do niej dostać.")}
+    source={tx("WOSK.650R LP, cięcie po obwodzie")}
   />
 
   {/* ------------------------------------------------ 05 PEOPLE */}
