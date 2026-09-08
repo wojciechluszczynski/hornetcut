@@ -1,4 +1,5 @@
 ---
+import { localizeHref, ui } from '../lib/i18n';
 import Base from '../layouts/Base.astro';
 import PageHero from '../components/PageHero.astro';
 import NextLinks from '../components/NextLinks.astro';
@@ -7,7 +8,9 @@ import { site } from '../data/site';
 
 const p = site.pages.uses;
 const crumbs = [{ label: 'Zastosowania', href: '/zastosowania/' }];
-const photos = [site.photos.hero, site.photos.edge, site.photos.ring];
+// Nie ring: w CMS-ie 'ring' i 'yard' wskazuja ten sam plik, a 'yard' stoi juz
+// w naglowku tej podstrony.
+const photos = [site.photos.hero, site.photos.edge, site.photos.handover];
 ---
 
 <Base title={p.title} description={p.description} crumbs={crumbs}>
@@ -37,14 +40,14 @@ const photos = [site.photos.hero, site.photos.edge, site.photos.ring];
 
   <section class="band band--paper band--tight">
     <div class="sheet">
-      <p class="smark"><b>02</b><span>Dobór</span></p>
+      <p class="smark"><b>02</b><span>{ui("selection")}</span></p>
 
       <div class="cta">
-        <h2 class="display-l">Twoja nawierzchnia, nasz dobór</h2>
+        <h2 class="display-l">{ui("yourSurface")}</h2>
         <p class="lead muted">
-          Napisz, w czym tniesz i na jakich średnicach pracujesz. Odpowiemy ceną i doborem tarczy.
+          {ui("usesCta")}
         </p>
-        <a href="/kontakt/" class="btn btn--solid">Zapytaj o cenę</a>
+        <a href={localizeHref("/kontakt/")} class="btn btn--solid">{ui("quote")}</a>
       </div>
 
       <NextLinks
