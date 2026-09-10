@@ -10,7 +10,7 @@
  */
 import {createClient} from '@sanity/client'
 import {site as staticSite} from './site.static'
-import {LANG, localizeHref} from '../lib/i18n'
+import {LANG, localizeHref, zarejestrujSlugi} from '../lib/i18n'
 import staticStrings from '../lib/static-i18n.json'
 
 /**
@@ -72,6 +72,7 @@ const QUERY = `{
   "assets": *[_type == "sanity.imageAsset"]{_id, url, metadata{dimensions}},
   "pages": *[_type == "pageContent" && coalesce(language, "pl") == "${LANG}"]{key, h1, lead, title, description},
   "models": ${tr('modelComparison')},
+  "wszystkieSlugi": *[_type == "article" && defined(slug.current)]{_id, language, "slug": slug.current},
   "articles": *[_type == "article" && defined(slug.current) && coalesce(language, "pl") == "${LANG}"] | order(published desc){
     title, "slug": slug.current, lead, seoTitle, seoDescription, published, readMin, body
   }
@@ -105,6 +106,25 @@ const keep = <T>(incoming: T | undefined | null, fallback: T): T =>
   incoming === undefined || incoming === null || (Array.isArray(incoming) && incoming.length === 0)
     ? fallback
     : incoming
+
+/**
+ * One article exists once per language as a separate document, and each carries
+ * its own slug. Grouping them by the base id (everything before the `__xx`
+ * suffix) gives the switcher and hreflang a real target instead of the current
+ * language's slug pasted under another language's route.
+ */
+zarejestrujSlugi(
+  Object.values(
+    ((cms?.wszystkieSlugi ?? []) as Array<{_id: string; language?: string; slug: string}>).reduce(
+      (acc: Record<string, Record<string, string>>, a) => {
+        const baza = a._id.replace(/__(en|de|uk)$/, '')
+        acc[baza] = {...(acc[baza] ?? {}), [a.language ?? 'pl']: a.slug}
+        return acc
+      },
+      {},
+    ),
+  ),
+)
 
 const assetsById = new Map<string, any>((cms?.assets ?? []).map((a: any) => [a._id, a]))
 

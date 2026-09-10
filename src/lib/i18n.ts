@@ -78,6 +78,16 @@ export const t = (key: keyof typeof UI, lang: Locale = LANG): string => UI[key][
 export const ui = (key: keyof typeof strings, lang: Locale = LANG): string =>
   (strings as Record<string, Record<Locale, string>>)[key][lang]
 
+/**
+ * Slugs of one article in every language, filled by the content adapter at
+ * build time. It lives here rather than in the adapter because hreflang and the
+ * language switcher both need it and neither should import content.
+ */
+let slugiArtykulow: Array<Partial<Record<Locale, string>>> = []
+export const zarejestrujSlugi = (grupy: Array<Partial<Record<Locale, string>>>) => {
+  slugiArtykulow = grupy
+}
+
 const KEY_BY_PL = Object.fromEntries(
   (Object.keys(ROUTES) as RouteKey[]).map((k) => [ROUTES[k].pl, k]),
 ) as Record<string, RouteKey>
@@ -95,9 +105,16 @@ export const localizeHref = (href: string, lang: Locale = LANG): string => {
   const suffix = hash ? `#${hash}` : ''
   const key = KEY_BY_PL[path]
   if (key) return `${L(key, lang)}${suffix}`
-  // Article permalinks: /poradnik/<slug>/ follows the guide route.
+  // Article permalinks carry a translated slug, not just a translated route:
+  // /poradnik/wymiana-wlazu-kanalizacyjnego/ is /en/guide/replacing-a-manhole-
+  // cover-step-by-step/. Swapping only the route produced an English slug under
+  // the German route and 36 dead addresses, in the switcher and in hreflang.
   const article = path.match(/^\/poradnik\/(.+?)\/?$/)
-  if (article) return `${articleHref(article[1], lang)}${suffix}`
+  if (article) {
+    const grupa = slugiArtykulow.find((g) => Object.values(g).includes(article[1]))
+    const slug = grupa?.[lang] ?? article[1]
+    return `${articleHref(slug, lang)}${suffix}`
+  }
   return `${prefixOf(lang)}${path}${suffix}`
 }
 
