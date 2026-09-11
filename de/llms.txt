@@ -1,0 +1,134 @@
+# HORNETCUT. HornetCut R650
+
+> Der HornetCut R650 wird mit Spreizklemmen im Schachtrahmen montiert und schneidet Asphalt oder Beton rundherum. Verstellbarer Schnittdurchmesser, maximaler Radius 1300 mm, Tiefe bis 100 mm.
+
+Producent: FIJALO-POLAND Cyprian Fijało, ul. Jana Kochanowskiego 130, 80-405 Gdańsk.
+Kontakt: +48 534 979 628, biuro@fijalo.pl. Montag bis Freitag, 9:00–18:00 Uhr.
+Strona: https://hornetcut.pl
+Realizacja: Wojciech Łuszczyński, GTM Architect, wojciech.io
+
+## Czym jest HornetCut R650
+
+Das Aufstemmen nimmt mehr Decke weg, als die Schachtregulierung verlangt. Mehr Bauschutt zum Abfahren, mehr Mischgut zum Einbauen, längere Sperrung. Der Abbruchhammer hinterlässt eine ausgefranste Kante, die Fuge zum frischen Mischgut lässt Wasser durch und reißt nach dem ersten Winter. Der Ringschnitt nimmt nur den Ring um den Schacht heraus und hinterlässt eine gleichmäßige, senkrechte Kante.
+
+## Kluczowe parametry
+
+- Schnitttiefe: 100 mm
+- Maximaler Schnittradius: bis 1300 mm
+- Schachtbereich: 500–900 mm
+- Benzinmotor: 11,2 PS
+- Nenngewicht: 125 kg
+
+## Pełna specyfikacja
+
+- Maximale Schnitttiefe: 100 mm
+- Schnittdurchmesser: verstellbar
+- Maximaler Schnittradius: 1300 mm
+- Werksbezeichnung: WOSK.650R LP
+- Durchmesserbereich der Schächte: 500–900 mm
+- Motor: LONCIN G390, 389 cm³, Benzin, 11,2 PS
+- Start: Hand und elektrisch
+- Transport: zugehöriger Transportwagen
+- Tiefen- und Drehvorschub: manuell
+- Nenngewicht: 125 kg
+- Betriebsgewicht: 190 kg
+- Abmessungen: 1400 × 840 × 1080 mm
+- Schneidsystem: Antriebswelle mit Trennscheiben
+- Maximaler Scheibendurchmesser: 350 mm
+- Scheibendrehzahl: 4750 U/min
+- Nassschnitt: ja, Wassertank 40 l
+- Kraftstofftank: 7 l bleifreies Benzin
+- Schallpegel: 106,9 dB
+
+## Jak działa
+
+1. Aufspannen: Die Maschine wird mit verstellbaren Spreizklemmen im Schachtrahmen montiert. Bezugspunkt ist der Schacht selbst, deshalb entfällt das Verankern in der Decke und das Abstecken.
+2. Einstellen: Sie stellen den Schnittradius ein, maximal 1300 mm, und senken die Säge auf die gewünschte Tiefe ab, maximal 100 mm. Dieselbe Einstellung gilt am nächsten Schacht wieder.
+3. Schneiden: Ein Benzinmotor treibt die Welle mit den Trennscheiben an. Der Bediener geht um den Schacht herum und schiebt den Sägerahmen, bestimmt das Tempo im harten Gestein also selbst.
+4. Herausheben: Der ausgeschnittene Ring wird angehoben und herausgenommen. Schachtkörper und Abdeckung bleiben unversehrt, die Stelle ist sofort für die Regulierung bereit.
+
+## Zastosowania
+
+### Schachthöhenregulierung
+Nach dem Einbau einer neuen Deckschicht liegt die Abdeckung unter dem Fahrbahnniveau. Mit dem Ringschnitt heben Sie den Fahrbahnring heraus, regulieren die Abdeckung auf die Sollhöhe und füllen nur den ausgeschnittenen Ring wieder auf. Die Reparaturfläche ist berechenbar und die Kante senkrecht, die Fuge bleibt dicht.
+
+### Tausch von Abdeckungen und Entlastungsringen
+Eine korrodierte Abdeckung oder ein gerissener Entlastungsring erfordert Zugang zum Schachtkörper. Der Kreisschnitt legt die Konstruktion frei, ohne die Decke aufzustemmen, der Schachtkörper bekommt also keine Schläge ab.
+
+### Straßensanierung und Umbau
+Beim Fräsen und beim Einbau einer neuen Decke werden die Schächte der Reihe nach abgearbeitet. Die Maschine fährt auf ihrem Wagen von Abdeckung zu Abdeckung, der einmal eingestellte Durchmesser gilt am nächsten Schacht wieder.
+
+### Wasser-, Abwasser-, Fernwärme- und Gasnetze
+Zugang zu Schiebern, Hydranten und Armaturen unter der Decke. Ein punktueller Ausschnitt begrenzt den Wiederherstellungsumfang und verkürzt die Sperrzeit, was sich direkt auf die Kosten der Flächennutzung auswirkt.
+
+### Betriebsflächen, Parkplätze und Werksgelände
+Beton- und Asphaltflächen auf Industriegeländen. Punktuelle Reparatur statt Austausch ganzer Platten, während der Verkehr auf der übrigen Fläche weiterläuft.
+
+### Awarie i szybkie interwencje
+Bei einer Störung zählen Zugriffszeit und Wiederherstellungszeit. Die Maschine braucht weder Untergrundvorbereitung noch Verankerung, von der Ankunft bis zum ersten Schnitt vergeht also nur die Zeit, die das Aufspannen im Schachtrahmen dauert.
+
+## Wyposażenie standardowe
+
+- Fahrbarer Transportwagen: Umsetzen zwischen Schächten ohne Kran.
+- Hand- und Elektrostart: Elektrostart im Alltag, Seilzug als Rückfallebene.
+- Verstellbare Kreuzhalterung: Aufspannen im Schachtrahmen, ohne Verankerung in der Decke.
+- Rundumleuchte: Orangefarbenes Licht, für den Transport abnehmbar.
+- Betriebsstundenzähler: Kontrolle der Wartungsintervalle und der tatsächlichen Motorlaufzeit.
+- Drehsperre für den Transport: Der Arm ist für Transport und Entladung fixiert.
+
+## Pytania i odpowiedzi
+
+### An welchen Schächten arbeitet der HornetCut R650?
+Die Maschine wird mit verstellbaren Spreizklemmen im Schachtrahmen montiert und braucht daher keine Verankerung in der Decke. Den Schnittradius stellen Sie unabhängig von der Schachtgröße ein, maximal 1300 mm.
+
+### Schneidet die Maschine Beton oder nur Asphalt?
+Sie schneidet Asphalt und Beton. Wie weit sie in Stahlbeton kommt, hängt von der gewählten Diamanttrennscheibe ab. Die Maschine nimmt Scheiben bis 350 mm Durchmesser auf.
+
+### Wie viele Personen bedienen die Maschine?
+Zum Schneiden genügt ein Bediener: Er senkt die Säge auf die eingestellte Tiefe ab und schiebt den Rahmen um den Schacht. Beim Entladen und Umsetzen arbeitet man zu zweit bequemer, denn die Maschine wiegt 125 kg ohne Wasser und 190 kg betriebsbereit. Auf ebenem Untergrund lässt sie sich mit dem Transportwagen allein rollen.
+
+### Wie wird der HornetCut R650 transportiert?
+Auf dem zugehörigen Transportwagen. Vor dem Transport sperren Sie die Armdrehung, die Rundumleuchte wird abgenommen. Die Maschine wiegt 125 kg ohne Wasser und misst 1400 × 840 × 1080 mm, passt also auf einen normalen Anhänger oder in einen Transporter. Für die Fahrt muss sie gesichert werden.
+
+### Wie lange dauert ein Kreisschnitt?
+Der Hersteller nennt keine Zeitvorgabe, denn die Dauer hängt von Tiefe, Deckenart und Zustand der Scheibe ab. Die Scheibe läuft mit 4750 Umdrehungen pro Minute bei Tiefen bis 100 mm. Die reale Zeit misst man am besten beim ersten Schnitt.
+
+### Was kostet der HornetCut R650?
+Der Preis hängt von Konfiguration und Verfügbarkeit ab. Die Preisliste schicken wir als Antwort auf eine Anfrage, in der Regel innerhalb eines Werktags.
+
+### Werden 100 mm in einem Durchgang erreicht?
+Die Anleitung schreibt keine Anzahl von Durchgängen vor. Über die Hub- und Senkmechanik lässt sich die Tiefe vor jedem Umlauf einstellen, in härterer Decke arbeiten Sie sich also schrittweise auf 100 mm vor, statt die volle Tiefe sofort zu erzwingen.
+
+### Braucht das Schneiden einen Wasseranschluss?
+Nein. Die Maschine hat einen eigenen Wassertank mit 40 Litern samt Scheibenkühlung und braucht deshalb keinen Anschluss an der Arbeitsstelle. Der Wasserstand wird vor dem Start geprüft, im Rahmen der täglichen Wartung.
+
+### Lässt sich ein Kreis schneiden, wo noch kein Schacht ist?
+Nein. Der bewegliche Rahmen wird mit verstellbaren Spreizklemmen im Schachtflansch aufgespannt, und dieser Flansch gibt die Drehachse vor. Ohne Schachtrahmen hat die Maschine nichts, wogegen sie sich abstützen kann.
+
+### Wie ist die Garantie und wo sitzt der Service?
+Der Hersteller gewährt 24 Monate Garantie in Polen. Reparaturen führt die Fachwerkstatt des Herstellers aus, ein Garantieanspruch wird schriftlich gemeldet, mit Angabe von Zeitpunkt, Umständen und Ort des Fehlers.
+
+### Wie lang ist die Lieferzeit?
+Sie hängt von der Maschinenverfügbarkeit zum jeweiligen Zeitpunkt ab. Wir nennen sie als Antwort auf eine Anfrage.
+
+### Bieten Sie eine Einweisung an?
+Mit der Maschine kommt eine Betriebsanleitung zu Arbeitsplatzvorbereitung, Betrieb und täglicher Wartung. Umfang der Übergabe und der Einweisung vor Ort klären wir bei der Bestellung.
+
+## Strony
+
+- https://hornetcut.pl/ : strona główna
+- https://hornetcut.pl/dane-techniczne/ : pełna specyfikacja
+- https://hornetcut.pl/zastosowania/ : zastosowania
+- https://hornetcut.pl/jak-to-dziala/ : przebieg pracy krok po kroku
+- https://hornetcut.pl/faq/ : pytania i odpowiedzi
+- https://hornetcut.pl/kontakt/ : zapytanie ofertowe
+- https://hornetcut.pl/do-pobrania/ : dokumentacja PDF
+- https://hornetcut.pl/poradnik/ : teksty o regulacji studzienek i wymianie włazów
+- https://hornetcut.pl/poradnik/regulacja-wysokosci-studzienki/ : regulacja wysokości studzienki w jezdni
+- https://hornetcut.pl/poradnik/wymiana-wlazu-kanalizacyjnego/ : wymiana włazu kanalizacyjnego krok po kroku
+- https://hornetcut.pl/poradnik/ciecie-po-obwodzie-czy-rozkuwanie/ : porównanie metod otwierania nawierzchni
+
+## Uwagi
+
+Parametry techniczne pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP
+wydanych przez producenta. Ceny, terminu dostawy i czasu cięcia producent nie publikuje.

@@ -1,0 +1,134 @@
+# HORNETCUT. HornetCut R650
+
+> The HornetCut R650 mounts in the manhole frame on expanding clamps and cuts asphalt or concrete around it. Adjustable cutting diameter, maximum radius 1300 mm, depth up to 100 mm.
+
+Producent: FIJALO-POLAND Cyprian Fijało, ul. Jana Kochanowskiego 130, 80-405 Gdańsk.
+Kontakt: +48 534 979 628, biuro@fijalo.pl. Monday to Friday, 9:00–18:00.
+Strona: https://hornetcut.pl
+Realizacja: Wojciech Łuszczyński, GTM Architect, wojciech.io
+
+## Czym jest HornetCut R650
+
+Breaking out with a hammer takes more surface than adjusting a manhole requires. More rubble to haul away, more mix to lay, a longer lane closure. A breaker leaves a ragged edge, so the joint with fresh asphalt lets water through and cracks after the first winter. A circular cut takes out only the ring around the manhole and leaves an even, vertical edge.
+
+## Kluczowe parametry
+
+- Cutting depth: 100 mm
+- Maximum cutting radius: up to 1300 mm
+- Manhole range: 500–900 mm
+- Petrol engine: 11.2 hp
+- Nominal weight: 125 kg
+
+## Pełna specyfikacja
+
+- Maximum cutting depth: 100 mm
+- Cutting diameter: adjustable
+- Maximum cutting radius: 1300 mm
+- Factory designation: WOSK.650R LP
+- Manhole diameter range: 500–900 mm
+- Engine: LONCIN G390, 389 cm³, petrol, 11.2 hp
+- Starting: manual and electric
+- Transport: dedicated transport trolley
+- Depth and rotation feed: manual
+- Nominal weight: 125 kg
+- Operating weight: 190 kg
+- Dimensions: 1400 × 840 × 1080 mm
+- Cutting system: drive shaft with cutting blades
+- Maximum blade diameter: 350 mm
+- Blade speed: 4750 rpm
+- Wet cutting: yes, 40 l water tank
+- Fuel tank: 7 l unleaded petrol
+- Noise level: 106.9 dB
+
+## Jak działa
+
+1. Mounting: The machine mounts in the manhole frame on adjustable expanding clamps. The manhole itself is the reference point, so there is no anchoring in the surface and no setting out.
+2. Setting: You set the cutting radius, up to 1300 mm, and lower the saw to the chosen depth, up to 100 mm. The same setting comes back at every following manhole.
+3. Cutting: A petrol engine drives the shaft with the cutting blades. The operator walks around the manhole pushing the saw frame, so they control the pace on hard aggregate themselves.
+4. Lifting out: The cut ring is levered up and lifted out. The shaft and the cover stay intact and the area is ready for adjustment straight away.
+
+## Zastosowania
+
+### Manhole height adjustment
+Once a new wearing course is laid, the cover sits below the road level. A circular cut lets you lift out the ring of pavement, set the cover to its final level and fill only the ring you cut. The repair area is predictable and the edge is vertical, so the joint stays watertight.
+
+### Cover and load-relief ring replacement
+A corroded cover or a cracked load-relief ring means getting at the shaft. Cutting a circle exposes the structure without breaking the surface with a hammer, so the shaft takes no impact.
+
+### Road repairs and rebuilds
+When milling and laying a new surface, manholes are handled one after another. The machine rolls between covers on its trolley, and the diameter you set once comes back at every following one.
+
+### Water, sewer, heating and gas networks
+Access to valves, hydrants and fittings buried under the surface. A spot cut-out limits how much has to be restored and shortens the lane closure, which feeds straight into the cost of occupying the road.
+
+### Yards, car parks and industrial sites
+Concrete and asphalt surfaces on industrial sites. A spot repair instead of replacing whole slabs, with traffic still running on the rest of the yard.
+
+### Awarie i szybkie interwencje
+In a failure what counts is how fast you get in and how fast you restore. The machine needs no ground preparation and no anchoring, so the time from arrival to the first cut is the time it takes to set the clamp in the manhole frame.
+
+## Wyposażenie standardowe
+
+- Wheeled transport trolley: Moving the machine between manholes without a crane.
+- Manual and electric start: Electric start day to day, the pull cord as a backup.
+- Adjustable cross clamp: Mounting in the manhole frame, without anchoring in the surface.
+- Warning beacon: Orange light, removed for transport.
+- Engine hour meter: Keeping track of servicing and actual engine running time.
+- Rotation lock for transport: The arm is fixed for transport and unloading.
+
+## Pytania i odpowiedzi
+
+### What manholes does the HornetCut R650 work on?
+The machine mounts in the manhole frame on adjustable expanding clamps, so it needs no anchoring in the surface. You set the cutting radius independently of the manhole size, up to 1300 mm.
+
+### Does it cut concrete or only asphalt?
+It cuts asphalt and concrete. How far it goes in reinforced concrete depends on the diamond blade you choose. The machine takes blades up to 350 mm in diameter.
+
+### How many people does it take to operate?
+One operator is enough for cutting: they lower the saw to the set depth and push the frame around the manhole. For unloading and repositioning two people are easier, because the machine weighs 125 kg dry and 190 kg ready to work. On even ground the dedicated trolley lets one person roll it.
+
+### How is the HornetCut R650 transported?
+On its dedicated transport trolley. Before transport you lock the arm rotation and the warning beacon is removed. The machine weighs 125 kg dry and measures 1400 × 840 × 1080 mm, so it fits an ordinary trailer or a van bed. It has to be strapped down for the journey.
+
+### How long does one circle take to cut?
+The manufacturer gives no time standard, because it depends on depth, surface type and blade condition. The blade runs at 4750 rpm at depths up to 100 mm. The real time on a given surface is best measured on the first cut.
+
+### What does the HornetCut R650 cost?
+The price depends on configuration and availability. We send the price list in reply to an enquiry, usually within one working day.
+
+### Is 100 mm reached in a single pass?
+The manual does not prescribe a number of passes. The saw raise and lower mechanism lets you set the depth before each lap, so in a harder surface you work down to 100 mm gradually instead of forcing full depth at once.
+
+### Does cutting need a water connection?
+No. The machine has its own 40 litre water tank with blade cooling, so it needs no connection at the working point. The water level is checked before start-up, as part of daily maintenance.
+
+### Can it cut a circle where there is no manhole yet?
+No. The moving frame clamps into the manhole flange on adjustable expanding clamps, and that flange sets the axis of rotation. Without a manhole frame the machine has nothing to brace against.
+
+### What is the warranty and where is service?
+The manufacturer gives 24 months of warranty within Poland. Repairs are carried out by the manufacturer's specialist service workshop, and a warranty claim is submitted in writing, describing when, how and where the fault occurred.
+
+### What is the delivery time?
+It depends on machine availability at the time. We give it in reply to an enquiry.
+
+### Do you provide operator training?
+The machine comes with an operating manual covering site preparation, work and daily maintenance. The scope of handover and on-site briefing is agreed when ordering.
+
+## Strony
+
+- https://hornetcut.pl/ : strona główna
+- https://hornetcut.pl/dane-techniczne/ : pełna specyfikacja
+- https://hornetcut.pl/zastosowania/ : zastosowania
+- https://hornetcut.pl/jak-to-dziala/ : przebieg pracy krok po kroku
+- https://hornetcut.pl/faq/ : pytania i odpowiedzi
+- https://hornetcut.pl/kontakt/ : zapytanie ofertowe
+- https://hornetcut.pl/do-pobrania/ : dokumentacja PDF
+- https://hornetcut.pl/poradnik/ : teksty o regulacji studzienek i wymianie włazów
+- https://hornetcut.pl/poradnik/regulacja-wysokosci-studzienki/ : regulacja wysokości studzienki w jezdni
+- https://hornetcut.pl/poradnik/wymiana-wlazu-kanalizacyjnego/ : wymiana włazu kanalizacyjnego krok po kroku
+- https://hornetcut.pl/poradnik/ciecie-po-obwodzie-czy-rozkuwanie/ : porównanie metod otwierania nawierzchni
+
+## Uwagi
+
+Parametry techniczne pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP
+wydanych przez producenta. Ceny, terminu dostawy i czasu cięcia producent nie publikuje.

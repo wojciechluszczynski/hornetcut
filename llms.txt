@@ -1,0 +1,134 @@
+# HORNETCUT. HornetCut R650
+
+> HornetCut R650 montuje się w ramie włazu na ściskach rozporowych i tnie asfalt lub beton po obwodzie. Regulowana średnica cięcia, maksymalny promień 1300 mm, głębokość do 100 mm.
+
+Producent: FIJALO-POLAND Cyprian Fijało, ul. Jana Kochanowskiego 130, 80-405 Gdańsk.
+Kontakt: +48 534 979 628, biuro@fijalo.pl. Poniedziałek do piątku, 9:00–18:00.
+Strona: https://hornetcut.pl
+Realizacja: Wojciech Łuszczyński, GTM Architect, wojciech.io
+
+## Czym jest HornetCut R650
+
+Rozkuwanie młotem zabiera więcej nawierzchni, niż wymaga tego regulacja studzienki. Więcej gruzu do wywiezienia, więcej masy do wbudowania, dłuższe zajęcie pasa ruchu. Krawędź po młocie jest poszarpana, więc styk ze świeżą masą przepuszcza wodę i pęka po pierwszej zimie. Cięcie po obwodzie zdejmuje tylko pierścień wokół włazu i zostawia równą, pionową krawędź.
+
+## Kluczowe parametry
+
+- Głębokość cięcia: 100 mm
+- Maksymalny promień cięcia: do 1300 mm
+- Zakres studzienek: 500–900 mm
+- Silnik spalinowy: 11,2 KM
+- Masa nominalna: 125 kg
+
+## Pełna specyfikacja
+
+- Maksymalna głębokość cięcia: 100 mm
+- Średnica cięcia: regulowana
+- Maksymalny promień cięcia: 1300 mm
+- Oznaczenie fabryczne: WOSK.650R LP
+- Zakres średnic studzienek: 500–900 mm
+- Silnik: LONCIN G390, 389 cm³, benzynowy, 11,2 KM
+- Rozruch: ręczny i elektryczny
+- Transport: dedykowany wózek transportowy
+- Posuw głębokości i obrotu: ręczny
+- Masa nominalna: 125 kg
+- Masa robocza: 190 kg
+- Wymiary: 1400 × 840 × 1080 mm
+- Układ tnący: wałek napędowy z tarczami tnącymi
+- Maksymalna średnica tarczy: 350 mm
+- Prędkość obrotowa tarczy: 4750 obr/min
+- Cięcie na mokro: tak, zbiornik wody 40 l
+- Zbiornik paliwa: 7 l benzyny bezołowiowej
+- Poziom hałasu: 106,9 dB
+
+## Jak działa
+
+1. Mocowanie: Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych. Punktem odniesienia jest sama studzienka, więc nie ma kotwienia w nawierzchni ani wytyczania obszaru.
+2. Ustawienie: Ustawiasz promień cięcia, maksymalnie 1300 mm, i opuszczasz piłę na zadaną głębokość, maksymalnie 100 mm. Ta sama nastawa wraca przy każdej kolejnej studzience.
+3. Cięcie: Silnik spalinowy napędza wałek z tarczami tnącymi. Operator obchodzi studzienkę, przepychając ramę piły, więc sam kontroluje tempo na twardym kruszywie.
+4. Wyjęcie: Wycięty pierścień podważa się i wyjmuje. Korpus studni i właz zostają nienaruszone, obszar nadaje się od razu do regulacji.
+
+## Zastosowania
+
+### Regulacja wysokości studzienek
+Po nałożeniu nowej warstwy ścieralnej właz zostaje poniżej poziomu jezdni. Cięcie po obwodzie pozwala zdjąć pierścień nawierzchni, wyregulować właz na docelową rzędną i uzupełnić masę tylko w wyciętym pierścieniu. Obszar naprawy jest przewidywalny, a krawędź pionowa, więc styk trzyma szczelność.
+
+### Wymiana włazów i pierścieni odciążających
+Skorodowany właz albo pęknięty pierścień odciążający wymaga dostępu do korpusu studni. Wycięcie okręgu odsłania konstrukcję bez rozkuwania nawierzchni młotem, więc korpus studni nie dostaje udarów.
+
+### Remonty i przebudowy dróg
+Przy frezowaniu i układaniu nowej nawierzchni studzienki obsługuje się seryjnie. Maszyna na dedykowanym wózku przejeżdża między kolejnymi włazami, a raz ustawiona średnica wraca przy każdej następnej.
+
+### Sieci wod-kan, ciepłownicze i gazowe
+Dostęp do zasuw, hydrantów i armatury schowanej pod nawierzchnią. Punktowa wycinka ogranicza zakres odtworzenia i skraca czas zajęcia pasa ruchu, co ma bezpośrednie przełożenie na koszt zajęcia terenu.
+
+### Place manewrowe, parkingi i tereny zakładowe
+Nawierzchnie betonowe i asfaltowe na terenach przemysłowych. Naprawa punktowa zamiast wymiany całych płyt, przy zachowanym ruchu na pozostałej części placu.
+
+### Awarie i szybkie interwencje
+Przy awarii liczy się czas wejścia i czas odtworzenia. Maszyna nie wymaga przygotowania podłoża ani kotwienia, więc od dojazdu do pierwszego cięcia mija tyle, ile zajmuje ustawienie uchwytu w pierścieniu włazu.
+
+## Wyposażenie standardowe
+
+- Wózek przejezdny kołowy: Przestawienie maszyny między studzienkami bez dźwigu.
+- Rozruch ręczny i elektryczny: Rozruch elektryczny na co dzień, linka jako zabezpieczenie.
+- Regulowany uchwyt krzyżowy: Mocowanie w pierścieniu włazu, bez kotwienia w nawierzchni.
+- Kogut ostrzegawczy: Światło pomarańczowe, demontowane na czas transportu.
+- Licznik motogodzin: Kontrola przeglądów i realnego przebiegu pracy silnika.
+- Blokada obrotu do transportu: Ramię unieruchomione na czas przewozu i rozładunku.
+
+## Pytania i odpowiedzi
+
+### Na jakich studzienkach pracuje HornetCut R650?
+Maszyna montuje się w ramie włazu na nastawnych ściskach rozporowych, więc nie wymaga kotwienia w nawierzchni. Promień cięcia ustawiasz niezależnie od wymiaru studzienki, maksymalnie 1300 mm.
+
+### Czy maszyna tnie beton, czy tylko asfalt?
+Tnie asfalt i beton. Zakres w żelbecie zależy od doboru tarczy diamentowej. Maszyna przyjmuje tarcze o średnicy do 350 mm.
+
+### Ile osób obsługuje maszynę?
+Do cięcia wystarczy jeden operator: obniża piłę na zadaną głębokość i przepycha ramę wokół studzienki. Przy rozładunku i przestawianiu wygodniej pracować we dwie osoby, bo maszyna waży 125 kg bez wody i 190 kg w stanie roboczym. Po równym podłożu dedykowany wózek pozwala przetoczyć ją w pojedynkę.
+
+### Jak transportuje się HornetCut R650?
+Na dedykowanym wózku transportowym. Przed transportem blokujesz obrót ramienia, a kogut ostrzegawczy jest demontowany. Maszyna waży 125 kg bez wody i mierzy 1400 × 840 × 1080 mm, więc mieści się w zwykłej przyczepie lub w skrzyni auta dostawczego. Na czas jazdy trzeba ją zamocować.
+
+### Ile trwa wycięcie jednego okręgu?
+Producent nie podaje normy czasowej, bo czas zależy od głębokości, rodzaju nawierzchni i stanu tarczy. Tarcza pracuje z prędkością 4750 obrotów na minutę przy głębokości do 100 mm. Realny czas na konkretnej nawierzchni najlepiej zmierzyć przy pierwszym cięciu.
+
+### Ile kosztuje HornetCut R650?
+Cena zależy od konfiguracji i dostępności. Cennik wysyłamy w odpowiedzi na zapytanie, zwykle w ciągu jednego dnia roboczego.
+
+### Czy głębokość 100 mm osiąga się w jednym przejściu?
+Instrukcja nie narzuca liczby przejść. Mechanizm podnoszenia i opuszczania piły pozwala ustawić głębokość przed każdym obiegiem, więc w twardszej nawierzchni schodzisz do 100 mm stopniowo, zamiast wymuszać pełną głębokość od razu.
+
+### Czy cięcie wymaga podłączenia wody?
+Nie. Maszyna ma własny zbiornik wody o pojemności 40 litrów wraz z układem chłodzenia tarczy, więc nie potrzebuje przyłącza na stanowisku. Poziom wody sprawdza się przed uruchomieniem, w ramach obsługi codziennej.
+
+### Czy da się wyciąć okrąg tam, gdzie nie ma jeszcze włazu?
+Nie. Rama ruchoma mocuje się w kołnierzu studzienki ściskami rozporowymi nastawnymi i to on wyznacza oś obrotu. Bez pierścienia włazu maszyna nie ma się o co zaprzeć.
+
+### Jaka jest gwarancja i gdzie jest serwis?
+Producent udziela 24 miesięcy gwarancji na terenie Polski. Naprawy prowadzi wyspecjalizowany zakład serwisowy producenta, a roszczenie gwarancyjne zgłasza się na piśmie, z opisem czasu, okoliczności i miejsca powstania usterki.
+
+### Jaki jest czas dostawy?
+Termin zależy od dostępności maszyn w danym momencie. Podajemy go w odpowiedzi na zapytanie.
+
+### Czy prowadzicie szkolenie z obsługi?
+Z maszyną jedzie instrukcja obsługi opisująca przygotowanie stanowiska, pracę i obsługę codzienną. Zakres przekazania i instruktażu na miejscu ustalamy przy zamówieniu.
+
+## Strony
+
+- https://hornetcut.pl/ : strona główna
+- https://hornetcut.pl/dane-techniczne/ : pełna specyfikacja
+- https://hornetcut.pl/zastosowania/ : zastosowania
+- https://hornetcut.pl/jak-to-dziala/ : przebieg pracy krok po kroku
+- https://hornetcut.pl/faq/ : pytania i odpowiedzi
+- https://hornetcut.pl/kontakt/ : zapytanie ofertowe
+- https://hornetcut.pl/do-pobrania/ : dokumentacja PDF
+- https://hornetcut.pl/poradnik/ : teksty o regulacji studzienek i wymianie włazów
+- https://hornetcut.pl/poradnik/regulacja-wysokosci-studzienki/ : regulacja wysokości studzienki w jezdni
+- https://hornetcut.pl/poradnik/wymiana-wlazu-kanalizacyjnego/ : wymiana włazu kanalizacyjnego krok po kroku
+- https://hornetcut.pl/poradnik/ciecie-po-obwodzie-czy-rozkuwanie/ : porównanie metod otwierania nawierzchni
+
+## Uwagi
+
+Parametry techniczne pochodzą z karty katalogowej i instrukcji obsługi WOSK.650R LP
+wydanych przez producenta. Ceny, terminu dostawy i czasu cięcia producent nie publikuje.
